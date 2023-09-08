@@ -2,10 +2,10 @@
 lock "~> 3.17.3"
 
 
-server '134.122.65.9', port: 22, roles: [:web, :app, :db], primary: true
+server '104.248.202.234', port: 22, roles: [:web, :app, :db], primary: true
 set :branch, 'main'
-set :application, "spree"
-set :repo_url, "git@github.com:stap780/spreetest.git"
+set :application, "marcel"
+set :repo_url, "git@github.com:stap780/marcel.git"
 
 set :user, 'deploy'
 set :puma_threads,    [4, 16]
