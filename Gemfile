@@ -52,6 +52,8 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem 'bootstrap'
+gem 'whenever', require: false
+
 
 gem 'spree', '~> 4.6'
 gem 'spree_backend', '~> 4.6'
