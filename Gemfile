@@ -13,8 +13,8 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-# gem "puma", "~> 5.0"
-gem 'unicorn'
+gem "puma", "~> 5.0"
+# gem 'unicorn'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -77,11 +77,6 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
   gem "capistrano", require: false
   gem "capistrano-rails", require: false
   gem 'capistrano-rvm', require: false
