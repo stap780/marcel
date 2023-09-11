@@ -1,8 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
 
-# Change these
-
 set :repo_url,        'git@github.com:stap780/marcel.git'
 set :application,     'marcel'
 set :branch,          'main'
@@ -69,12 +67,15 @@ namespace :deploy do
       end
   end
 
+#   desc "Restart sidekiq"
+#   task :restart_sidekiq do
+#     on roles(:app), in: :sequence, wait: 5 do
+#       execute :sudo, :systemctl, :restart, :sidekiq
+#     end
+#   end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  # after  :finishing,    :restart
+#   after  :finishing,    :restart_sidekiq
 end
-
-# ps aux | grep puma    # Get puma pid
-# kill -s SIGUSR2 pid   # Restart puma
-# kill -s SIGTERM pid   # Stop puma
