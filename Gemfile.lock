@@ -505,6 +505,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
