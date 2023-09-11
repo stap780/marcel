@@ -79,8 +79,3 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: marcel_production
-  username: marcel
-  password: <%= ENV["marcel_DATABASE_PASSWORD"] %>
