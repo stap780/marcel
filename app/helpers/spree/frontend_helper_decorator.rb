@@ -1,5 +1,5 @@
 module Spree
-    module FrontendHelper
+    module FrontendHelperDecorator
       include BaseHelper
       include InlineSvg::ActionView::Helpers
   
