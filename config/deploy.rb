@@ -13,7 +13,6 @@ set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
-# set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :deploy_to,       "/var/www/#{fetch(:application)}"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle','public', 'storage')
 set :linked_files, %w{config/database.yml config/master.key}

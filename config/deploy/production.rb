@@ -59,6 +59,6 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server '167.99.40.247', port: 22, roles: [:web, :app, :db], primary: true
+server '92.222.25.127', port: 22, roles: [:web, :app, :db], primary: true
 set :user,            'deploy'
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
