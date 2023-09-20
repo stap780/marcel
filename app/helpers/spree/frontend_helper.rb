@@ -1,5 +1,5 @@
 module Spree
-    module FrontendHelperDecorator
+    module FrontendHelper
       include BaseHelper
       include InlineSvg::ActionView::Helpers
   
@@ -17,7 +17,7 @@ module Spree
   
         image_path ||= if logo_attachment&.attached? && logo_attachment&.variable?
                          #main_app.cdn_image_url(logo_attachment.variant(resize: '244x104>'))
-                         main_app.cdn_image_url(logo_attachment.variant(resize_to_fill: [244, nil]))
+                         main_app.cdn_image_url(logo_attachment)#.variant(resize_to_fill: [300, 300]))
                        elsif logo_attachment&.attached? && logo_attachment&.image?
                          main_app.cdn_image_url(current_store.logo)
                        else
