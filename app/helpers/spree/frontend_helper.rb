@@ -27,7 +27,7 @@ module Spree
         path = spree.respond_to?(:root_path) ? spree.root_path : main_app.root_path
   
         link_to path, 'aria-label': current_store.name, class: 'logo-wrap', method: options[:method] do
-          image_tag image_path, alt: current_store.name, title: current_store.name, class: 'our-logo-img'
+          image_tag image_path, alt: current_store.name, title: current_store.name, class: 'our-logo-img test'
         end
       end
   
