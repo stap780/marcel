@@ -17,6 +17,7 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+!/lib/tasks/.keep
 
 # Ignore uploaded files in development.
 /storage/*
@@ -37,3 +38,4 @@
 
 .DS_Store
 /z-help.txt
+/lib/tasks
