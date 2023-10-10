@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_08_124104) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_131955) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -763,6 +763,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_124104) do
     t.jsonb "private_metadata"
     t.string "status", default: "draft", null: false
     t.datetime "make_active_at", precision: nil
+    t.string "unique_identifier"
+    t.string "unique_identifier_type", default: "gtin"
+    t.boolean "feed_active", default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -1461,7 +1464,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_124104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "engine", default: 0, null: false
+    t.integer "store_id"
     t.index ["active"], name: "index_spree_trackers_on_active"
+    t.index ["store_id"], name: "index_spree_trackers_on_store_id"
   end
 
   create_table "spree_users", force: :cascade do |t|
@@ -1526,6 +1531,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_124104) do
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
     t.string "barcode"
+    t.string "unique_identifier"
+    t.string "unique_identifier_type", default: "gtin"
+    t.boolean "show_in_product_feed", default: true
     t.index ["barcode"], name: "index_spree_variants_on_barcode"
     t.index ["deleted_at"], name: "index_spree_variants_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_variants_on_discontinue_on"
