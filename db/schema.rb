@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_131955) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_10_100250) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -677,6 +677,36 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_131955) do
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at"
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
+  end
+
+  create_table "spree_product_import_columns", force: :cascade do |t|
+    t.integer "product_import_id"
+    t.string "column_file"
+    t.string "column_system"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_product_imports", force: :cascade do |t|
+    t.boolean "active", default: true
+    t.string "title"
+    t.string "report"
+    t.string "file"
+    t.string "strategy"
+    t.string "uniq_field"
+    t.boolean "update_title", default: true
+    t.boolean "update_desc", default: true
+    t.boolean "update_img", default: true
+    t.boolean "update_quantity", default: true
+    t.boolean "update_price", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_spree_product_imports_on_active"
+    t.index ["update_desc"], name: "index_spree_product_imports_on_update_desc"
+    t.index ["update_img"], name: "index_spree_product_imports_on_update_img"
+    t.index ["update_price"], name: "index_spree_product_imports_on_update_price"
+    t.index ["update_quantity"], name: "index_spree_product_imports_on_update_quantity"
+    t.index ["update_title"], name: "index_spree_product_imports_on_update_title"
   end
 
   create_table "spree_product_option_types", force: :cascade do |t|

@@ -6,3 +6,4 @@
 //
 //= require spree/backend
 //= require_tree .
+//= require spree/backend/bulk//= require spree/backend/import
