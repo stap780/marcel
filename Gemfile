@@ -68,9 +68,9 @@ gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 
 gem 'spree_analytics_trackers', github: 'stap780/spree_analytics_trackers' # use this because it fix override js for rails 7
 
-gem 'spree_product_import', github: 'stap780/spree_product_import'
+# gem 'spree_product_import', github: 'stap780/spree_product_import'
 
-gem 'spree_product_bulk', github: 'stap780/spree_product_bulk'
+# gem 'spree_product_bulk', github: 'stap780/spree_product_bulk'
 
 
  
