@@ -46,9 +46,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_product_import.git
-  revision: 3ea7cd46db89f1860edcdf34d9fc51936d935971
+  revision: f1a83f51aef89728426ca7406494fdfe8fcdf691
   specs:
-    spree_product_import (0.0.23)
+    spree_product_import (0.0.24)
       caxlsx
       caxlsx_rails
       roo
@@ -310,7 +310,7 @@ GEM
     money (6.16.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
-    net-imap (0.4.1)
+    net-imap (0.4.2)
       date
       net-protocol
     net-pop (0.1.2)
