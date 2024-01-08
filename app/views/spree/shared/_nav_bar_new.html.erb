@@ -1,0 +1,27 @@
+<ul id="nav-bar" class="navbar-nav d-none d-md-flex justify-content-end gap-4" data-turbo-permanent data-turbo-permanent>
+    <li class="nav-item">
+        <a class="nav-link p-0" data-bs-toggle="offcanvas" href="#modalSearch" aria-label="<%= Spree.t('nav_bar.show_search') %>">
+            <%= icon(name: 'search_new', classes: 'd-inline-block', width: 20, height: 24) %>
+        </a>
+    </li>
+
+    <% if defined?(spree.account_link_path) %>
+        <li class="nav-item">
+            <div class="dropdown navbar-right-dropdown">
+                <span id="account-button" type="button" data-bs-toggle="dropdown" class="navbar-right-dropdown-toggle account-icon" aria-label="<%= Spree.t('nav_bar.show_user_menu') %>">
+                    <%= icon(name: 'person_new', classes: 'd-inline-block', width: 20, height: 24) %>
+                </span>
+
+                <div id="link-to-account" class="dropdown-menu dropdown-menu-right text-right">
+                </div>
+            </div>
+        </li>
+    <% end %>
+
+  <li id="link-to-cart1" class="nav-item">
+    <%= render 'spree/shared/cart', class: 'd-inline-block cart-icon', size: 30, item_count: 0 %>
+  </li>
+
+  <%= render partial: 'spree/shared/internationalization_options' %>
+
+</ul>

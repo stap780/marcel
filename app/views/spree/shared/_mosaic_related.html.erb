@@ -1,0 +1,14 @@
+<% cache [common_product_cache_keys, products&.except(:group, :order)&.maximum(:updated_at)&.to_i, id, products&.ids&.join(',')] do %>
+  <div id="<%= id.parameterize %>-desktop" class="d-md-block ">      
+
+        <div class="row mosaic-items-container px-5">
+            <% padding = 'pt-3 pb-4 px-3' %>
+            <% products.each_with_index do |product, index| %>
+            <div class="col-3 mosaiclItem <%=padding%> position-relative">
+                <%= render 'spree/shared/product', product: product, image_class: 'w-100', product_index: index %>
+            </div>
+            <% end %>
+        </div>
+      
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<div id="<%= id %>" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner product-carousel-inner">
+        <% images.each_with_index do |image, imageIndex| %>
+        <div class="carousel-item product-carousel-item<%= ' active' if imageIndex == 0 %>">
+                <% image_attrs = {
+                src: main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large)),
+                alt: image.alt || @product.name,
+                class: "d-block w-100",
+                width: zoomed ? 650 : 475,
+                height: zoomed ? 870 : 594
+                } %>
+                <%= imageIndex.zero? ? image_tag(image_attrs.delete(:src), image_attrs) : lazy_image(**image_attrs) %>
+        </div>
+        <% end %>
+    </div>
+    <div class="indicator-wrap">
+        <ol class="carousel-indicators">
+            <% images.each_with_index do |image, imageIndex| %>
+            <li type="button" data-bs-target="#<%= id %>" data-bs-slide-to="<%= imageIndex %>" class="<%= ' active' if imageIndex == 0 %> thumbnail" aria-current="true" aria-label="Slide <%= imageIndex %>">
+            <%= lazy_image(
+                    src: main_app.cdn_image_url(image.url(:pdp_thumbnail)), #:pdp_thumbnail
+                    class: 'd-block w-100',
+                    width: image.style(:pdp_thumbnail)[:width],
+                    height: image.style(:pdp_thumbnail)[:height],
+                    alt: image.alt || @product.name
+                    ) %>
+            </li>
+            <% end %>
+        </ol>
+        <a class="carousel-control-prev" type="button" href="#<%= id %>" data-bs-target="#<%= id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" type="button" href="#<%= id %>" data-bs-target="#<%= id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+</div>

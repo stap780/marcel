@@ -1,0 +1,34 @@
+<div class="row d-flex py-5 footer-spree-menu-links">
+<div class="col-3">
+    <a href="/">
+    <%= icon(name: 'logo', classes: '', width: 233, height: 83) %>
+    </a>
+</div>
+<div class="col-9 row d-flex">
+
+    <% if spree_menu('footer').present? %>
+        <% spree_menu('footer').children.each do |parent| %>
+        <div class="col-3">
+            <div class="footer-spree-label pb-3">
+                <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
+            </div>
+            <% parent.children.each do |child| %>
+            <div class="footer-link mb-2">
+                <%= spree_nav_link_tag(child) %>
+            </div>
+            <% end %>
+        </div>
+        <% end %>
+    <% end %>
+
+    <% if spree.respond_to?(:account_path) %>
+        <div class="col-3">
+            <div class="footer-spree-label pb-3"><%= Spree.t('nav_bar.my_account')%></div>
+            <div class="footer-link mb-2">
+                <%= link_to Spree.t(:my_orders).upcase, spree.account_path(anchor: "account-my-orders") %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+</div>

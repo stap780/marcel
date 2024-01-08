@@ -50,10 +50,10 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
-gem 'bootstrap'
+# gem "image_processing", "~> 1.2"
+# gem 'bootstrap'
 gem 'whenever', require: false
-
+gem "addressable"
 
 gem 'spree', '~> 4.6'
 gem 'spree_backend', '~> 4.6'
@@ -65,6 +65,9 @@ gem 'spree_gateway', '~> 3.10' # payment gateways eg. Stripe, Braintree (optiona
 gem 'spree_i18n', '~> 5.1' # translation files (optional)
 gem 'spree_product_feed', github: 'matthewkennedy/spree_product_feed'
 gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
+
+# gem 'spree_related_products', github: 'spree-contrib/spree_related_products' # not use because have error in generator and override
+gem 'spree_related_products', github: 'stap780/spree_related_products' 
 
 gem 'spree_analytics_trackers', github: 'stap780/spree_analytics_trackers' # use this because it fix override js for rails 7
 
@@ -90,6 +93,8 @@ group :development do
   gem "capistrano-rails", require: false
   gem 'capistrano-rvm', require: false
   gem 'capistrano3-puma', require: false
+  
+  gem 'spree_cmd'
 end
 
 group :test do

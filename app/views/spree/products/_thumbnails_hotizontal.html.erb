@@ -1,0 +1,110 @@
+<div id="<%= id %>"
+    class="carousel slide position-relative d-flex justify-content-center"
+    data-product-carousel-group-identifier="<%= group_id %>"
+    data-variant-change-trigger-identifier="<%= trigger_id %>"
+    data-product-carousel-per-page="<%= per_page %>"
+    data-product-carousel-is-slave="true" data-interval="false" data-hook>
+        <% if images.length > per_page %>
+            <a class="d-none d-sm-flex position-absolute top-50 start-0 translate-middle z-2"
+            href="#<%= id %>" role="button" data-bs-target="#<%= id %>" data-bs-slide="prev">
+            <span aria-hidden="true" class="d-flex justify-content-center align-items-center carousel-icon-control-rounded">
+                <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-left', width: 16, height: 16) %>
+            </span>
+            <span class="sr-only d-none"><%# Spree.t(:previous) %></span>
+            </a>
+        <% end %>
+
+        <div class="carousel-inner m-auto px-4" role="listbox">
+            <% images.each_with_index do |image, imageIndex| %>
+            <div class="carousel-item <%= ' active' if imageIndex == 0 %> default-background">
+                <div class="col-md-3">
+                    <div class="card border-0 default-background">
+                        <div class="card-img"   data-product-carousel-to-slide="<%= imageIndex %>"
+                                                data-variant-is-master="<%= image.viewable_id == @product.master.id %>"
+                                                data-variant-id="<%= image.viewable_id %>" >
+                            <%= lazy_image(
+                            src: main_app.cdn_image_url(image.url(:pdp_thumbnail)),
+                            class: 'img-fluid p-1 default-background',
+                            alt: image.alt || @product.name,
+                            width: image.style(:pdp_thumbnail)[:width],
+                            height: image.style(:pdp_thumbnail)[:height]
+                            ) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <% end %>
+        </div>
+
+        <% if images.length > per_page %>
+            <a class="d-none d-sm-flex position-absolute top-50 start-100 translate-middle z-2"
+            href="#<%= id %>" role="button" data-bs-target="#<%= id %>" data-bs-slide="next">
+            <span aria-hidden="true" class="d-flex justify-content-center align-items-center carousel-icon-control-rounded">
+                <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-right', width: 16, height: 16) %>
+            </span>
+            <span class="sr-only"><%# Spree.t(:next) %></span>
+            </a>
+        <% end %>
+</div>
+
+<%# https://codepen.io/hellomev/pen/LYORMQW %>
+
+<script>
+
+    document.addEventListener('turbo:load', function () {
+        let items = document.querySelectorAll('#productThumbnailsCarousel.carousel .carousel-item')
+
+        items.forEach((el) => {
+                const minPerSlide = 4
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                // wrap carousel by using first child
+                next = items[0]
+            }
+            let cloneChild = next.cloneNode(true)
+            el.appendChild(cloneChild.children[0])
+            next = next.nextElementSibling
+            }
+        })
+    })
+</script>
+<style>
+.carousel-item-start, .carousel-item-end {
+    background: #EFEFEF!important;
+}
+    @media (max-width: 767px) {
+		#productThumbnailsCarousel .carousel-inner .carousel-item > div {
+			display: none;
+		}
+		#productThumbnailsCarousel .carousel-inner .carousel-item > div:first-child {
+			display: block;
+		}
+	}
+
+	#productThumbnailsCarousel .carousel-inner .carousel-item.active,
+	#productThumbnailsCarousel .carousel-inner .carousel-item-next,
+	#productThumbnailsCarousel .carousel-inner .carousel-item-prev {
+		display: flex;
+	}
+
+	/* medium and up screens */
+	@media (min-width: 768px) {
+
+		#productThumbnailsCarousel .carousel-inner .carousel-item-end.active,
+		#productThumbnailsCarousel .carousel-inner .carousel-item-next {
+			transform: translateX(25%);
+		}
+
+		#productThumbnailsCarousel .carousel-inner .carousel-item-start.active, 
+		#productThumbnailsCarousel .carousel-inner .carousel-item-prev {
+			transform: translateX(-25%);
+		}
+	}
+
+	#productThumbnailsCarousel .carousel-inner .carousel-item-end,
+	#productThumbnailsCarousel .carousel-inner .carousel-item-start { 
+		transform: translateX(0);
+	}
+
+</style>

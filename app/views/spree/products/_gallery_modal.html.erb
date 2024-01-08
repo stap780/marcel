@@ -1,0 +1,39 @@
+<% if @product_images.size > 0 %>
+  <div class="modal fade" id="picturesModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog--zoom modal-dialog mw-100 vh-100 mt-0 mb-0" role="document">
+      <div class="modal-content h-100">
+        <div class="modal-body h-100">
+          <span type="button" class="close position-absolute mr-3" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <%= icon(name: 'close_new',classes: 'd-block d-lg-none', width: 20,height: 20) %>
+              <%= icon(name: 'close_new',classes: 'd-none d-lg-block',width: 20,height: 20) %>
+            </span>
+          </span>
+          <div class="d-flex justify-content-center align-items-center product-details-images h-100">
+             <%# Thumbnails VERTICAL LEFT %>
+            <% if @product_images.size > 1 %>
+              <div class="d-none d-sm-block product-details-thumbnails">
+                <%= render 'thumbnails_vertical',
+                            images: @product_images,
+                            group_id: 'main-product-modal-carousel',
+                            id: 'productModalThumbnailsCarousel',
+                            trigger_id: 'productCarousel',
+                            per_page: 4 %>
+              </div>
+            <% end %>
+             <%# END Thumbnails VERTICAL LEFT %>
+            <div class="col-12 product-details-single">
+              <%= render 'single',
+                          images: @product_images,
+                          group_id: 'main-product-modal-carousel',
+                          id: 'productModalCarousel',
+                          trigger_id: 'productCarousel',
+                          zoomed: true %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

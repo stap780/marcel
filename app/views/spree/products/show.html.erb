@@ -1,0 +1,40 @@
+<% @body_id = 'product-details' %>
+<div class="container d-none">
+  <%= spree_breadcrumbs(@taxon, '', @product) %>
+</div>
+
+<%# cache cache_key_for_product do %>
+<div class="product-details border-bottom border-1 border-black">
+    <div class="row" data-hook="product_show">
+        <div class="col-12 col-md-6 col-lg-6 pr-padding" data-hook="product_left_part">
+            <%= render partial: 'gallery' %>
+        </div>
+        <div class="col-12 col-md-6 border-start border-1 border-black pr-padding description-background-color" data-hook="product_right_part">
+            <div id="product-description" data-hook="product_right_part_wrap">
+                <h1 class="product-details-title border-bottom border-1 border-black">
+                    <%= @product.name %>
+                </h1>
+                <div id="cart-form" data-hook="cart_form">
+                    <%= render 'cart_form', variant_change_identifier: 'productCarousel' %>
+                </div>
+            </div>
+            <div class="pb-4 pt-md-5 row" data-hook="product_extra_info">
+                <div class="col-12">
+                    <%= render partial: 'extra_info' %>
+                </div>
+            </div>
+            <div id="no-product-available" class="no-product-available-dropdown">
+                <%= render partial: 'spree/shared/no_product_available' %>
+            </div>
+        </div>
+    </div>
+    <%= render partial: 'gallery_modal' %>
+  </div>
+  <div id="related-products"></div>
+
+  <%= products_structured_data([@product]) %>
+
+  <%= render 'spree/shared/product_added_modal' %>
+<%# end %>
+
+<div data-related-products data-related-products-id="<%= @product.slug %>" data-related-products-enabled="<%= @product.respond_to?(:has_related_products?) %>" />

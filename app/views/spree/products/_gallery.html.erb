@@ -1,0 +1,31 @@
+
+  <% if @product_images.size > 0 %>
+    <div class="w-100 d-flex row align-self-start justify-content-between product-details-images sticky-top" data-hook="product_left_part_wrap">
+        
+        <%# Thumbnails VERTICAL LEFT %>
+        <%# render 'spree/shared/carousel/thumbnails_vertical',
+                  images: @product_images,
+                  group_id: 'main-product-carousel',
+                  id: 'productThumbnailsCarousel',
+                  trigger_id: 'productCarousel',
+                  per_page: 5 %>
+        <%# END Thumbnails VERTICAL LEFT %>
+      
+      <div class="col-12 product-details-single" data-hook="product_images">
+        <%# render 'b5_images', images: @product_images, zoomed: false, id: 'productCarousel'%>
+        <%= render 'single', images: @product_images,
+                  group_id: 'main-product-carousel', id: 'productCarousel',
+                  trigger_id: 'productCarousel', zoomed: false %>
+      </div>
+        <%# Thumbnails hotizontal %>
+        <div class="col-12 product-details-thumbnails-hotizontal" data-hook="product_thumbnails_hotizontal">
+        <%= render 'thumbnails_hotizontal',
+                  images: @product_images,
+                  group_id: 'main-product-carousel',
+                  id: 'productThumbnailsCarousel',
+                  trigger_id: 'productCarousel',
+                  per_page: 4 %>
+        </div>
+        <%# END Thumbnails hotizontal %>
+    </div>
+  <% end %>

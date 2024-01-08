@@ -1,0 +1,9 @@
+<% cache spree_menu_cache_key('footer') do %>
+  <footer id="footer" class="footer-marcel">
+    <div class="container">
+        <%# render partial: 'spree/shared/footer_small' %>
+        <%= render partial: 'spree/shared/footer_big' %>
+    </div>
+    <%= render 'spree/shared/copyright' %>
+  </footer>
+<% end %>
