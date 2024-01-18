@@ -17,6 +17,8 @@ Rails.application.config.after_initialize do
   end
 
   Spree::Frontend::Config.http_cache_enabled = false if Rails.env.development?
+  Spree::Frontend::Config[:locale] = :en if Rails.env.development?
+  Spree::Backend::Config[:locale] = :en if Rails.env.development?
 
 end
 # Configure Spree Dependencies

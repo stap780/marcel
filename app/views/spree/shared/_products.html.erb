@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <% if products.respond_to?(:total_pages) %>
+    <%= rel_next_prev_link_tags products %>
+  <% end %>
+<% end %>
+
+
+  <div class="row mosaic-items-container px-5">
+    <% cache cache_key_for_products(products) do %>
+      <% products.each_with_index do |product, index| %>
+        <div id="product_<%= product.id %>" class="col-4 mosaiclItem pt-3 pb-4 px-3 position-relative<%= index&1 == 0 ? ' ' : ' ' %>">
+          <%= render 'spree/shared/product', product: product, image_class: 'product-component-plp-image' %>
+        </div>
+      <% end %>
+    <% end %>
+  <div class="col-md-12">
+    <% if products.respond_to?(:total_pages) %>
+    <div class="row pl-md-4 pl-sm-4">
+      <div class="col-12">
+        <div class="plp-pagination d-none d-lg-flex">
+          <%= paginate products, window: 2, theme: 'twitter-bootstrap-4' %>
+        </div>
+
+        <div class="plp-pagination d-lg-none">
+          <%= paginate products, window: 1, theme: 'twitter-bootstrap-4' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>

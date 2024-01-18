@@ -1,4 +1,4 @@
-<% cache [common_product_cache_keys, products&.except(:group, :order)&.maximum(:updated_at)&.to_i, id, products&.ids&.join(',')] do %>
+<%# cache [common_product_cache_keys, products&.except(:group, :order)&.maximum(:updated_at)&.to_i, id, products&.ids&.join(',')] do %>
   <div id="<%= id.parameterize %>-desktop" class="d-md-block ">      
 
         <div class="row mosaic-items-container px-5">
@@ -11,4 +11,4 @@
         </div>
       
   </div>
-<% end %>
+<%# end %>

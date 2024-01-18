@@ -13,41 +13,64 @@
             <% end %>
 
              <% if has_dropdown %>
-              <div class="dropdown-menu shadow main-nav-bar-category-dropdown">
-                <div class="container p-0 d-flex ">
-                  <div class="row px-1">
-                    <% parent.children.each do |child| %>
-
-                      <!-- Categories -->
-                      <%# if child.container? && child.code?('category') %>
-                        <div class="category-links my-4 mx-2">
-                          <div class="category-links-header text-uppercase">
-                             <% if child.children.present? %>
-                              <%= child.name %>
-                            <% else %>
-                              <%= spree_nav_link_tag(child, { class: "text-uppercase main-nav-bar-category-links dropdown-item truncate1" }) %>
-                            <% end %>
-                          </div>
-                          <% if child.children.present? %>
-                            <ul class="pl-0">
-                              <% child.children.each do |category_link| %>
-                                <li>
-                                  <%= spree_nav_link_tag(category_link, { class: "text-uppercase main-nav-bar-category-links dropdown-item truncate1" }) %>
-                                </li>
-                              <% end %>
-                            </ul>
-                          <% end %>
-                        </div>
-                      <%# end %>
-
+              <div class="dropdown-menu shadow main-nav-bar-category-dropdown py-3">
+                <div class="container">
+                  <div class="d-flex row">
+                    <% if parent.children.count > 7 %>
+                      <div class="col-4">
+                        <% parent.children.each_with_index do |child, index| %>
+                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index <= 7 %>
+                        <% end %>
+                      </div>
+                      <div class="col-4">
+                        <% parent.children.each_with_index do |child, index| %>
+                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index > 7 && index < 13 %>
+                        <% end %>
+                      </div>
+                      <div class="col-4">
+                        <% parent.children.each_with_index do |child, index| %>
+                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index > 13 %>
+                        <% end %>
+                      </div>
+                    <% else %>
+                      <% parent.children.each_with_index do |child, index| %>
+                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2 px-3" }) %>
+                      <% end %>
                     <% end %>
                   </div>
+
+                      <!-- Categories -->
+                      <% not_use = true %>
+                      <% if not_use %>
+                        <% parent.children.each_with_index do |child, index| %>
+                          <% if child.container? && child.code?('category') %>
+                            <div class="category-links py-2">
+                              <div class="category-links-header ">
+                                <% if child.children.present? %>
+                                  <%= child.name %>
+                                <% else %>
+                                  <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
+                                <% end %>
+                              </div>
+                              <% if child.children.present? %>
+                                <ul class="pl-0">
+                                  <% child.children.each do |category_link| %>
+                                    <li>
+                                      <%= spree_nav_link_tag(category_link, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
+                                    </li>
+                                  <% end %>
+                                </ul>
+                              <% end %>
+                            </div>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                      <!-- Categories -->
+
                 </div>
               </div>
-
              <% end %>
           </li>
-
       <% end %>
     </ul>
   </div>

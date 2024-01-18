@@ -2205,12 +2205,12 @@ body {
 }
 
 .main-nav-bar-category-dropdown {
-    min-height: 341px;
+    // min-height: 341px;
     left: 0;
     right: 0;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 101%;
     margin: 0;
     border: none;
     z-index: 1200;
@@ -5222,43 +5222,35 @@ input:checked~.spree-radio-label-custom-input {
 
 .taxon-title {
     font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 10px
+    font-family: 'Halvar';
+    line-height: 140%;
+    letter-spacing: .04em;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .taxon-title {
-        font-size:2rem
+        font-size:1rem
     }
 }
 
 .taxon-description {
     font-size: 0.875rem;
-    font-weight: 500
 }
 
 .taxon-subcategories {
-    overflow-x: auto;
     white-space: nowrap;
-    font-weight: bold
 }
 
 .taxon-subcategories-wrapper {
-    position: sticky;
-    top: 50px;
-    z-index: 2;
-    background: #ffffff
 }
 
 @media (min-width: 576px) {
     .taxon-subcategories-wrapper {
-        top:75px
     }
 }
 
 @media (min-width: 992px) {
     .taxon-subcategories-wrapper {
-        top:75px
     }
 }
 
@@ -5267,11 +5259,10 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .taxon-subcategories-selected {
-    border-bottom: 5px solid black
+    border-bottom: 1px solid black
 }
 
 .account-page {
-    font-weight: 500
 }
 
 .account-page h3 {
