@@ -2207,8 +2207,8 @@ body {
 .main-nav-bar-category-dropdown {
     // min-height: 341px;
     left: 0;
-    right: 0;
-    width: 100%;
+    // right: 0;
+    // width: 100%;
     position: absolute;
     top: 101%;
     margin: 0;
@@ -2216,7 +2216,8 @@ body {
     z-index: 1200;
     background: #ffffff;
     background-clip: padding-box;
-    border-top: 1px solid #e2e2e2
+    border-top: 1px solid #e2e2e2;
+    // min-width: 290px;
 }
 
 .main-nav-bar-category-dropdown form input#keywords {
@@ -3013,11 +3014,11 @@ body {
 .plp-filters-card-header {
     background-color: #ffffff;
     border: 0;
-    border-bottom: 1px solid #e2e2e2;
+    // border-bottom: 1px solid #e2e2e2;
     text-align: left;
     cursor: pointer;
-    font-size: 1.0625rem;
-    font-weight: bold
+    font-size: 1.125rem;
+    // font-weight: bold
 }
 
 .plp-filters-card-header-arrow--minus {

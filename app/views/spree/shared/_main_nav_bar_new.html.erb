@@ -1,74 +1,61 @@
   <div class="h-100" role="navigation" aria-label="<%= Spree.t('nav_bar.desktop') %>">
-    <ul class="nav main-nav-bar justify-content-between position-relative">
-      <% spree_menu.children.each do |parent| %>
-          <li class="p-0 nav-item main-nav-bar-category">
+    <ul class="nav main-nav-bar justify-content-between">
+      <% spree_menu.children.each_with_index do |parent| %>
+          <li class="p-0 nav-item main-nav-bar-category position-relative">
+            <% first = parent == spree_menu.children.first %>
+            <% last = parent == spree_menu.children.last %>
             <% has_dropdown = parent.children.present? %>
             <% dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
-            <% data_attr = has_dropdown ? { toggle: "dropdown" } : {} %>
+            <% data_attr = has_dropdown ? { bs_toggle: "" } : {} %>
             <% aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
-            <% if parent.container? %>
-              <%= content_tag :span, parent.name, class: "nav-link py-3 main-nav-bar-item main-nav-bar-category-button #{dropdown_toggle_class}", data: data_attr, aria: aria_attr %>
-            <% else %>
-               <%= spree_nav_link_tag(parent, { class: "nav-link py-3 main-nav-bar-item main-nav-bar-category-button #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
+            <% we_use_this = false %>
+            <% if we_use_this %>
+              <% if parent.container? %>
+                <%= content_tag :span, parent.name, class: "nav-link py-3 main-nav-bar-item main-nav-bar-category-button #{dropdown_toggle_class}", data: data_attr, aria: aria_attr %>
+              <% else %>
+                <%= spree_nav_link_tag(parent, { class: "nav-link py-3 main-nav-bar-item main-nav-bar-category-button #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
+              <% end %>
             <% end %>
+            <%= spree_nav_link_tag(parent, { class: "nav-link py-3 main-nav-bar-item main-nav-bar-category-button #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
 
              <% if has_dropdown %>
-              <div class="dropdown-menu shadow main-nav-bar-category-dropdown py-3">
-                <div class="container">
-                  <div class="d-flex row">
-                    <% if parent.children.count > 7 %>
-                      <div class="col-4">
-                        <% parent.children.each_with_index do |child, index| %>
-                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index <= 7 %>
-                        <% end %>
-                      </div>
-                      <div class="col-4">
-                        <% parent.children.each_with_index do |child, index| %>
-                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index > 7 && index < 13 %>
-                        <% end %>
-                      </div>
-                      <div class="col-4">
-                        <% parent.children.each_with_index do |child, index| %>
-                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2" }) if index > 13 %>
-                        <% end %>
-                      </div>
-                    <% else %>
-                      <% parent.children.each_with_index do |child, index| %>
-                        <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2 px-3" }) %>
+              <% column_style = nil %>
+              <% column_style = '2' if parent.children.count > 7 && parent.children.count <= 13 %>
+              <% column_style = '3' if parent.children.count > 13 %>
+             <ul class="dropdown-menu shadow main-nav-bar-category-dropdown py-3 <% if last %>last-dropdown<%end%>" style="columns: <%= column_style%>;">
+              <% parent.children.each_with_index do |child, index| %>
+                <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2 px-3" }) %>
+              <% end %>
+             </ul>
+              
+              <% if we_use_this %>
+
+                  <!-- Categories -->
+                    <% parent.children.each_with_index do |child, index| %>
+                      <% if child.container? && child.code?('category') %>
+                        <div class="category-links py-2">
+                          <div class="category-links-header ">
+                            <% if child.children.present? %>
+                              <%= child.name %>
+                            <% else %>
+                              <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
+                            <% end %>
+                          </div>
+                          <% if child.children.present? %>
+                            <ul class="pl-0">
+                              <% child.children.each do |category_link| %>
+                                <li>
+                                  <%= spree_nav_link_tag(category_link, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
+                                </li>
+                              <% end %>
+                            </ul>
+                          <% end %>
+                        </div>
                       <% end %>
                     <% end %>
-                  </div>
+                  <!-- Categories -->
 
-                      <!-- Categories -->
-                      <% not_use = true %>
-                      <% if not_use %>
-                        <% parent.children.each_with_index do |child, index| %>
-                          <% if child.container? && child.code?('category') %>
-                            <div class="category-links py-2">
-                              <div class="category-links-header ">
-                                <% if child.children.present? %>
-                                  <%= child.name %>
-                                <% else %>
-                                  <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
-                                <% end %>
-                              </div>
-                              <% if child.children.present? %>
-                                <ul class="pl-0">
-                                  <% child.children.each do |category_link| %>
-                                    <li>
-                                      <%= spree_nav_link_tag(category_link, { class: " main-nav-bar-category-links dropdown-item truncate1" }) %>
-                                    </li>
-                                  <% end %>
-                                </ul>
-                              <% end %>
-                            </div>
-                          <% end %>
-                        <% end %>
-                      <% end %>
-                      <!-- Categories -->
-
-                </div>
-              </div>
+                <% end %>
              <% end %>
           </li>
       <% end %>

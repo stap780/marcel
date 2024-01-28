@@ -8,6 +8,7 @@
     font-style: normal;
 }
 
+
 body {
     margin: 0;
     font-family: 'Anonymous Pro', monospace;
@@ -162,4 +163,77 @@ body {
 .py-4-5 {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+}
+.last-dropdown {
+    right: 0;
+    left: auto;
+}
+.collapse-nav-link {
+    font-family: 'Halvar';
+    letter-spacing: .03rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+}
+#modalSidebar {
+    width: 590px; 
+}
+.list-group-item a {
+    transition: color .3s ease;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+}
+#modalSidebar .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    color: black;
+}
+#modalSidebar .accordion-button:focus {
+    box-shadow: none;
+}
+.sidebar-menu-title {
+    font-size: 1.2rem;
+    line-height: 28px;
+    letter-spacing: .04rem;
+    font-family: 'Halvar';
+}
+.second-menu-sidebar {
+    font-size: 0.9rem;
+    letter-spacing: .04rem;
+    font-family: 'Halvar';
+}
+.third-menu-sidebar {
+    font-size: 0.9rem;
+    letter-spacing: .04rem;
+    font-family: 'Halvar';
+}
+.menu-sidebar-0 a {
+    font-size: 0.9rem;
+    letter-spacing: .04rem;
+    font-family: 'Halvar';
+}
+
+.menu-sidebar-1 a {
+    font-size: 1.2rem;
+}
+.sidebar-filter-menu-title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.filter-items {
+    margin-left: -4px;
+}
+.subtitle-2 {
+    margin: 0;
+    font-size: 2.81rem;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -.01em;
+    font-style: italic;
+    font-weight: 700;
+}
+.show-more-products {
+    border: 0;
 }

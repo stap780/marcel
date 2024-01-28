@@ -19,17 +19,15 @@
       <div id="no-taxon-banner">
         <div class="container">
           <%= lazy_image(
-            src: asset_path('homepage/products.jpg'),
-            alt: 'products-banner',
-            width: 1110,
-            height: 300,
-            class: 'w-100 d-none d-md-block'
+            src: asset_path('homepage/products.jpg'),alt: 'products-banner',
+            width: 1110,height: 300,class: 'w-100 d-none d-md-block'
           ) %>
         </div>
       </div>
     <% end %>
-    
+    <!-- FILTER & SORT offcanvas -->
     <%= render 'spree/products/filters_desktop', permitted_params: permitted_params %>
+    <!-- finish FILTER & SORT offcanvas -->
     <!-- FILTER & SORT BUTTON -->
     <div class="container d-flex justify-content-between">
         <%= render 'spree/products/filter_and_sort_mobile_buttons' %>
@@ -45,9 +43,40 @@
     </div>
     <!-- finish FILTER & SORT BUTTON -->
 
-    <div class="d-flex border-top border-bottom border-1 border-black" data-hook="homepage_products">
-      <%= render 'spree/shared/products', products: @products %>
-    </div>
+    <% if @taxon.children.any? %>
+      <% subcategories = [@taxon] %>
+      <% unless @taxon.children.any? %>
+        <% subcategories.unshift(@taxon.parent) %>
+      <% end %>
+        <% subcategories.compact.each do |current_taxon| %>
+        <% child_taxons = [current_taxon, *current_taxon.children.where(hide_from_nav: false)] %>
+          <% child_taxons.each_with_index.map do |subcategory, index| %>
+            <% taxon_products = subcategory.products.limit(6)%>
+            <%if !index.zero? && taxon_products.present? %>
+              <div class="container d-flex justify-content-center">
+                <%= content_tag :span, subcategory.name, class: "subtitle-2 p-4 align-center"%>
+              </div>
+              <div class="d-flex border-top border-1 border-black taxon_products_<%= subcategory.id%>" data-hook="homepage_products">
+                <%= render 'spree/shared/products', products: subcategory.products, limit: 6 %>
+              </div>
+             <div class="container d-flex justify-content-center py-3">
+                <%# content_tag :span, 'more', class: "show-more-products text-uppercase p-3 align-center", 'data-taxon-id': subcategory.id %>
+                <button class="show-more-products text-uppercase" data-taxon-id="<%=subcategory.id%>" >
+                    <span class="py-1 text-uppercase border border-start-0 border-top-0 border-end-0 border-bottom-1 border-black"><%= Spree.t('more') %></span>
+                    <%= icon(name: 'arrow-right',
+                            classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',
+                            width: 14,height: 14) %>
+                    </button>
+
+              </div>   
+            <% end %>
+          <% end %>
+        <% end %>
+    <% else %>
+      <div class="d-flex border-top border-1 border-black" data-hook="homepage_products">
+        <%= render 'spree/shared/products', products: @products, limit: nil %>
+      </div>
+     <% end %>
   <% end %>
 </div>
 
@@ -59,3 +88,33 @@
     <%= products_structured_data(@products) %>
   <% end %>
 <% end %>
+
+<script>
+    document.addEventListener('turbo:load', function () {
+        let btns = document.querySelectorAll('.show-more-products')
+        // console.log('btns',btns)
+        btns.forEach((el) => {
+          // console.log('el',this);
+          el.addEventListener("click",function(){
+            let id  = this.dataset.taxonId;
+            // console.log(this);
+            // console.log(id);
+            let class_name = '.taxon_products_'+id+' .mosaiclItem';
+            // console.log('class_name => ', class_name);
+            let search_nodes = document.querySelectorAll(class_name);
+            // console.log('search_nodes => ', search_nodes);
+            for (const search of search_nodes) {
+              search.classList.remove('d-none');
+            }
+            el.classList.add('d-none');
+            // $.ajax({
+            //   url: Spree.routes.product_carousel(id)
+            // }).done(function (data) {
+            //   console.log('pr data', data)
+            //   // htmlContainer.html(data);
+            //   // htmlContainer.find('.carousel').carouselBootstrap4()
+            // })
+          });
+        })
+    })
+</script>
