@@ -11,8 +11,8 @@
     <div id="overlay" class="overlay hide-on-esc"></div>
     <%= render partial: 'spree/shared/header' %>
     <%# render partial: 'spree/shared/get_started' %>
-
-    <main class="col-12" id="content" data-hook>
+    
+    <main class="<% if @homepage %><%else%>col-12<%end%>" id="content" data-hook>
       <%= flash_messages %>
       <%= yield %>
       <div data-hook>

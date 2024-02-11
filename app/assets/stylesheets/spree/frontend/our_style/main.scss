@@ -8,7 +8,6 @@
     font-style: normal;
 }
 
-
 body {
     margin: 0;
     font-family: 'Anonymous Pro', monospace;
@@ -19,6 +18,121 @@ body {
     overflow-x: hidden;
     background: #EFEFEF;
 }
+.pb-6 {
+    padding-bottom: 3.5rem !important;
+  }
+  
+  .pb-7 {
+    padding-bottom: 4rem !important;
+  }
+  
+  .pb-8 {
+    padding-bottom: 4.5rem !important;
+  }
+  
+  .pb-9 {
+    padding-bottom: 5rem !important;
+  }
+  
+  .pb-10 {
+    padding-bottom: 6rem !important;
+  }
+  .pb-11 {
+    padding-bottom: 6.5rem !important;
+  }
+  .pb-12 {
+    padding-bottom: 7rem !important;
+  }
+.pt-6 {
+    padding-top: 3.5rem !important;
+  }
+  
+  .pt-7 {
+    padding-top: 4rem !important;
+  }
+  
+  .pt-8 {
+    padding-top: 4.5rem !important;
+  }
+  
+  .pt-9 {
+    padding-top: 5rem !important;
+  }
+  
+  .pt-10 {
+    padding-top: 6rem !important;
+  }
+  .pt-11 {
+    padding-top: 6.5rem !important;
+  }
+  .pt-12 {
+    padding-top: 7rem !important;
+  }
+
+.px-6 {
+    padding-right: 3.5rem !important;
+    padding-left: 3.5rem !important;
+  }
+  
+  .px-7 {
+    padding-right: 4rem !important;
+    padding-left: 4rem !important;
+  }
+  
+  .px-8 {
+    padding-right: 4.5rem !important;
+    padding-left: 4.5rem !important;
+  }
+  
+  .px-9 {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+  }
+  
+  .px-10 {
+    padding-right: 6rem !important;
+    padding-left: 6rem !important;
+  }
+  .px-11 {
+    padding-right: 6.5rem !important;
+    padding-left: 6.5rem !important;
+  }
+  .px-12 {
+    padding-right: 7rem !important;
+    padding-left: 7rem !important;
+  }
+  .py-6 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  
+  .py-7 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .py-8 {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+  
+  .py-9 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  
+  .py-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .py-11 {
+    padding-top: 6.5rem !important;
+    padding-bottom: 6.5rem !important;
+  }
+  .py-12 {
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
+  }
 
 .indicator-wrap {
     left: 0;
@@ -236,4 +350,252 @@ body {
 }
 .show-more-products {
     border: 0;
+}
+.section-content-wrap {
+    max-width: 320px;
+}
+.section-title .link {
+    text-decoration: none;
+    color: black;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    font-size: 0.87rem;
+    font-family: 'Halvar';
+    align-items: center;
+}
+.section-subtitle {
+    font-size: 0.87rem;
+    font-family: "Anonymous Pro";
+}
+
+.section-product-wrap .pr1 .link, .section-product-wrap .pr2 .link{
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    font-size: 0.87rem;
+    line-height: 140%;
+    max-width: 280px;
+}
+
+.section-product-wrap .pr1:before,  .section-product-wrap .pr2:before{
+    content: '';
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+.section-product-wrap .buy {
+    font-size: 0.87rem;
+    line-height: 140%;
+    text-underline-position: under;
+}
+.section-product-wrap .buy:hover {
+    text-underline-position: none;
+}
+
+.homepage-carousel-text {
+    font-family: 'Halvar';
+    line-height: 140%;
+    letter-spacing: .04em;
+    font-size: 1.2rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-family: 'Halvar';
+    line-height: 140%;
+    letter-spacing: .04em;
+}
+.section-with-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-family: 'Halvar';
+    font-size: 36px;
+    text-align: center;
+}
+.section-with-text li {
+    position: relative;
+}
+.section-with-text li a {
+    display: inline-block;
+    padding: 0 7px;
+    color: black;
+    text-decoration: none;
+}
+.section-with-text li a:before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: currentColor;
+    position: absolute;
+    left: calc(-7px/2);
+    top: calc(50% - 7px/2);
+}
+.section-with-text li a:after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: currentColor;
+    position: absolute;
+    right: calc(-7px/2);
+    top: calc(50% - 7px/2);
+}
+
+.who-marcel .heading {
+    letter-spacing: -.02em;
+    font-size: 36px;
+    grid-column: 1/-1;
+    margin: 0 0 60px;
+    position: relative;
+    font-family: 'Halvar';
+    line-height: 140%;
+    text-transform: uppercase;
+}
+.who-marcel .heading em {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    text-transform: initial;
+    display: block;
+    margin-left: 100px;
+}
+.who-marcel .heading svg {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+}
+.who-marcel .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 110px;
+    align-items: flex-start;
+}
+.who-marcel .grid .image {
+    width: 100%;
+    display: block;
+}
+.who-marcel .grid .image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 16px;
+}
+.who-marcel .grid .m-image {
+    display: none;
+    width: 100%;
+}
+.who-marcel .grid .m-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+.who-marcel .grid .m-image figcaption {
+    font-size: 12px;
+    line-height: 106%;
+}
+.who-marcel .grid .m-image figcaption em {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+}
+.who-marcel .grid .content picture {
+    width: 100%;
+    max-width: 238px;
+    margin-left: 60px;
+    position: relative;
+    display: block;
+}
+.who-marcel .grid .content picture img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 16px;
+}
+
+.who-marcel .grid .content picture figcaption {
+    font-size: 0.75rem;
+    line-height: 106%;
+    position: absolute;
+    bottom: 0;
+    left: calc(100% + 21px);
+    width: 100%;
+}
+.who-marcel .grid .content picture figcaption em {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+}
+.who-marcel .grid .content .text {
+    font-size: 1.25rem;
+    line-height: 134%;
+    margin: 7.5rem 0 0;
+}
+
+.who-marcel .grid .content .text p {
+    text-indent: 5rem;
+}
+
+.who-marcel .author {
+    display: flex;
+    align-items: center;
+    grid-gap: 33px;
+    text-transform: uppercase;
+    margin-top: 2.875rem;
+    line-height: 136%;
+}
+.who-marcel .author:before {
+    content: '';
+    flex: 1;
+    border-top: 1px solid black;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.marcel-text-with-background {
+    font-size: 1.5rem;
+    font-family: 'Halvar';
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    line-height: 2.18rem;
+}
+.marcel-text-with-background span {
+    font-size: 0.75rem;
+    text-decoration: none !important;
+    letter-spacing: .24em;
+}
+.marcel-text-with-background em {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    text-transform: initial;
+}
+
+.image-gallery-2-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-family: 'Halvar';
+    letter-spacing: .24em;
+}
+.image-gallery-2-title a {
+    text-decoration: none;
+    color: black;
+    transition: color .3s ease;
 }
