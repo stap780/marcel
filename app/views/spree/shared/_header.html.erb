@@ -1,6 +1,6 @@
 
 <header class="border-bottom border-1 border-black position-relative">
-    <% section = @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').present? ? @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').first : nil %>
+    <% section = @homepage.present? && @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').present? ? @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').first : nil %>
     <% if @homepage && section %>
     <div class="header-image-wrap">
         <%# lazy_image(
@@ -12,7 +12,7 @@
                         data-srcset="<%= main_app.cdn_image_url( section.image_one.attachment ) %>" >
 
     </div>
-    <div class="header-content-wrap position-absolute bottom-0 mb-5 w-100">
+    <div class="header-content-wrap position-absolute bottom-0 mb-5 pb-5 w-100">
         <div class="container">
         <div class="text">
             <%= section.text.html_safe%>
