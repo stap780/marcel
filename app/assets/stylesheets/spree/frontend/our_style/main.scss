@@ -599,3 +599,23 @@ body {
     color: black;
     transition: color .3s ease;
 }
+
+.header-content-wrap {
+
+}
+.header-content-wrap .text {
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: -.02em;
+    font-family: 'Halvar';
+}
+
+.header-content-wrap .text em {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    text-transform: lowercase;
+}
+.header-content-wrap .text p {
+    margin: 0;
+}

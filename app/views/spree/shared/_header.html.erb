@@ -1,6 +1,31 @@
 
-<header class="border-bottom border-1 border-black py-4">
-    <div class="container">
+<header class="border-bottom border-1 border-black position-relative">
+    <% section = @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').present? ? @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').first : nil %>
+    <% if @homepage && section %>
+    <div class="header-image-wrap">
+        <%# lazy_image(
+            src: asset_path('header_main.jpeg'),alt: 'header-main',
+            width: 1110,height: 300,class: 'd-block w-100 lazyload'
+          ) %>
+
+          <img class="d-block w-100 lazyload" data-src="<%= main_app.cdn_image_url( section.image_one.attachment ) %>"
+                        data-srcset="<%= main_app.cdn_image_url( section.image_one.attachment ) %>" >
+
+    </div>
+    <div class="header-content-wrap position-absolute bottom-0 mb-5 w-100">
+        <div class="container">
+        <div class="text">
+            <%= section.text.html_safe%>
+        </div>
+        </div>
+    </div>
+    <% end %>
+    <% if @homepage && section  %>
+    <div class="py-4 position-absolute top-0 w-100">
+        <div class="container">
+    <% else %>
+    <div class="container py-4">
+    <% end %>
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
                 <!-- Button -->
@@ -20,7 +45,12 @@
                 </nav>
             </div>
         </div>
+    <% if @homepage && section  %>
+        </div>
     </div>
+    <% else %>
+    </div>
+    <% end %>
 </header>
 <% if spree_menu.present? %>
 <div class="header-nav border-bottom border-1 border-black d-none d-lg-block">
