@@ -38,9 +38,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
-  revision: 3079684ccdd153f49b710071efdf9277510c0cd1
+  revision: 5d3c4e1f328fa1b1c56137e5830e6c9e9b1bb4e6
   specs:
-    spree_custom_cms_sections (0.0.2)
+    spree_custom_cms_sections (0.0.3)
       spree (>= 4.3.2)
       spree_extension
 

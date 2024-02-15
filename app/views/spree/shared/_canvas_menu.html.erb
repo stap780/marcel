@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start p-5" tabindex="-1" id="modalSidebar" aria-labelledby="offcanvasmodalSidebar">    
+<div class="offcanvas offcanvas-start p-0 p-lg-5" tabindex="-1" id="modalSidebar" aria-labelledby="offcanvasmodalSidebar">    
     
       <!-- Body -->
       <div class="offcanvas-body px-5 my-auto overflow-hidden">
@@ -16,33 +16,33 @@
         <!-- Nav -->
         <div class="accordion accordion-flush" id="sidebarNav">
           <% spree_menu.children.each_with_index do |parent| %>
-          <div class="accordion-item border-0">
-    
-            <% first = parent == spree_menu.children.first %>
-            <% last = parent == spree_menu.children.last %>
-            <% has_dropdown = parent.children.present? %>
-            <% dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
-            <% data_attr = has_dropdown ? { bs_toggle: "collapse" } : {} %>
-            <% aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
-              <%# spree_nav_link_tag(parent, { class: "nav-link #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
-            <!-- Toggle -->
-            <div class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button bg-transparent ps-0 pe-1 pt-2 pb-2" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>Collapse" aria-expanded="false" aria-controls="flush-collapseOne">
-                <%= parent.name%>
-              </button>
+            <div class="accordion-item border-0">
+      
+              <% first = parent == spree_menu.children.first %>
+              <% last = parent == spree_menu.children.last %>
+              <% has_dropdown = parent.children.present? %>
+              <% dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
+              <% data_attr = has_dropdown ? { bs_toggle: "collapse" } : {} %>
+              <% aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
+                <%# spree_nav_link_tag(parent, { class: "nav-link #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
+              <!-- Toggle -->
+              <div class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button bg-transparent ps-0 pe-1 pt-2 pb-2" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>Collapse" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <%= parent.name%>
+                </button>
+              </div>
+                      <!-- Collapse -->
+              <div class="accordion-collapse collapse" id="<%=parent.id%>Collapse" data-bs-parent="#sidebarNav">
+                <ul class="list-group border-0 ps-0">
+                  <% parent.children.each_with_index do |child, index| %>
+                    <li class="list-group-item border-0">
+                      <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+      
             </div>
-                    <!-- Collapse -->
-            <div class="accordion-collapse collapse" id="<%=parent.id%>Collapse" data-bs-parent="#sidebarNav">
-              <ul class="list-group border-0 ps-0">
-                <% parent.children.each_with_index do |child, index| %>
-                  <li class="list-group-item border-0">
-                    <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-    
-          </div>
           <% end %>
         </div>
     
@@ -50,23 +50,23 @@
       <!-- Body -->
       <!-- Second menu -->
       <% if spree_menu('sidebar').present? %>
-            <% spree_menu('sidebar').children.each_with_index do |parent, index| %>
-        <div class="offcanvas-body px-5 my-auto overflow-hidden menu-sidebar-<%= index.to_s%>">
-              <% item_class= index == 0 ? 'text-uppercase' : ''%>
-              <% if parent.container? %>
-                <%=tag.div(parent.name, class: 'h3') if !parent.code?('not_show')%>
-              <% else %>
-                <%= spree_nav_link_tag(parent)%>
-              <%end%>
-              <ul class="list-group border-0 ">
-                <% parent.children.each do |child| %>
-                <li class="list-group-item border-0 d-flex <%= item_class%> py-2 px-0">
-                    <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
-                </li>
-                <% end %>
-              </ul>
-        </div>
-            <% end %>
+        <% spree_menu('sidebar').children.each_with_index do |parent, index| %>
+          <div class="offcanvas-body px-5 my-auto overflow-hidden menu-sidebar-<%= index.to_s%>">
+                <% item_class= index == 0 ? 'text-uppercase' : ''%>
+                <% if parent.container? %>
+                  <%=tag.div(parent.name, class: 'h3') if !parent.code?('not_show')%>
+                <% else %>
+                  <%= spree_nav_link_tag(parent)%>
+                <%end%>
+                <ul class="list-group border-0 ">
+                  <% parent.children.each do |child| %>
+                  <li class="list-group-item border-0 d-flex <%= item_class%> py-2 px-0">
+                      <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
+                  </li>
+                  <% end %>
+                </ul>
+          </div>
+        <% end %>
       <% end %>
 
       <!-- Second menu -->

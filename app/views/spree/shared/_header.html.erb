@@ -1,61 +1,48 @@
 
-<header class="border-bottom border-1 border-black position-relative">
+<header class="">
     <% section = @homepage.present? && @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').present? ? @homepage.cms_sections.where(name: 'HOMEPAGE HEADER BANNER').first : nil %>
+
+<!-- mobile -->
+
+        <%=tag.div class: 'd-block d-lg-none' do %>
+                <%= render partial: 'spree/shared/header_menu'%>
+        <% end %>
+
+<!-- end mobile -->
+
     <% if @homepage && section %>
-    <div class="header-image-wrap">
-        <%# lazy_image(
-            src: asset_path('header_main.jpeg'),alt: 'header-main',
-            width: 1110,height: 300,class: 'd-block w-100 lazyload'
-          ) %>
+        <div class="header-image-wrap position-relative">
+            <img class="w-100 lazyload d-none d-lg-block" data-src="<%= main_app.cdn_image_url( section.image_one.attachment ) %>"
+                            data-srcset="<%= main_app.cdn_image_url( section.image_one.attachment ) %>" >
+            <img class="w-100 lazyload d-block d-lg-none" data-src="<%= main_app.cdn_image_url( section.image_two.attachment ) %>"
+                            data-srcset="<%= main_app.cdn_image_url( section.image_two.attachment ) %>" >
 
-          <img class="d-block w-100 lazyload" data-src="<%= main_app.cdn_image_url( section.image_one.attachment ) %>"
-                        data-srcset="<%= main_app.cdn_image_url( section.image_one.attachment ) %>" >
+            <div class="header-content-wrap position-absolute bottom-0 mb-5 pb-5 w-100">
+                <div class="container">
+                    <div class="text d-none d-lg-block"><%= section.text.html_safe%></div>
+                    <div class="text d-block d-lg-none"><%= section.text_mobile.html_safe%></div>
+                </div>
+            </div>
 
-    </div>
-    <div class="header-content-wrap position-absolute bottom-0 mb-5 pb-5 w-100">
-        <div class="container">
-        <div class="text">
-            <%= section.text.html_safe%>
         </div>
-        </div>
-    </div>
     <% end %>
-    <% if @homepage && section  %>
-    <div class="py-4 position-absolute top-0 w-100">
-        <div class="container">
+
+<!-- desktop -->
+    <%if @homepage && section %>
+        <%=tag.div class: 'position-absolute top-0 w-100 d-none d-lg-block' do %>
+                <%= render partial: 'spree/shared/header_menu'%>
+        <% end %>
     <% else %>
-    <div class="container py-4">
+        <%=tag.div class: 'd-none d-lg-block' do %>
+                <%= render partial: 'spree/shared/header_menu'%>
+        <% end %>
     <% end %>
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-                <!-- Button -->
-                <button class="navbar-toggler d-block ms-7" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalSidebar" aria-controls="offcanvasmodalSidebar">
-                    <span class="navbar-toggler-icon-svg">
-                        <%= icon(name: 'burger_new', classes: 'd-inline-block', width: 20, height: 20) %>
-                    </span>
-                </button>
-            </div>
-            <div class="col-4 text-center">
-                <%# logo %>
-                <a href="/"><%= icon(name: 'logo', classes: '', width: 233, height: 83) %></a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <nav class="navbar navbar-expand">
-                <%= render partial: 'spree/shared/nav_bar_new' %>
-                </nav>
-            </div>
-        </div>
-    <% if @homepage && section  %>
-        </div>
-    </div>
-    <% else %>
-    </div>
-    <% end %>
+<!-- end desktop -->
 </header>
 <% if spree_menu.present? %>
-<div class="header-nav border-bottom border-1 border-black d-none d-lg-block">
-    <div class="container">
-        <%= render partial: 'spree/shared/main_nav_bar_new' %>
+    <div class="header-nav border-bottom border-top border-1 border-black d-none d-lg-block">
+        <div class="container">
+            <%= render partial: 'spree/shared/main_nav_bar_new' %>
+        </div>
     </div>
-</div>
 <%end%>
