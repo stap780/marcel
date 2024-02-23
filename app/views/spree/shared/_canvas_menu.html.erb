@@ -1,9 +1,9 @@
-<div class="offcanvas offcanvas-start p-0 p-lg-5" tabindex="-1" id="modalSidebar" aria-labelledby="offcanvasmodalSidebar">    
+<div class="offcanvas offcanvas-start " tabindex="-1" id="modalSidebar" aria-labelledby="offcanvasmodalSidebar">    
     
       <!-- Body -->
-      <div class="offcanvas-body px-5 my-auto overflow-hidden">
+      <div class="offcanvas-body p-5 my-auto d-flex flex-column justify-content-between">
         <!-- Close -->
-        <div class="d-flex justify-content-between mb-5">
+        <div class="d-flex justify-content-between mb-3 mb-lg-5">
           <div class="sidebar-menu-title text-uppercase">
             Menu
           </div>
@@ -11,7 +11,7 @@
             <i class="fe fe-x" aria-hidden="true"></i>
           </button>
         </div>
-      <!-- Close -->
+        <!-- Close -->
 
         <!-- Nav -->
         <div class="accordion accordion-flush" id="sidebarNav">
@@ -46,34 +46,40 @@
           <% end %>
         </div>
     
+        <!-- Second menu -->
+        <% if spree_menu('sidebar').present? %>
+          <% spree_menu('sidebar').children.each_with_index do |parent, index| %>
+            <div class="my-3 menu-sidebar-<%= index.to_s%>">
+                  <% item_class= index == 0 ? 'text-uppercase' : ''%>
+                  <% if parent.container? %>
+                    <%=tag.div(parent.name, class: 'h3') if !parent.code?('not_show')%>
+                  <% else %>
+                    <%= spree_nav_link_tag(parent)%>
+                  <%end%>
+                  <ul class="list-group border-0 ">
+                    <% parent.children.each do |child| %>
+                    <li class="list-group-item border-0 d-flex <%= item_class%> py-2 px-0">
+                        <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
+                    </li>
+                    <% end %>
+                  </ul>
+            </div>
+          <% end %>
+        <% end %>
+
+        <!-- Second menu -->
+        <!-- Third block -->
+        <div class="my-0 third-menu-sidebar text-center">
+          <%= link_to '/',  class: "" do %>
+            <%= icon(name: 'logo_sm', width: 70, height: '') %>
+          <% end %>
+        </div>
+        <!-- Third block -->
+        <!-- Fourth block -->
+        <div class="my-2 fourth-menu-sidebar text-center">
+            © <%= Time.now.strftime("%Y")%> All rights reserved.
+          </div>
+        <!-- Fourth block -->
       </div>
       <!-- Body -->
-      <!-- Second menu -->
-      <% if spree_menu('sidebar').present? %>
-        <% spree_menu('sidebar').children.each_with_index do |parent, index| %>
-          <div class="offcanvas-body px-5 my-auto overflow-hidden menu-sidebar-<%= index.to_s%>">
-                <% item_class= index == 0 ? 'text-uppercase' : ''%>
-                <% if parent.container? %>
-                  <%=tag.div(parent.name, class: 'h3') if !parent.code?('not_show')%>
-                <% else %>
-                  <%= spree_nav_link_tag(parent)%>
-                <%end%>
-                <ul class="list-group border-0 ">
-                  <% parent.children.each do |child| %>
-                  <li class="list-group-item border-0 d-flex <%= item_class%> py-2 px-0">
-                      <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>
-                  </li>
-                  <% end %>
-                </ul>
-          </div>
-        <% end %>
-      <% end %>
-
-      <!-- Second menu -->
-      <!-- Third menu -->
-       <div class="offcanvas-body px-5 my-auto overflow-hidden third-menu-sidebar">
-          © <%= Time.now.strftime("%Y")%> All rights reserved.
-        </div>
-      <!-- Third menu -->
-    
 </div>
