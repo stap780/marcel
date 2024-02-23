@@ -6,11 +6,11 @@
 <% end if !limit.present?%>
 
 
-  <div class="row mosaic-items-container px-5">
+  <div class="row mosaic-items-container px-2 px-lg-5">
     <% cache cache_key_for_products(products) do %>
       <% products.each_with_index do |product, index| %>
         <div id="product_<%= product.id %>" 
-          class="col-4 mosaiclItem pt-3 pb-4 px-3 position-relative <%= index&1 == 0 ? ' ' : ' ' %>
+          class="col-6 col-lg-4 mosaiclItem pt-3 pb-4 px-3 position-relative <%= index&1 == 0 ? ' ' : ' ' %>
           <%= 'd-none' if limit.present? && index+1 > limit.to_i %>">
           <%= render 'spree/shared/product', product: product, image_class: 'product-component-plp-image' %>
         </div>

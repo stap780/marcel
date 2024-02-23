@@ -1,18 +1,19 @@
-<div class="offcanvas offcanvas-top" id="modalSearch" tabindex="-1" role="dialog" aria-modal="true">
-    
-      <!-- Close -->
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="fe fe-x" aria-hidden="true"></i>
-      </button>
-    
-      <!-- Header-->
-      <div class="offcanvas-header lh-fixed fs-lg">
-        <strong class="mx-auto">Search Products</strong>
-      </div>
-    
+<div class="offcanvas offcanvas-top h-10 d-flex" id="modalSearch" tabindex="-1" role="dialog" aria-modal="true">
+        
       <!-- Body: Form -->
-      <div class="offcanvas-body">
+      <div class="offcanvas-body d-flex align-items-center">
         <%= render partial: 'spree/shared/search' %>
+        <!-- Close -->
+        <div class="d-flex justify-content-between p-2">
+          <div class="sidebar-menu-title text-uppercase">
+            
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fe fe-x" aria-hidden="true"></i>
+          </button>
+        </div>
+      <!-- Close -->
+
       </div>
 
 </div>

@@ -1,0 +1,28 @@
+<div id="no-product-available" class="no-product-available-dropdown hide-on-esc">
+  <%= render partial: 'spree/shared/no_product_available' %>
+</div>
+
+<div class="d-flex" id="cart-detail" data-hook>
+    <%# tag.div class: "active d-flex shopping-cart-table-header", "data-hook": "cart_items_headers" do %>
+        <%# tag.div(Spree.t('cart_page.product'), class: "cart-item-description-header text-uppercase") %>
+        <%# tag.div() %>
+        <%# tag.div(Spree.t(:price), class: "cart-item-price-header text-uppercase") %>
+        <%# tag.div(Spree.t('cart_page.quantity'), class: "cart-item-quantity-header text-uppercase") %>
+        <%# tag.div(Spree.t(:total), class: "cart-item-total-header text-uppercase") %>
+        <%# tag.div('', class: "cart-item-delete-header") %>
+    <%# end %>
+
+  <div id="line_items" class="row w-100 m-auto" data-hook>
+    <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
+  </div>
+</div>
+
+<% if @order&.errors&.any? %>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('overlay').classList.add('shown');
+      document.getElementById('no-product-available').classList.add('shown');
+      window.scrollTo(0, 0);
+    })
+  </script>
+<% end %>

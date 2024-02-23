@@ -186,6 +186,11 @@ body {
 .description-background-color {
     background-color: #EAEAE1;
 }
+@media screen and (max-width: 767px) {
+    .description-background-color {
+    background-color: transparent;
+    }
+}
 .product-details-title {
     font-size: 1.25rem;
     font-family: 'Halvar';
@@ -196,16 +201,26 @@ body {
     margin-bottom: 1rem;
     font-weight: 600;
 }
+@media screen and (max-width: 767px) {
+    .product-details-title {
+        font-size: 1rem;
+    }
+}
 .add-to-cart-form-price {
     font-size: 1.5rem;
     line-height: 110%;
+}
+@media screen and (max-width: 767px) {
+    .add-to-cart-form-price {
+        font-size: 1.25rem;
+    }
 }
 .price-sku-info .sku{
     font-size: 0.625rem;
 }
 .product-details-subtitle, .product-details-subtitle {
     font-family: 'Halvar';
-    font-size: 0.9rem;
+    font-size: 1.125rem;
 }
 .product-description {
     font-size: 0.875rem;
@@ -215,7 +230,17 @@ body {
 .add-to-cart-button {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 0;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    font-family: 'Halvar';
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    height: 44px;
+    width: 196px;
+}
+.shopping-cart-buttons-checkout, .no-product-available-button {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0;
+    font-size: 0.875rem;
     font-family: 'Halvar';
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -227,6 +252,11 @@ body {
     font-family: 'Halvar';
     line-height: 140%;
     letter-spacing: .04em;
+}
+@media screen and (max-width: 767px) {
+    .product-details-carousel-text {
+        font-size: 1rem;
+    }
 }
 .product-component-name {
     font-size: 0.9rem;
@@ -257,30 +287,46 @@ body {
     width: 100vw;
     //transform: translateX(-50%);
 }
-.col-3.mosaiclItem:nth-child(4n) {
+.col-lg-3.mosaiclItem:nth-child(4n) {
     border-right-width: 0;
 }
-.col-4.mosaiclItem:nth-child(3n) {
+.col-lg-4.mosaiclItem:nth-child(3n) {
     border-right-width: 0;
 }
 @media screen and (min-width: 767px) {
-    .border-lg-0.mosaiclItem:nth-child(1n):before{
+    .homepageMosaic.mosaiclItem:nth-child(1n):before{
         border-bottom: 0px solid rgb(0, 0, 0);
+    }
+    .homepageMosaic.mosaiclItem{
+        border-right: 0px solid rgb(0, 0, 0);
     }
 }
 @media screen and (max-width: 767px) {
     .mosaiclItem:nth-child(1n):before { 
         width: 100%;
-        // left: 0%;
+        left: 0%;
     }
-    .border-lg-0.mosaiclItem:nth-child(3):before{
+    .col-6.col-lg-3.mosaiclItem:nth-child(4n) {
+        border-right-width: 1px;
+    }
+    .col-6.col-lg-4.mosaiclItem:nth-child(3n) {
+        border-right-width: 1px;
+    }
+    .homepageMosaic.mosaiclItem:nth-child(3):before{
         border-bottom: 0px solid rgb(0, 0, 0);
     }
-    .border-lg-0.mosaiclItem:nth-child(4):before{
+    .homepageMosaic.mosaiclItem:nth-child(4):before{
         border-bottom: 0px solid rgb(0, 0, 0);
     }
 }
-
+@media (max-width: 768px) {
+    .taxon-title {
+      font-size: 0.625rem;
+    }
+    .taxon-subcategories {
+        font-size: 0.875rem;
+    }
+}
 .taxon-title-2 {
     font-size: 2.7rem;
     font-family: 'Cormorant Garamond', serif;
@@ -750,4 +796,104 @@ body {
     color: black;
     letter-spacing: .19em;
     text-decoration: none;
+}
+
+.product-added-modal-button {
+    border: 1px solid black;
+  border-radius: 0;
+  font-family: 'Halvar';
+  letter-spacing: .05em;
+  height: 44px;
+}
+@media screen and (max-width: 767px) {
+    .pr-padding {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+}
+@media (min-width: 768px) {
+    .pr-padding {
+        padding: 2rem 4rem;
+    }  
+}
+@media (min-width: 992px) {
+    .pr-padding {
+        padding: 4.375rem 7.5rem;
+    } 
+}
+
+// Product Carousel
+.carousel-item-start, .carousel-item-end {
+background: #EFEFEF!important;
+}
+@media (max-width: 767px) {
+    #productThumbnailsCarousel .carousel-inner .carousel-item > div {
+        // display: none;
+    }
+    #productThumbnailsCarousel .carousel-inner .carousel-item > div:first-child {
+        // display: block;
+    }
+}
+
+#productThumbnailsCarousel .carousel-inner .carousel-item.active,
+#productThumbnailsCarousel .carousel-inner .carousel-item-next,
+#productThumbnailsCarousel .carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    #productThumbnailsCarousel .carousel-inner .carousel-item-end.active,
+    #productThumbnailsCarousel .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    #productThumbnailsCarousel .carousel-inner .carousel-item-start.active, 
+    #productThumbnailsCarousel .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+#productThumbnailsCarousel .carousel-inner .carousel-item-end,
+#productThumbnailsCarousel .carousel-inner .carousel-item-start { 
+    transform: translateX(0);
+}
+// Product Carousel
+
+.horizontalThumb .product-thumbnails-carousel-item-content {
+    padding-bottom: 0px;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .horizontalThumb .carousel-inner>.carousel-item:not(.active)  {
+    position: relative;
+    display: none;
+    position: relative;
+    transition: transform 1s ease-in, opacity .8s cubic-bezier(.39,.58,.57,1);
+    float: unset;
+    margin-right: unset;
+    will-change: unset;
+}
+.horizontalThumb .carousel-inner>.carousel-item.active, .horizontalThumb .carousel-inner>.carousel-item.next.left, .horizontalThumb .carousel-inner>.carousel-item.prev.right {
+    // left: 0;
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
+}
+
+
+.shopping-cart-item-image img {
+    min-width: 80px;
+}
+
+
+.shopping-cart-item-quantity input[type="number"]::-webkit-outer-spin-button,
+.shopping-cart-item-quantity input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none!important;
+    margin: 0!important;
+}
+
+.shopping-cart-item-quantity input[type="number"] {
+    -webkit-appearance: none!important;
+    -moz-appearance: textfield!important;
+    appearance: none!important;
 }

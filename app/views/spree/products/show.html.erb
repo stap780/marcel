@@ -7,7 +7,9 @@
 <div class="product-details border-bottom border-1 border-black">
     <div class="row" data-hook="product_show">
         <div class="col-12 col-md-6 col-lg-6 pr-padding" data-hook="product_left_part">
-            <%= render partial: 'gallery' %>
+            <%# render partial: 'gallery_vert' %>
+            <%# render partial: 'gallery_horiz' %>
+            <%= render partial: 'gallery_horiz_new' %>
         </div>
         <div class="col-12 col-md-6 border-start border-1 border-black pr-padding description-background-color" data-hook="product_right_part">
             <div id="product-description" data-hook="product_right_part_wrap">
@@ -18,7 +20,7 @@
                     <%= render 'cart_form', variant_change_identifier: 'productCarousel' %>
                 </div>
             </div>
-            <div class="pb-4 pt-md-5 row" data-hook="product_extra_info">
+            <div class="pb-4 pt-5 row" data-hook="product_extra_info">
                 <div class="col-12">
                     <%= render partial: 'extra_info' %>
                 </div>

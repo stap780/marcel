@@ -4,8 +4,8 @@
       <% products = product_relations_by_type(relation_type) %>
 
       <% if products.any? %>
-        <div class="product-details-related m-0" id="product-details-related-<%= relation_type.id %>">
-          <h3 class="product-details-carousel-text mb-0 py-4 border-bottom border-1 border-black text-center"><%= relation_type.name %></h3>
+        <div class="product-details-related m-0 pb-3 pb-lg-0" id="product-details-related-<%= relation_type.id %>">
+          <h3 class="product-details-carousel-text mb-0 py-2 py-lg-4 border-bottom border-1 border-black text-center"><%= relation_type.name %></h3>
           <%# render 'spree/shared/carousel_4_products', id: "related-products-carousel-#{relation_type.id}", products: products %>
           <%= render 'spree/shared/mosaic_related', id: "related-products-carousel-#{relation_type.id}", products: products %>
         </div>

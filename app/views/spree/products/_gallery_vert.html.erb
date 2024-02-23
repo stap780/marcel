@@ -1,0 +1,26 @@
+  <% if @product_images.size > 0 %>
+    <div class="w-100 d-flex align-self-start justify-content-between product-details-images  sticky-top"
+      data-hook="product_left_part_wrap">
+
+             <%# Thumbnails VERTICAL LEFT %>
+            <% if @product_images.size > 1 %>
+            <%=tag.div class: "d-none d-sm-block product-details-thumbnails" do %>
+                <%= render 'spree/shared/carousel/thumbnails_vertical',
+                            images: @product_images,
+                            group_id: 'main-product-modal-carousel',
+                            id: 'productThumbnailsCarousel',
+                            trigger_id: 'productCarousel',
+                            per_page: 4 %>
+              <% end %>
+            <% end %>
+             <%# END Thumbnails VERTICAL LEFT %>
+             <%=tag.div class: "col-12 product-details-single" do %>
+                    <%= render 'spree/shared/carousel/single',
+                          images: @product_images,
+                          group_id: 'main-product-modal-carousel',
+                          id: 'productCarousel',
+                          trigger_id: 'productCarousel',
+                          zoomed: true %>
+             <% end %>
+    </div>
+  <% end %>

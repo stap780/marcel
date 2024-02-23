@@ -18,8 +18,9 @@
         </li>
     <% end %>
 
-  <li id="link-to-cart1" class="nav-item">
-    <%= render 'spree/shared/cart', class: 'd-inline-block cart-icon', size: 30, item_count: 0 %>
+  <li id="link-to-cart" class="nav-item">
+    <% item_count = simple_current_order&.item_count || 0 %>
+    <%= render 'spree/shared/cart', class: 'd-inline-block', size: 30, item_count: item_count %>
   </li>
 
   <%= render partial: 'spree/shared/internationalization_options' %>

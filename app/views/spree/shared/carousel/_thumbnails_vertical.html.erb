@@ -1,13 +1,11 @@
 <div class="d-none d-md-block product-details-thumbnails" data-hook="product_thumbnails">
-    <div
-    id="<%= id %>"
-    class="h-100 carousel slide d-flex flex-column carousel-vertically-animated product-thumbnails-carousel"
-    data-product-carousel-group-identifier="<%= group_id %>"
-    data-variant-change-trigger-identifier="<%= trigger_id %>"
-    data-product-carousel-per-page="<%= per_page %>"
-    data-product-carousel-is-slave="true"
-    data-interval="false"
-    data-hook>
+    <div id="<%= id %>"
+        class="h-100 carousel slide d-flex flex-column carousel-vertically-animated product-thumbnails-carousel"
+        data-product-carousel-group-identifier="<%= group_id %>"
+        data-variant-change-trigger-identifier="<%= trigger_id %>"
+        data-product-carousel-per-page="<%= per_page %>"
+        data-product-carousel-is-slave="true"
+        data-interval="false" data-hook>
     <div class="carousel-inner order-1 h-100">
     <% images.each_with_index do |image, image_index| %>
         <% if image_index % per_page == 0 %>
@@ -35,29 +33,19 @@
         <% end %>
     </div>
     <% if images.length > per_page %>
-        <a
-        class="d-none d-sm-flex order-0 justify-content-center w-100 product-thumbnails-carousel-previous"
-        href="#<%= id %>"
-        role="button"
-        data-slide="prev">
+        <a class="d-none d-sm-flex order-0 justify-content-center w-100 product-thumbnails-carousel-previous"
+            href="#<%= id %>" role="button" data-slide="prev">
         <span aria-hidden="true">
-            <%= icon(name: 'arrow-right',
-                    classes: 'spree-icon-arrow spree-icon-arrow-up',
-                    width: 16,
-                    height: 16) %>
+            <%= icon(name: 'arrow-right',classes: 'spree-icon-arrow spree-icon-arrow-up',
+                    width: 16,height: 16) %>
         </span>
         <span class="sr-only"><%# Spree.t(:previous) %></span>
         </a>
-        <a
-        class="d-none d-sm-flex order-2 justify-content-center w-100 product-thumbnails-carousel-next"
-        href="#<%= id %>"
-        role="button"
-        data-slide="next">
+        <a class="d-none d-sm-flex order-2 justify-content-center w-100 product-thumbnails-carousel-next"
+            href="#<%= id %>" role="button" data-slide="next">
         <span aria-hidden="true">
-            <%= icon(name: 'arrow-right',
-                    classes: 'spree-icon-arrow spree-icon-arrow-down',
-                    width: 16,
-                    height: 16) %>
+            <%= icon(name: 'arrow-right',classes: 'spree-icon-arrow spree-icon-arrow-down',
+                    width: 16,height: 16) %>
         </span>
         <span class="sr-only"><%# Spree.t(:next) %></span>
         </a>

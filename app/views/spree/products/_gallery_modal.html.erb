@@ -13,7 +13,7 @@
              <%# Thumbnails VERTICAL LEFT %>
             <% if @product_images.size > 1 %>
               <div class="d-none d-sm-block product-details-thumbnails">
-                <%= render 'thumbnails_vertical',
+                <%= render 'spree/shared/carousel/thumbnails_vertical',
                             images: @product_images,
                             group_id: 'main-product-modal-carousel',
                             id: 'productModalThumbnailsCarousel',
@@ -23,7 +23,7 @@
             <% end %>
              <%# END Thumbnails VERTICAL LEFT %>
             <div class="col-12 product-details-single">
-              <%= render 'single',
+              <%= render 'spree/shared/carousel/single',
                           images: @product_images,
                           group_id: 'main-product-modal-carousel',
                           id: 'productModalCarousel',

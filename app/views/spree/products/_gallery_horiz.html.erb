@@ -1,6 +1,7 @@
 
   <% if @product_images.size > 0 %>
-    <div class="w-100 d-flex row align-self-start justify-content-between product-details-images sticky-top" data-hook="product_left_part_wrap">
+    <%# w-100 d-flex align-self-start justify-content-between  %>
+    <div class="row product-details-images sticky-top" data-hook="product_left_part_wrap">
         
         <%# Thumbnails VERTICAL LEFT %>
         <%# render 'spree/shared/carousel/thumbnails_vertical',
@@ -8,24 +9,24 @@
                   group_id: 'main-product-carousel',
                   id: 'productThumbnailsCarousel',
                   trigger_id: 'productCarousel',
-                  per_page: 5 %>
+                  per_page: 4 %>
         <%# END Thumbnails VERTICAL LEFT %>
       
       <div class="col-12 product-details-single" data-hook="product_images">
         <%# render 'b5_images', images: @product_images, zoomed: false, id: 'productCarousel'%>
-        <%= render 'single', images: @product_images,
+        <%= render 'spree/shared/carousel/single', images: @product_images,
                   group_id: 'main-product-carousel', id: 'productCarousel',
                   trigger_id: 'productCarousel', zoomed: false %>
       </div>
         <%# Thumbnails hotizontal %>
-        <div class="col-12 product-details-thumbnails-hotizontal" data-hook="product_thumbnails_hotizontal">
-        <%= render 'thumbnails_hotizontal',
-                  images: @product_images,
+        <%= tag.div class: "col-12 product-details-thumbnails-hotizontal px-3 px-lg-0", 'data-hook': "product_thumbnails_hotizontal" do %>
+        <%= render 'spree/shared/carousel/thumbnails_horizontal', images: @product_images,
                   group_id: 'main-product-carousel',
                   id: 'productThumbnailsCarousel',
                   trigger_id: 'productCarousel',
                   per_page: 4 %>
-        </div>
+        <% end %>
         <%# END Thumbnails hotizontal %>
     </div>
   <% end %>
+  

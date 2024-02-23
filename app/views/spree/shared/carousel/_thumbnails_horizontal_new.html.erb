@@ -1,0 +1,53 @@
+<div class="d-block product-details-thumbnails" data-hook="product_thumbnails">
+    <div id="<%= id %>"
+        class=" carousel slide product-thumbnails-carousel"
+        data-product-carousel-group-identifier="<%= group_id %>"
+        data-variant-change-trigger-identifier="<%= trigger_id %>"
+        data-product-carousel-per-page="<%= per_page %>"
+        data-product-carousel-is-slave="true"
+        data-interval="false" data-hook>
+        <% if images.length > per_page %>
+            <a class="d-sm-flex position-absolute top-50 start-0 translate-middle z-2"
+            href="#<%= id %>" role="button" data-bs-target="#<%= id %>" data-bs-slide="prev">
+            <span aria-hidden="true" class="d-flex justify-content-center align-items-center carousel-icon-control-rounded">
+                <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-left', width: 16, height: 16) %>
+            </span>
+            <span class="sr-only d-none"><%# Spree.t(:previous) %></span>
+            </a>
+        <% end %>
+
+    <div class="carousel-inner carousel-inner-width">
+    <% images.each_with_index do |image, image_index| %>
+        <% if image_index % per_page == 0 %>
+            <div class="carousel-item product-thumbnails-carousel-item <%= ' active' if image_index == 0 %>">
+            <div class=" container position-relative">
+                <div class="product-thumbnails-carousel-item-content row d-flex">
+        <% end %>
+                <div
+                    class="product-thumbnails-carousel-item-single my-0 product-thumbnails-carousel-item-single--visible col-3"
+                    data-product-carousel-to-slide="<%= image_index %>"
+                    data-variant-is-master="<%= image.viewable_id == @product.master.id %>"
+                    data-variant-id="<%= image.viewable_id %>">
+                    <%= lazy_image(
+                    src: main_app.cdn_image_url(image.url(:pdp_thumbnail)),
+                    class: 'd-block w-100', alt: image.alt || @product.name,
+                    width: 57, height: 70) %>
+                </div>
+        <% if (image_index + 1) % per_page == 0 || (image_index + 1) == images.length %>
+                </div>
+            </div>
+            </div>
+        <% end %>
+        <% end %>
+    </div>
+        <% if images.length > per_page %>
+            <a class="d-sm-flex position-absolute top-50 start-100 translate-middle z-2"
+            href="#<%= id %>" role="button" data-bs-target="#<%= id %>" data-bs-slide="next">
+            <span aria-hidden="true" class="d-flex justify-content-center align-items-center carousel-icon-control-rounded">
+                <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-right', width: 16, height: 16) %>
+            </span>
+            <span class="sr-only"><%# Spree.t(:next) %></span>
+            </a>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+
+<% variant = line_item.variant %>
+
+<%= order_form.fields_for :line_items, line_item do |item_form| %>
+  <div class="shopping-cart-item row w-100 justify-content-between align-items-center py-1 py-lg-4 px-0 m-auto">
+    <div class=" shopping-cart-item-image col" data-hook="cart_item_image">
+      <% image = default_image_for_product_or_variant(variant) %>
+      <%= lazy_image(
+                src: main_app.cdn_image_url(image.url(:pdp_thumbnail)),
+                class: 'd-block w-100',
+                alt: image.alt || line_item.name,
+                width: image.style(:pdp_thumbnail)[:width],
+                height: image.style(:pdp_thumbnail)[:height]
+                ) %>
+      <%# link_to product_image(variant), spree.product_path(variant.product) %>
+    </div>
+    <div class=" shopping-cart-item-description col-7" data-hook="cart_item_description">
+      <h2 class="item-title"><%= link_to line_item.name, spree.product_path(variant.product) %></h2>
+      <% if line_item.insufficient_stock? %>
+        <span class="out-of-stock">
+          <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br>
+        </span>
+      <% end %>
+      <ul class="item-details-list" data-hook="line_item_description">
+        <% variant.option_values.sort { |ov| ov.option_type.position }.each do |ov| %>
+          <li class="item-details">
+            <% # TODO: rework option values so options_text method can be used here %>
+            <%= "#{ov.option_type.presentation}: #{ov.presentation}" %>
+          </li>
+        <% end %>
+      </ul>
+      <%# render 'line_item_data', view: 'mobile', line_item: line_item, item_form: item_form %>
+    </div>
+    <%= render 'line_item_data', view: 'desktop', line_item: line_item, item_form: item_form %>
+  </div>
+<% end %>
