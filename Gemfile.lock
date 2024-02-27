@@ -626,6 +626,7 @@ DEPENDENCIES
   addressable
   bootsnap
   capistrano
+  capistrano-bundler
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
