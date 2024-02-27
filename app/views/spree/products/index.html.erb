@@ -43,7 +43,7 @@
     </div>
     <!-- finish FILTER & SORT BUTTON -->
 
-    <% if @taxon.children.any? %>
+    <% if @taxon.present? && @taxon.children.any? %>
       <% subcategories = [@taxon] %>
       <% unless @taxon.children.any? %>
         <% subcategories.unshift(@taxon.parent) %>
