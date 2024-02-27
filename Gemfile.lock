@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/matthewkennedy/spree_product_feed.git
+  revision: 07541d4d5945e53d0770ca799d95e33a2861e37a
+  specs:
+    spree_product_feed (0.0.1.alpha)
+      deface (~> 1.0)
+      spree_api (> 4.1, < 5.0)
+      spree_backend (> 4.1, < 5.0)
+      spree_core (> 4.1, < 5.0)
+      spree_extension
+
+GIT
   remote: https://github.com/sass/sassc-ruby.git
   revision: 4fce2b635ca5d616a8b1381c64846410bc785ea4
   branch: master
@@ -16,11 +27,52 @@ GIT
       spree_extension
 
 GIT
+  remote: https://github.com/stap780/spree_analytics_trackers.git
+  revision: b71e7c9dccca15b267ced2f1bc90f21f493c350f
+  specs:
+    spree_analytics_trackers (2.1.1)
+      deface (~> 1.0)
+      spree_backend (>= 4.1.0, < 5.0)
+      spree_core (>= 4.1.0, < 5.0)
+      spree_extension
+
+GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
   revision: c255a6734b4a0fc0e3f4c031d4d7b4b742e81801
   specs:
     spree_custom_cms_sections (0.0.5)
       spree (>= 4.3.2)
+      spree_extension
+
+GIT
+  remote: https://github.com/stap780/spree_product_bulk.git
+  revision: 90a0e45ea95756d9089c0b6904385c9b4a321243
+  specs:
+    spree_product_bulk (0.0.15)
+      spree (>= 4.3.2)
+      spree_extension
+
+GIT
+  remote: https://github.com/stap780/spree_product_import.git
+  revision: 3e81f46450e98757c2ffc091550c59966097cd10
+  specs:
+    spree_product_import (0.0.30)
+      addressable (~> 2.8)
+      caxlsx
+      caxlsx_rails
+      roo
+      roo-xls
+      spree (>= 4.3.2)
+      spree_extension
+
+GIT
+  remote: https://github.com/stap780/spree_related_products.git
+  revision: b7b0a8c9158932a527be1b1ddd21b5ae0090dffe
+  specs:
+    spree_related_products (3.4.2)
+      deface (~> 1.0)
+      spree_backend (>= 3.1.0)
+      spree_core (>= 3.1.0)
       spree_extension
 
 GEM
@@ -167,6 +219,14 @@ GEM
       xpath (~> 3.2)
     carmen (1.1.3)
       activesupport (>= 3.0.0)
+    caxlsx (4.0.0)
+      htmlentities (~> 4.3, >= 4.3.4)
+      marcel (~> 1.0)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (>= 1.3.0, < 3)
+    caxlsx_rails (0.6.3)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
     chronic (0.10.2)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
@@ -177,6 +237,12 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    deface (1.9.0)
+      actionview (>= 5.2)
+      nokogiri (>= 1.6)
+      polyglot
+      railties (>= 5.2)
+      rainbow (>= 2.1.0)
     devise (4.9.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -209,6 +275,7 @@ GEM
       rails (>= 6.0.0)
       stimulus-rails
       turbo-rails
+    htmlentities (4.3.4)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     i18n_data (0.17.1)
@@ -299,6 +366,7 @@ GEM
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
     pg (1.5.5)
+    polyglot (0.3.5)
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
@@ -346,6 +414,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
+    rainbow (3.1.1)
     rake (13.1.0)
     ransack (4.1.1)
       activerecord (>= 6.1.5)
@@ -363,6 +432,14 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
+    roo (2.10.1)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+    roo-xls (1.2.0)
+      nokogiri
+      roo (>= 2.0.0, < 3)
+      spreadsheet (> 0.9.0)
+    ruby-ole (1.2.12.2)
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
@@ -383,6 +460,9 @@ GEM
     simple_po_parser (1.1.6)
     sitemap_generator (6.3.0)
       builder (~> 3.0)
+    spreadsheet (1.3.1)
+      bigdecimal
+      ruby-ole
     spree (4.7.1)
       spree_api (= 4.7.1)
       spree_cli (= 4.7.1)
@@ -562,6 +642,7 @@ DEPENDENCIES
   sassc!
   selenium-webdriver
   spree (~> 4.6)
+  spree_analytics_trackers!
   spree_auth_devise (~> 4.5)
   spree_backend (~> 4.6)
   spree_cmd
@@ -570,6 +651,10 @@ DEPENDENCIES
   spree_frontend
   spree_gateway (~> 3.10)
   spree_i18n (~> 5.1)
+  spree_product_bulk!
+  spree_product_feed!
+  spree_product_import!
+  spree_related_products!
   spree_sample (~> 4.6)
   spree_sitemap!
   sprockets-rails
