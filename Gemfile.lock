@@ -54,9 +54,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_product_import.git
-  revision: 3e81f46450e98757c2ffc091550c59966097cd10
+  revision: 86225dd70b345657b356c7728861b96d34748cfb
   specs:
-    spree_product_import (0.0.30)
+    spree_product_import (0.0.33)
       addressable (~> 2.8)
       caxlsx
       caxlsx_rails
@@ -144,7 +144,7 @@ GEM
       activemodel (= 7.1.3.2)
       activesupport (= 7.1.3.2)
       timeout (>= 0.4.0)
-    activerecord-typedstore (1.5.1)
+    activerecord-typedstore (1.6.0)
       activerecord (>= 6.1)
     activestorage (7.1.3.2)
       actionpack (= 7.1.3.2)
@@ -204,10 +204,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    capistrano3-puma (6.0.0.beta.1)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 5.1, < 7.0)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     capybara (3.40.0)
       addressable
       matrix
