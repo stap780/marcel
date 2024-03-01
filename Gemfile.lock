@@ -38,9 +38,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
-  revision: c255a6734b4a0fc0e3f4c031d4d7b4b742e81801
+  revision: 744051f18d801c326194c7115ea5da145dccba7f
   specs:
-    spree_custom_cms_sections (0.0.5)
+    spree_custom_cms_sections (0.0.6)
       spree (>= 4.3.2)
       spree_extension
 
@@ -252,8 +252,7 @@ GEM
       devise (>= 2.1.0)
     doorkeeper (5.6.9)
       railties (>= 5)
-    drb (2.2.0)
-      ruby2_keywords
+    drb (2.2.1)
     erubi (1.12.0)
     execjs (2.9.1)
     ffaker (2.23.0)
@@ -325,7 +324,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.2)
+    marcel (1.0.3)
     matrix (0.4.2)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
@@ -441,7 +440,6 @@ GEM
     ruby-ole (1.2.12.2)
     ruby-vips (2.2.1)
       ffi (~> 1.12)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)

@@ -60,5 +60,5 @@
 #     # password: "please use keys"
 #   }
 server '92.222.25.127', port: 22, roles: [:web, :app, :db], primary: true
-set :user,            'deploy'
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :user, 'deploy'
+set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
