@@ -38,9 +38,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
-  revision: 744051f18d801c326194c7115ea5da145dccba7f
+  revision: 874b089fa151536fcd3af32600ed2639131f45f9
   specs:
-    spree_custom_cms_sections (0.0.6)
+    spree_custom_cms_sections (0.0.7)
       spree (>= 4.3.2)
       spree_extension
 
@@ -218,7 +218,7 @@ GEM
       xpath (~> 3.2)
     carmen (1.1.3)
       activesupport (>= 3.0.0)
-    caxlsx (4.0.0)
+    caxlsx (4.1.0)
       htmlentities (~> 4.3, >= 4.3.4)
       marcel (~> 1.0)
       nokogiri (~> 1.10, >= 1.10.4)
@@ -324,7 +324,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.3)
+    marcel (1.0.4)
     matrix (0.4.2)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
@@ -363,7 +363,7 @@ GEM
     orm_adapter (0.5.0)
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
-    pg (1.5.5)
+    pg (1.5.6)
     polyglot (0.3.5)
     popper_js (1.16.1)
     psych (5.1.2)
