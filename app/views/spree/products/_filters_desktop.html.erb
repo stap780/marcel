@@ -23,14 +23,12 @@
                     <% option_type_name = ot_filter_param.titleize %>
                     <% collapsed = params[ot_filter_param].blank? %>
 
-                    <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= ot_filter_param %>" data-toggle="collapse" data-target="#collapseFilter<%= ot_filter_param %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= ot_filter_param %>" role="heading" aria-level="2">
+                    <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= ot_filter_param %>" data-bs-toggle="collapse" data-bs-target="#collapseFilter<%= ot_filter_param %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= ot_filter_param %>" role="heading" aria-level="2">
                         <%= option_type.presentation %>
                         <%= icon(name: 'caret-down-fill_new',
-                                classes: 'float-right plp-filters-card-header-arrow--plus',
-                                width: 16, height: 16) %>
+                                classes: 'float-right plp-filters-card-header-arrow--plus',width: 16, height: 16) %>
                         <%= icon(name: 'caret-up-fill_new',
-                                classes: 'float-right plp-filters-card-header-arrow--minus',
-                                width: 16, height: 16) %>
+                                classes: 'float-right plp-filters-card-header-arrow--minus',width: 16, height: 16) %>
                     </button>
                     <div id="collapseFilter<%= ot_filter_param %>" class="filter-items collapse <%= 'show' unless collapsed %>" aria-labelledby="filters<%= ot_filter_param %>">
                         <div class="card-body px-0">
@@ -47,7 +45,7 @@
                     <div class="w-100 card plp-filters-card">
                         <% property_name = property.name %>
                         <% collapsed = params.dig(:properties, property.filter_param).blank? %>
-                        <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= property_name %>" data-toggle="collapse" data-target="#collapseFilter<%= property_name %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= property_name %>" role="heading" aria-level="2">
+                        <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= property_name %>" data-bs-toggle="collapse" data-bs-target="#collapseFilter<%= property_name %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= property_name %>" role="heading" aria-level="2">
                         <%= property.presentation %>
                         <%= icon(name: 'caret-down-fill_new',
                                 classes: 'float-right plp-filters-card-header-arrow--plus',
@@ -72,7 +70,7 @@
 
                 <% price_collapsed = params[:price].blank? %>
                 <div class="w-100 card plp-filters-card">
-                    <button class="card-header text-capitalize <%= 'collapsed' if price_collapsed %> plp-filters-card-header px-0" id="filtersPrice" data-toggle="collapse" data-target="#collapseFilterPrice" aria-expanded="<% !price_collapsed %>" aria-controls="collapseFilterPrice" role="heading" aria-level="2">
+                    <button class="card-header text-capitalize <%= 'collapsed' if price_collapsed %> plp-filters-card-header px-0" id="filtersPrice" data-bs-toggle="collapse" data-bs-target="#collapseFilterPrice" aria-expanded="<% !price_collapsed %>" aria-controls="collapseFilterPrice" role="heading" aria-level="2">
                     <%= Spree.t('plp.price') %>
                     <%= icon(name: 'caret-down-fill_new',
                             classes: 'float-right plp-filters-card-header-arrow--plus',
