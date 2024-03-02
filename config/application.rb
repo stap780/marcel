@@ -39,7 +39,6 @@ module Spree
 
     # use Sidekiq for ActiveJob
     # config.active_job.queue_adapter = :sidekiq
-    config.active_job.queue_adapter = :delayed_job
     config.active_storage.variant_processor = :vips
 
     # adds support for Services
