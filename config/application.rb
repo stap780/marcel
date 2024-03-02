@@ -39,12 +39,14 @@ module Spree
 
     # use Sidekiq for ActiveJob
     # config.active_job.queue_adapter = :sidekiq
-    config.active_storage.variant_processor = :vips
-    config.autoload_lib
-    #config.autoload_lib(ignore: %w[tasks assets]) if need ignore
+    
+    # config.active_storage.variant_processor = :vips
+    # config.autoload_lib(ignore: %w[clouds])
+    
+    # config.autoload_lib(ignore: %w[tasks assets]) #if need ignore
 
     # adds support for Services
-    config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns #{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
 
   end
 end
