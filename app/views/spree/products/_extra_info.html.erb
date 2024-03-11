@@ -1,6 +1,6 @@
   <% if Spree::Cms::Pages::ProductExtraInfoTab.all.size > 0 %>
   <% Spree::Cms::Pages::ProductExtraInfoTab.all.each do |tab| %>
-    <h3 class="product-details-subtitle d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#product-<%= tab.slug%>" role="button" aria-expanded="false">
+    <h3 class="product-details-subtitle d-flex justify-content-between mb-3" data-bs-toggle="collapse" data-bs-target="#product-<%= tab.slug%>" role="button" aria-expanded="false">
       <%= tab.title%>
       <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down', width: 15, height: 15) %>
     </h3>

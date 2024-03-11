@@ -9,11 +9,12 @@
 
 
   <%# render 'spree/shared/breadcrumbs', current_page_name: Spree.t('cart_page.title') %>
-
+<% if !@order.line_items.empty? %>
   <h1 class="text-uppercase shopping-cart-header"><%= Spree.t('cart_page.header') %></h1>
+ <% end %>
 
   <% if @order.line_items.empty? %>
-    <div data-hook="empty_cart" class="shopping-cart-empty">
+    <div data-hook="empty_cart" class="shopping-cart-empty col-12">
       <div class="d-flex flex-column justify-content-between h-100">
         <div class="d-flex flex-column align-items-center">
           <%= icon(name: 'empty-cart', classes: 'shopping-cart-empty-image', width: 83, height: 83) %>
@@ -21,7 +22,7 @@
           <p class="text-center shopping-cart-empty-info"><%= Spree.t('cart_page.empty_info').html_safe %></p>
         </div>
         <%# link_to Spree.t(:continue_shopping), spree.products_path, class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
-        <%= link_to Spree.t(:continue_shopping), '/', class: 'btn btn-primary text-uppercase font-weight-bold shopping-cart-empty-continue-link' %>
+        <%= link_to Spree.t(:continue_shopping), '/', class: 'btn btn-light cart-checkout-btn shopping-cart-buttons-checkout w-50 h-100 fw-bold shopping-cart-empty-continue-link' %>
       </div>
     </div>
   <% else %>

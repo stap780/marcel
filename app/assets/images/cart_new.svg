@@ -1,9 +1,1 @@
-<svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="11" cy="23" r="2.5" stroke="currentColor"></circle>
-    <circle cx="23" cy="23" r="2.5" stroke="currentColor"></circle>
-    <line x1="8.18164" y1="17.5" x2="26.3635" y2="17.5" stroke="currentColor"></line>
-    <line x1="5.0459" y1="5.5" x2="29.5004" y2="5.5" stroke="currentColor" stroke-linecap="round"></line>
-    <line y1="-0.5" x2="17.8536" y2="-0.5" transform="matrix(0.305515 0.952187 -0.93221 0.361917 2.72754 1)" stroke="currentColor"></line>
-    <line y1="-0.5" x2="12.9351" y2="-0.5" transform="matrix(-0.281117 0.959673 -0.942544 -0.334081 29.0908 5)" stroke="currentColor"></line>
-    <line x1="0.5" y1="0.5" x2="3.13636" y2="0.5" stroke="currentColor" stroke-linecap="round"></line>
-    </svg>
+<svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="23" r="2.5" stroke="currentColor"></circle><circle cx="23" cy="23" r="2.5" stroke="currentColor"></circle><line x1="8.18164" y1="17.5" x2="26.3635" y2="17.5" stroke="currentColor"></line><line x1="5.0459" y1="5.5" x2="29.5004" y2="5.5" stroke="currentColor" stroke-linecap="round"></line><line y1="-0.5" x2="17.8536" y2="-0.5" transform="matrix(0.305515 0.952187 -0.93221 0.361917 2.72754 1)" stroke="currentColor"></line><line y1="-0.5" x2="12.9351" y2="-0.5" transform="matrix(-0.281117 0.959673 -0.942544 -0.334081 29.0908 5)" stroke="currentColor"></line><line x1="0.5" y1="0.5" x2="3.13636" y2="0.5" stroke="currentColor" stroke-linecap="round"></line></svg>
