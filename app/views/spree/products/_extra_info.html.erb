@@ -1,36 +1,13 @@
-  <h3 class="product-details-subtitle d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#product-delivery" role="button" aria-expanded="false">
-    Delivery
-    <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down', width: 15, height: 15) %>
+  <% if Spree::Cms::Pages::ProductExtraInfoTab.all.size > 0 %>
+  <% Spree::Cms::Pages::ProductExtraInfoTab.all.each do |tab| %>
+    <h3 class="product-details-subtitle d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#product-<%= tab.slug%>" role="button" aria-expanded="false">
+      <%= tab.title%>
+      <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down', width: 15, height: 15) %>
     </h3>
-  <div id="product-delivery" class="m-0 list-unstyled product-delivery collapse" data-hook>
-<div class="page-content page-delivery">
-<p>Важно! Доставка товаров возможна только после полной оплаты товара.&nbsp;</p>
-<p>Доставка товаров по Москве возможна как нашим курьером, так и транспортными компаниями:</p>
-<ul>
-<li>
-<p>Достависта (доставка курьером до двери);&nbsp;</p>
-</li>
-<li>
-<p>Курьерская BoxBerry (доставка курьером до двери и на пункты самовывоза);</p>
-</li>
-<li>
-<p>PickPoint (сеть автоматических пунктов выдачи заказов);</p>
-</li>
-<li>
-<p>СДЭК (доставка курьером до двери и на пункты самовывоза).</p>
-</li>
-</ul>
-<p>&nbsp;</p>
-<p>Доставки по России нам обеспечивают компании Почта России и следущие компании доставки:</p>
-<ul>
-<li>Курьерская BoxBerry (доставка курьером до двери и на пункты самовывоза);</li>
-<li>
-<p>PickPoint (сеть автоматических пунктов выдачи заказов);</p>
-</li>
-<li>
-<p>СДЭК (доставка курьером до двери и на пункты самовывоза).<br><br></p>
-</li>
-</ul>
-<p>Стоимость доставки и удобный пункт выдачи, Вы можете рассчитать он-лайн при оформлении заказа на нашем сайте.</p>
-</div>
-  </div>
+    <div id="product-<%= tab.slug%>" class="m-0 list-unstyled product-<%= tab.slug%> collapse" data-hook>
+      <div class="page-content page-<%= tab.slug%>"><%= tab.content.html_safe%></div>
+    </div>
+  <% end %>
+<% end %>
+
+

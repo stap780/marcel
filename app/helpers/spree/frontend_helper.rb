@@ -168,6 +168,27 @@ module Spree
         end
       end
   
+      def plp_and_carousel_image_second(product, image_class = '')
+        image = product.images.second
+  
+        image_url = if image.present?
+                      main_app.cdn_image_url(image.url('plp'))
+                    else
+                      asset_path('noimage/plp.svg')
+                    end
+  
+        image_style = image&.style(:plp)
+  
+        lazy_image(
+          src: image_url,
+          srcset: carousel_image_source_set(image),
+          alt: product.name,
+          width: image_style&.dig(:width) || 278,
+          height: image_style&.dig(:height) || 371,
+          class: "product-component-image d-block mw-100 #{image_class}"
+        )
+      end
+
       def plp_and_carousel_image(product, image_class = '')
         image = default_image_for_product_or_variant(product)
   

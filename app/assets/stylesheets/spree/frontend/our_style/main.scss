@@ -278,6 +278,15 @@ body {
 .mosaiclItem {
     border-right: 1px solid rgb(0, 0, 0);
 }
+.mosaiclItem .first-image {
+    opacity: 1;
+}
+.mosaiclItem:hover .first-image {
+    opacity: 0;
+}
+.mosaiclItem:hover .second-image.opacity-0 {
+    opacity: 1!important;
+}
 .mosaiclItem:nth-child(1n):before {
     content: '';
     border-bottom: 1px solid rgb(0, 0, 0);

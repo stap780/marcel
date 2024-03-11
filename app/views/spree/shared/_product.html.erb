@@ -1,7 +1,10 @@
 <% url = spree.product_path(product, taxon_id: @taxon&.id) %>
 <%= link_to url, class: 'd-flex flex-column justify-content-between text-decoration-none gap-3' do %>
   <%# cache [common_product_cache_keys, product] do  THIS cach not work - for future investigation %>
-    <%= plp_and_carousel_image(product, image_class) %>
+  <div class="image-wrap position-relative">
+    <%= plp_and_carousel_image(product, 'first-image') %>
+    <%= plp_and_carousel_image_second(product, 'second-image position-absolute top-50 start-50 translate-middle opacity-0') %>
+  </div>
     <div class="d-flex justify-content-between gap-3">
       <div class="product-component-name mt-0" title="<%= product.name %>">
         <%= product.name %>
