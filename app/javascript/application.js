@@ -1,7 +1,7 @@
 // Entry point for the build script in your package.json
 import "@hotwired/turbo-rails"
 import "./controllers"
-import "./live_reload"
+// import "./live_reload"
 
 import * as bootstrap from "bootstrap"
 
