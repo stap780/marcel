@@ -13,12 +13,14 @@
                 </span>
 
                 <div id="link-to-account" class="dropdown-menu dropdown-menu-right text-right">
+                    <a class="dropdown-item" href="/login">LOGIN</a>
+                    <a class="dropdown-item" href="/signup">SIGN UP</a>
                 </div>
             </div>
         </li>
     <% end %>
 
-  <li id="link-to-cart" class="nav-item">
+  <li id="link-to-cart" class="nav-item mini-cart">
     <% item_count = simple_current_order&.item_count || 0 %>
     <%= render 'spree/shared/cart', class: 'd-inline-block', size: 30, item_count: item_count %>
   </li>

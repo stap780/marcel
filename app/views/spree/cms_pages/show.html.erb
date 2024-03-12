@@ -1,0 +1,19 @@
+<% if @cms_page %>
+  <% if simple_page?(@cms_page) %>
+  <div class="container simple_cms_page" id="<%= @cms_page.slug%>_cms_page">
+    <div class="row mt-1 mb-5">
+      <div class="col-12 text-center text-uppercase mt-2 mb-1 mt-lg-4 mb-lg-2">
+        <h1 class="my-2 my-lg-5"><%= @cms_page.title.html_safe %></h1>
+      </div>
+      <div class="col-12">
+        <%= @cms_page.content.html_safe %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+      <% @cms_page.cms_sections.each do |section| %>
+        <%= build_section(section) %>
+      <% end %>
+  <% end %>
+<% end %>
+<%= render "spree/shared/cms/pages/edit_mode", edit_mode: @edit_mode %>

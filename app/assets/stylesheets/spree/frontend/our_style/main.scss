@@ -911,3 +911,13 @@ background: #EFEFEF!important;
     -moz-appearance: textfield!important;
     // appearance: none!important;
 }
+
+.simple_cms_page {
+    max-width: 800px;
+}
+.simple_cms_page h1{
+    font-size: 1.25rem;
+    font-family: 'Halvar';
+    line-height: 140%;
+    letter-spacing: .04em;
+}
