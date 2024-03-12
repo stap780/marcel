@@ -8,3 +8,12 @@
 //= require_tree .
 //= require spree/backend/bulk
 //= require spree/backend/import
+
+
+document.addEventListener("spree:load", function() {
+    console.log('load')
+    $('.product_property .btn.btn-danger.disabled').click(function(){
+        $(this).closest('tr').remove();
+    });
+
+});
