@@ -2,6 +2,7 @@
 <% products_empty = @products.empty? %>
 
 <div data-hook="search_results">
+
   <% if products_empty %>
     <% if permitted_params[:keywords].present? && permitted_params.to_h.one? %>
       <%= render 'spree/products/no_results' %>
@@ -43,35 +44,35 @@
     </div>
     <!-- finish FILTER & SORT BUTTON -->
 
-    <% if @taxon.present? && @taxon.children.any? %>
+    <% if !permitted_params.present? && @taxon.present? && @taxon.children.any? %>
       <% subcategories = [@taxon] %>
       <% unless @taxon.children.any? %>
         <% subcategories.unshift(@taxon.parent) %>
       <% end %>
-        <% subcategories.compact.each do |current_taxon| %>
+      <% subcategories.compact.each do |current_taxon| %>
         <% child_taxons = [current_taxon, *current_taxon.children.where(hide_from_nav: false)] %>
-          <% child_taxons.each_with_index.map do |subcategory, index| %>
-            <% taxon_products = subcategory.products.limit(6)%>
-            <%if !index.zero? && taxon_products.present? %>
-              <div class="container d-flex justify-content-center">
-                <%= content_tag :span, subcategory.name, class: "subtitle-2 p-4 align-center"%>
-              </div>
-              <div class="d-flex border-top border-1 border-black taxon_products_<%= subcategory.id%>" data-hook="homepage_products">
-                <%= render 'spree/shared/products', products: subcategory.products, limit: 6 %>
-              </div>
-             <div class="container d-flex justify-content-center py-3">
-                <%# content_tag :span, 'more', class: "show-more-products text-uppercase p-3 align-center", 'data-taxon-id': subcategory.id %>
-                <button class="show-more-products text-uppercase" data-taxon-id="<%=subcategory.id%>" >
-                    <span class="py-1 text-uppercase border border-start-0 border-top-0 border-end-0 border-bottom-1 border-black"><%= Spree.t('more') %></span>
-                    <%= icon(name: 'arrow-right',
-                            classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',
-                            width: 14,height: 14) %>
-                    </button>
+        <% child_taxons.each_with_index.map do |subcategory, index| %>
+          <% taxon_products = subcategory.products.limit(6)%>
+          <%if !index.zero? && taxon_products.present? %>
+            <div class="container d-flex justify-content-center">
+              <%= content_tag :span, subcategory.name, class: "subtitle-2 p-4 align-center"%>
+            </div>
+            <div class="d-flex border-top border-1 border-black taxon_products_<%= subcategory.id%>" data-hook="homepage_products">
+              <%= render 'spree/shared/products', products: subcategory.products, limit: 6 %>
+            </div>
+            <div class="container d-flex justify-content-center py-3">
+              <%# content_tag :span, 'more', class: "show-more-products text-uppercase p-3 align-center", 'data-taxon-id': subcategory.id %>
+              <button class="show-more-products text-uppercase" data-taxon-id="<%=subcategory.id%>" >
+                  <span class="py-1 text-uppercase border border-start-0 border-top-0 border-end-0 border-bottom-1 border-black"><%= Spree.t('more') %></span>
+                  <%= icon(name: 'arrow-right',
+                          classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',
+                          width: 14,height: 14) %>
+                  </button>
 
-              </div>   
-            <% end %>
+            </div>   
           <% end %>
         <% end %>
+      <% end %>
     <% else %>
       <div class="d-flex border-top border-1 border-black" data-hook="homepage_products">
         <%= render 'spree/shared/products', products: @products, limit: nil %>
