@@ -45,8 +45,7 @@
         <%= render 'spree/products/sort_desktop', permitted_params: permitted_params %>
     </div>
     <!-- finish FILTER & SORT BUTTON -->
-
-    <% if permitted_params.present?%>
+    <% if permitted_params.present? && !permitted_params.to_h.one?%>
       <%= render 'spree/shared/products', products: @products, limit: nil, wrap_class: "filter" %>
     <% else %>
       <% if @taxon.present? && @taxon.children.any? %>
