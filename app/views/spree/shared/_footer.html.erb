@@ -1,6 +1,7 @@
 <% cache spree_menu_cache_key('footer') do %>
   <footer id="footer" class="footer-marcel px-2">
-    <div class="container border border-top-1 border-bottom-0 border-start-0 border-end-0 border-black">
+    <% border_top = @taxon&.products.present? || @taxon.present? && @taxon.children.any? ? 'border-top-0' : 'border-top-1'%>
+    <div class="container border <%= border_top %> border-bottom-0 border-start-0 border-end-0 border-black">
         <%# render partial: 'spree/shared/footer_small' %>
         <%= render partial: 'spree/shared/footer_big' %>
     </div>
