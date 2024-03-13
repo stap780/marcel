@@ -20,7 +20,7 @@
                 <% available_option_types.each do |option_type| %>
                     <div class="w-100 card plp-filters-card">
                     <% ot_filter_param = option_type.filter_param %>
-                    <% option_type_name = ot_filter_param.titleize %>
+                    <% option_type_name = ot_filter_param.titleize.gsub(' ','_') %>
                     <% collapsed = params[ot_filter_param].blank? %>
 
                     <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= ot_filter_param %>" data-bs-toggle="collapse" data-bs-target="#collapseFilter<%= ot_filter_param %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= ot_filter_param %>" role="heading" aria-level="2">
@@ -43,7 +43,7 @@
                 <% available_properties.each do |property| %>
                     <% if property.uniq_values.present? %>
                     <div class="w-100 card plp-filters-card">
-                        <% property_name = property.name %>
+                        <% property_name = property.name.titleize.gsub(' ','_') %>
                         <% collapsed = params.dig(:properties, property.filter_param).blank? %>
                         <button class="card-header <%= 'collapsed' if collapsed %> plp-filters-card-header px-0" id="filters<%= property_name %>" data-bs-toggle="collapse" data-bs-target="#collapseFilter<%= property_name %>" aria-expanded="<%= !collapsed %>" aria-controls="collapseFilter<%= property_name %>" role="heading" aria-level="2">
                         <%= property.presentation %>
