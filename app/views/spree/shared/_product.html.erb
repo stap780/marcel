@@ -14,7 +14,12 @@
 <!-- Color from related -->
   <% color_relation_product_ids = product.relations.map{|relation| relation.related_to.id if relation.relation_type.name == "Color"}.reject(&:blank?)%>
   <% if color_relation_product_ids.any? %>
-    <%= render partial: '/spree/products/product_color_option', locals: { color_relation_product_ids: color_relation_product_ids,  product: product, show_title: 'not_show', css_class: 'gap-2 mt-2', limit: 2 } %>
+    <%= render partial: '/spree/products/product_color_option', locals: { 
+                                                                          color_relation_product_ids: color_relation_product_ids,  
+                                                                          product: product, 
+                                                                          show_title: 'not_show', 
+                                                                          css_class: 'gap-2 mt-2', 
+                                                                          limit: 2 } %>
   <% end %>
 <!--end Color from related -->
 

@@ -6,22 +6,22 @@
 <div class="my-3 text-left color-option-title col-12 p-0"><%= color_options.first[:presentation] %></div>
 <% end %>
 <div class="container">
-    <div class="d-flex row <%= css_class %> justify-content-start p-0 align-items-center">  
+    <div class="d-flex row <%= css_class %> justify-content-start p-0 align-items-end">  
         <% color_options.each_with_index do |option_type, index| %>
-        <a href="<%= product_path(product)%>" class="col-1 p-0 d-flex justify-content-center">
+        <a href="<%= product_path(product)%>" class="col-1 p-0 d-flex justify-content-center color-svg">
             <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
                 <%= render partial: "spree/products/color_option_type_new", locals: {  option_type: option_type, index: 0, tooltip_title: product.name } %>
             <% end %>
         </a>
         <% end %>
 
-        <% color_relation_product_ids.each do |pr_id|%>
+        <% color_relation_product_ids_check_limit = limit.present? ? color_relation_product_ids.take(limit) : color_relation_product_ids %>
+        <% color_relation_product_ids_check_limit.each do |pr_id|%>
             <% related_product = Spree::Product.find_by_id(pr_id) %>
             <% option_types = Spree::Variants::OptionTypesFinder.new(variant_ids: related_product.variants.map(&:id)).execute %>
             <% rel_options = Spree::Variants::OptionTypesPresenter.new(option_types, related_product.variants, related_product).options %>
-            <% rel_options_check_limit = limit.present? ? rel_options.take(limit) : rel_options %>
-            <% rel_options_check_limit.each_with_index do |option_type, index| %>
-                <a href="<%= product_path(related_product) %>" class="col-1 p-0 d-flex justify-content-center">
+            <% rel_options.each_with_index do |option_type, index| %>
+                <a href="<%= product_path(related_product) %>" class="col-1 p-0 d-flex justify-content-center color-svg">
                     <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
                         <%= render partial: "spree/products/color_option_type_new", locals: { option_type: option_type, index: index+1, tooltip_title: related_product.name } %>
                     <% end %>
@@ -29,7 +29,7 @@
             <% end %>
         <% end %>
         <% if limit.present? %>
-        <a href="<%= product_path(product)%>" title="<%= product.name%>" class="col-2 text-decoration-none text-black text-lowercase fs-6"><%= Spree.t('more') %>...</a>
+        <a href="<%= product_path(product)%>" title="<%= product.name%>" class="col-2 text-decoration-none text-black text-lowercase color-svg-more"><%= Spree.t('more') %>...</a>
         <% end %>
     </div>
 </div>

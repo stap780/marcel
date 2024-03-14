@@ -926,6 +926,25 @@ background: #EFEFEF!important;
     font-family: "Halvar";
   }
 
+.mosaiclItem label {
+    padding-bottom: 5px;
+}
+
+#product-related-variants label {
+    padding-bottom: 8px;
+}
 label.active {
     border-bottom: 1px solid black;
-  }
+}
+
+.color-svg {
+    max-width: 27px;
+}
+
+.color-svg svg{
+    margin-left: -2px;
+}
+
+.color-svg-more {
+    font-size: 11px;
+}
