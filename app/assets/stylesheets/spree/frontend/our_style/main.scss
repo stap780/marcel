@@ -921,3 +921,11 @@ background: #EFEFEF!important;
     line-height: 140%;
     letter-spacing: .04em;
 }
+.color-option-title {
+    font-size: 1.125rem;
+    font-family: "Halvar";
+  }
+
+label.active {
+    border-bottom: 1px solid black;
+  }
