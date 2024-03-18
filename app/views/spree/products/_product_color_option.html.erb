@@ -1,7 +1,7 @@
 <% title = show_title.present? && show_title == 'not_show' ? false : true %>
 
 <% option_types = Spree::Variants::OptionTypesFinder.new(variant_ids: product.variants.map(&:id)).execute %>
-<% color_options = Spree::Variants::OptionTypesPresenter.new(option_types, product.variants, product).options %>
+<% color_options = Spree::Variants::OptionTypesPresenter.new(option_types, product.variants, product).options.uniq %>
 <% if title %>
 <div class="my-3 text-left color-option-title col-12 p-0"><%= color_options.first[:presentation] %></div>
 <% end %>
