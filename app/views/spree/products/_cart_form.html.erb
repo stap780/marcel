@@ -62,11 +62,10 @@
     </div>
   <% end %>
 <!--end Color from related -->
-
     <% if @product.variants_and_option_values(current_currency).any? %>
-      <ul id="product-variants" class="product-variants d-none">
+      <ul id="product-variants" class="product-variants <% if color_relation_product_ids.any? %>d-none<%end%>" >
         <% used_variants_options(@variants, @product).each_with_index do |option_type, index| %>
-          <li>
+          <li class="container mt-0">
             <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
               <%= render "color_option_type", option_type: option_type, index: index %>
             <% else %>
