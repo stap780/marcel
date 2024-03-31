@@ -21,11 +21,11 @@
             <% option_types = Spree::Variants::OptionTypesFinder.new(variant_ids: related_product.variants.map(&:id)).execute %>
             <% rel_options = Spree::Variants::OptionTypesPresenter.new(option_types, related_product.variants, related_product).options %>
             <% rel_options.each_with_index do |option_type, index| %>
+                <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
                 <a href="<%= product_path(related_product) %>" class="col-1 p-0 d-flex justify-content-center color-svg">
-                    <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
                         <%= render partial: "spree/products/color_option_type_new", locals: { option_type: option_type, index: index+1, tooltip_title: related_product.name } %>
-                    <% end %>
                 </a>
+                <% end %>
             <% end %>
         <% end %>
         <% if limit.present? %>
