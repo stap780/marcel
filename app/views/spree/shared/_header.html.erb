@@ -4,8 +4,8 @@
 
 <!-- mobile -->
 
-        <%=tag.div class: 'd-block d-lg-none' do %>
-                <%= render partial: 'spree/shared/header_menu' %>
+        <%=tag.div class: 'd-block d-lg-none mobile' do %>
+                <%= render partial: 'spree/shared/header_menu', locals: {view: 'mobile'} %>
         <% end %>
 
 <!-- end mobile -->
@@ -29,12 +29,12 @@
 
 <!-- desktop -->
     <%if @homepage && section %>
-        <%=tag.div class: 'position-absolute top-0 w-100 d-none d-lg-block' do %>
-                <%= render partial: 'spree/shared/header_menu'%>
+        <%=tag.div class: 'position-absolute top-0 w-100 d-none d-lg-block desktop' do %>
+                <%= render partial: 'spree/shared/header_menu', locals: {view: 'desktop'}%>
         <% end %>
     <% else %>
-        <%=tag.div class: 'd-none d-lg-block' do %>
-                <%= render partial: 'spree/shared/header_menu'%>
+        <%=tag.div class: 'd-none d-lg-block desktop' do %>
+                <%= render partial: 'spree/shared/header_menu', locals: {view: 'desktop'}%>
         <% end %>
     <% end %>
 <!-- end desktop -->

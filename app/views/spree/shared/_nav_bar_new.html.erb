@@ -20,7 +20,7 @@
         </li>
     <% end %>
 
-  <li id="link-to-cart" class="nav-item mini-cart">
+  <li id="link-to-cart<%= "-mobile" if view == 'mobile'%>" class="nav-item mini-cart <%= view%>">
     <% item_count = simple_current_order&.item_count || 0 %>
     <%= render 'spree/shared/cart', class: 'd-inline-block', size: 30, item_count: item_count %>
   </li>

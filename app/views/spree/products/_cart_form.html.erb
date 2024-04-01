@@ -49,8 +49,8 @@
                 <%= render 'cart_form_availability_templates', type: 'out-of-stock' %>
                 <% end %>
             </div>
-            <div class="sku d-flex justify-content-end" data-hook="product_sku">
-                <%= @product.sku %>
+            <div class="sku d-flex justify-content-end" data-hook="product_sku" id="product_variant_sku">
+                <%= @product.default_variant.present? ? @product.default_variant.sku : @product.sku %>
             </div>
         </div>
     </div>
