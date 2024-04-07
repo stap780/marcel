@@ -6,11 +6,11 @@
     </div>
     <div class="col-12 col-lg-9 row ">
             <% if spree_menu('footer').present? %>
-                <% spree_menu('footer').children.each do |parent| %>
+                <% spree_menu('footer').children.each_with_index do |parent, index| %>
                     <ul class="list-group border-0 ps-0 col-12 col-lg-4 mb-4 mt-4 mt-lg-0 mb-lg-0">
-                        <li class="list-group-item border-0 bg-transparent">
+                        <%= tag.li class: "list-group-item border-0 bg-transparent" do %>
                             <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
-                        </li>
+                        <% end if index != 0 %>
                         <ul>
                         <% parent.children.each do |child| %>
                             <li class="">
