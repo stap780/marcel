@@ -6,11 +6,18 @@ module Marcel
           # puts base.to_s
           # puts base::MENU_LOCATIONS.to_s
           location_name = 'sidebar'
+          location_name2 = 'footer_small'
           base::MENU_LOCATIONS.push('Sidebar')
+          base::MENU_LOCATIONS.push('Footer small')
           base::MENU_LOCATIONS_PARAMETERIZED.push(location_name)
+          base::MENU_LOCATIONS_PARAMETERIZED.push(location_name2)
 
           base.define_singleton_method("for_#{location_name}") do |locale|
             menu = find_by(location: location_name, locale: locale.to_s)
+            menu.root if menu.present?
+          end
+          base.define_singleton_method("for_#{location_name2}") do |locale|
+            menu = find_by(location: location_name2, locale: locale.to_s)
             menu.root if menu.present?
           end
 

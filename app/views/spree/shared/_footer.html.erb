@@ -2,8 +2,10 @@
   <footer id="footer" class="footer-marcel px-2">
     <% border_top = @taxon&.products.present? || @taxon.present? && @taxon.children.any? ? 'border-top-0' : 'border-top-1'%>
     <div class="container border <%= border_top %> border-bottom-0 border-start-0 border-end-0 border-black">
-        <%# render partial: 'spree/shared/footer_small' %>
         <%= render partial: 'spree/shared/footer_big' %>
+    </div>
+    <div class="container">
+        <%= render partial: 'spree/shared/footer_small' %>
     </div>
     <%# render 'spree/shared/copyright' %>
   </footer>

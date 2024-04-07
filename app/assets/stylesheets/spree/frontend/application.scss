@@ -5,6 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import "spree/frontend/our_style/main";
 
+
+@media (min-width: 1400px) {
+    .container-xxl,.container-xl,.container-lg,.container-md,.container-sm,.container {
+        max-width: 1190px;
+    }
+}
+
 .h-10 {
     height: 10% !important;
 }
@@ -30,13 +37,3 @@
 }
 
 
-// $utilities: map-merge(
-//   $utilities, (
-//     "border": map-merge(
-//       map-get($utilities, "border"),
-//       ( responsive: true ),
-//     ),
-//   )
-// );
-
-// @import "../../../node_modules/bootstrap/scss/utilities/api";
