@@ -3535,10 +3535,11 @@ body {
 }
 
 .spree-btn {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-size: 0.875rem;
-    font-weight: bold
+    // font-weight: bold;
+    border-radius: 0;
 }
 
 .spree-btn.btn-primary {
