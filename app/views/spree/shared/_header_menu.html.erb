@@ -4,13 +4,18 @@
             <!-- Button -->
             <button class="navbar-toggler d-block ms-7" type="button" data-bs-toggle="offcanvas" data-bs-target="#modalSidebar" aria-controls="offcanvasmodalSidebar">
                 <span class="navbar-toggler-icon-svg">
-                    <%= icon(name: 'burger_new', classes: 'd-inline-block', width: 20, height: 20) %>
+                    <%= icon(name: 'burger_new', classes: 'd-inline-block', width: 30, height: 20) %>
                 </span>
             </button>
         </div>
-        <div class="col text-center">
-            <%# logo %>
-            <a href="/"><%= icon(name: 'logo', classes: 'logo-header', width: 233, height: 83) %></a>
+        <div class="col text-center" >
+            <span class="logo-header">
+            <%= logo %>
+            </span>
+            <% check_use = true %>
+            <% if !check_use %>
+                <a href="/"><%= icon(name: 'logo', classes: 'logo-header', width: 233, height: 83) %></a>
+            <% end %>
         </div>
         <div class="col d-flex justify-content-end align-items-center">
             <nav class="navbar navbar-expand">

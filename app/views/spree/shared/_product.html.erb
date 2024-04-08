@@ -9,7 +9,7 @@
     <div class="product-component-name mt-0" title="<%= product.name %>">
       <%= product.name %>
     </div>
-    <div class="product-component-price mt-0"><%= display_price(product) %></div>
+    <div class="product-component-price mt-0 d-flex align-items-end"><%= display_price(product) %></div>
   </div>
 <!-- Color from related -->
   <% color_relation_product_ids = product.relations.map{|relation| relation.related_to.id if relation.relation_type.name == "Color"}.reject(&:blank?)%>
