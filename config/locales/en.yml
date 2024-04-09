@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  spree:
+    sku: Sku2
+    skus: Skus2
+    analytics_trackers: 'Analytics Trackers'
