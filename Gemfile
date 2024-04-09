@@ -73,7 +73,7 @@ gem 'spree_related_products', github: 'stap780/spree_related_products'
 
 gem 'spree_analytics_trackers'#, '~> 2.0'
 # gem 'spree_analytics_trackers', github: 'stap780/spree_analytics_trackers' # use this because it fix override js for rails 7
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
+# gem 'spree_reviews', github: 'spree-contrib/spree_reviews' # need check Zeitwerk before use
 
 # gem 'spree_product_import', path: '../spree_product_import'
 gem 'spree_product_import', github: 'stap780/spree_product_import'
