@@ -27,6 +27,16 @@ GIT
       spree_extension
 
 GIT
+  remote: https://github.com/stap780/spree_analytics_trackers.git
+  revision: b71e7c9dccca15b267ced2f1bc90f21f493c350f
+  specs:
+    spree_analytics_trackers (2.1.1)
+      deface (~> 1.0)
+      spree_backend (>= 4.1.0, < 5.0)
+      spree_core (>= 4.1.0, < 5.0)
+      spree_extension
+
+GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
   revision: 175255e9e24645dd2f5f3ab2b58aba5124123056
   specs:
@@ -454,11 +464,6 @@ GEM
       spree_api (= 4.7.1)
       spree_cli (= 4.7.1)
       spree_core (= 4.7.1)
-    spree_analytics_trackers (2.1.1)
-      deface (~> 1.0)
-      spree_backend (>= 4.1.0, < 5.0)
-      spree_core (>= 4.1.0, < 5.0)
-      spree_extension
     spree_api (4.7.1)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
@@ -635,7 +640,7 @@ DEPENDENCIES
   sassc!
   selenium-webdriver
   spree (~> 4.6)
-  spree_analytics_trackers
+  spree_analytics_trackers!
   spree_auth_devise (~> 4.5)
   spree_backend (~> 4.6)
   spree_cmd
