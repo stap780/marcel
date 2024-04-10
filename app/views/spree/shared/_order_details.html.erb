@@ -114,7 +114,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="mt-5" id="checkout-summary" data-hook="checkout_summary_box">
     <%= render partial: 'spree/checkout/summary', locals: { order: @order } %>
     <% unless @order.uneditable? %>

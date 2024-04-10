@@ -136,8 +136,8 @@ module Spree
         flash.to_h.except('order_completed').each do |msg_type, text|
           next if msg_type.blank? || excluded_types.include?(msg_type)
   
-          flashes << content_tag(:div, class: "alert alert-#{class_for(msg_type)} mb-0") do
-            content_tag(:button, '&times;'.html_safe, class: 'close', data: { dismiss: 'alert', hidden: true }) +
+          flashes << content_tag(:div, class: "alert alert-#{class_for(msg_type)} mb-0 d-flex justify-content-center align-items-center") do
+            content_tag(:button, '&times;'.html_safe, class: 'btn close', data: { dismiss: 'alert', hidden: true }) +
               content_tag(:span, text)
           end
         end

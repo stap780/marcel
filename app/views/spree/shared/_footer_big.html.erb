@@ -5,22 +5,28 @@
         </a>
     </div>
     <div class="col-12 col-lg-9 row ">
-            <% if spree_menu('footer').present? %>
-                <% spree_menu('footer').children.each_with_index do |parent, index| %>
-                    <ul class="list-group border-0 ps-0 col-12 col-lg-4 mb-4 mt-4 mt-lg-0 mb-lg-0">
-                        <%= tag.li class: "list-group-item border-0 bg-transparent" do %>
-                            <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
-                        <% end if index != 0 %>
-                        <ul>
-                        <% parent.children.each do |child| %>
-                            <li class="">
-                                <%= spree_nav_link_tag(child) %>
-                            </li>
-                        <% end %>
-                        </ul>
-                    </ul>
+        <% if spree_menu('footer').present? %>
+            <ul class="list-group border-0 ps-0 col-12 col-lg-4 mb-4 mt-4 mt-lg-0 mb-lg-0">
+          <% spree_menu('footer').children.each_with_index do |parent, index| %>
+              <%= tag.li class: "list-group-item border-0 bg-transparent" do %>
+                  <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
+              <% end %>
+          <% end %>
+            </ul>
+
+              <%# this is subcat %>
+              <% use = false %> 
+              <% if use %>
+              <ul>
+                <% parent.children.each do |child| %>
+                  <li class="">
+                      <%= spree_nav_link_tag(child) %>
+                  </li>
                 <% end %>
-            <% end %>
+              </ul>
+              <% end %>
+
+        <% end %>
                 
         <ul class="col-12 col-lg-5 accordion accordion-flush list-group border-0 ps-0 mb-4 mb-lg-0" id="footerNav">
           <% spree_menu.children.each_with_index do |parent| %>

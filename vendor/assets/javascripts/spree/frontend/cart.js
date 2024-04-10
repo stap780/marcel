@@ -119,7 +119,7 @@ document.addEventListener("turbo:load", function() {
     })
   
     if (!Spree.cartFetched) Spree.fetchCart()
-  })
+})
   
 Spree.fetchCart = function () {
     return $.ajax({
