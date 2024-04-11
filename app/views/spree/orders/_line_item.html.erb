@@ -2,8 +2,8 @@
 <% variant = line_item.variant %>
 
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
-  <div class="shopping-cart-item row w-100 justify-content-between align-items-center py-1 py-lg-4 px-0 m-auto">
-    <div class=" shopping-cart-item-image col" data-hook="cart_item_image">
+  <div class="shopping-cart-item row w-100 justify-content-between align-items-center p-1 p-md-4 m-auto">
+    <div class=" shopping-cart-item-image col p-0" data-hook="cart_item_image">
       <% image = default_image_for_product_or_variant(variant) %>
       <%= lazy_image(
                 src: main_app.cdn_image_url(image.url(:pdp_thumbnail)),

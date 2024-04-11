@@ -18,6 +18,12 @@ body {
     overflow-x: hidden;
     background: #EFEFEF;
 }
+.font-halvar {
+    font-family: 'Halvar'!important;
+}
+.font-anonymus {
+    font-family: 'Anonymous Pro'!important;
+}
 .logo-header img {
     max-width: 233px;
 }
@@ -961,6 +967,15 @@ label.active {
 .border-radius-0 {
     border-radius: 0!important;
 }
-.checkout-content-save-continue-button {
-    
+.accordion-button:not(.collapsed)::after {
+    transform: none;
 }
+
+.shopping-cart-header {
+    font-size: 1.25rem;
+    line-height: 140%;
+    letter-spacing: .04em;
+}
+.form-control::placeholder {
+    opacity: 0.5;
+  }

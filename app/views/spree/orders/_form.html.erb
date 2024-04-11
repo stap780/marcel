@@ -12,7 +12,7 @@
         <%# tag.div('', class: "cart-item-delete-header") %>
     <%# end %>
 
-  <div id="line_items" class="row w-100 m-auto" data-hook>
+  <div id="line_items" class="row w-100 m-auto" data-hook="line_items">
     <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
   </div>
 </div>
