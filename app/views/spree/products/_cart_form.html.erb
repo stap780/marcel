@@ -31,7 +31,7 @@
     <div class="price-sku-info d-flex">
 
     <% if is_product_available_in_currency %>
-      <div id="product-price" class="col-6 d-flex justify-content-start add-to-cart-form-price p-0" data-hook="product_price">
+      <div id="product-price" class="col-5 d-flex justify-content-start add-to-cart-form-price p-0" data-hook="product_price">
         <% if should_display_compare_at_price?(default_variant) %>
           <span class="compare-at-price mr-3"><%= display_compare_at_price(default_variant) %></span>
         <% end %>
@@ -41,7 +41,7 @@
         <span content="<%= current_currency %>"></span>
       </div>
     <% end %>
-        <div class="col-6 d-flex flex-column">
+        <div class="col-7 d-flex flex-column">
             <div class="add-to-cart-form-general-availability d-flex justify-content-end gap-1">
                 <%= Spree.t(:availability) %>
                 <% if !is_product_available_in_currency %>
@@ -103,7 +103,7 @@
           <%= render 'spree/shared/quantity_select', input_name: :quantity %>
         </div>
 
-        <%= button_tag class: 'btn btn-light add-to-cart-button w-100', id: 'add-to-cart-button', type: :submit, disabled: true do %>
+        <%= button_tag class: 'btn btn-light add-to-cart-button w-75', id: 'add-to-cart-button', type: :submit, disabled: true do %>
           <%= Spree.t(:add_to_cart) %>
         <% end %>
       </div>

@@ -183,8 +183,8 @@ module Spree
           src: image_url,
           srcset: carousel_image_source_set(image),
           alt: product.name,
-          width: image_style&.dig(:width) || 278,
-          height: image_style&.dig(:height) || 371,
+          width: image_style&.dig(:width) || 600, #278
+          height: image_style&.dig(:height) || 600, #371
           class: "product-component-image d-block mw-100 #{image_class}"
         )
       end
@@ -204,8 +204,8 @@ module Spree
           src: image_url,
           srcset: carousel_image_source_set(image),
           alt: product.name,
-          width: image_style&.dig(:width) || 278,
-          height: image_style&.dig(:height) || 371,
+          width: image_style&.dig(:width) || 600, #278
+          height: image_style&.dig(:height) || 600, #371
           class: "product-component-image d-block mw-100 #{image_class}"
         )
       end

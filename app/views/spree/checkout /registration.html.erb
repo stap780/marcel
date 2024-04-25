@@ -1,5 +1,5 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @user } %>
-<div class="checkout-registration container">
+<div class="checkout-registration container py-1 py-md-5">
   <div class="row col-xs-12 col-lg-11 mx-auto">
     <div class="col-xs-12 col-lg-6">
       <%= render partial: 'spree/shared/login' if defined?(spree_login_path) %>
@@ -21,7 +21,7 @@
                 <%= f.email_field :email, class: 'spree-flat-input', placeholder: Spree.t(:email) %>
               </p>
             </div>
-            <%= f.submit Spree.t(:continue_as_guest), class: 'btn btn-outline-dark text-uppercase font-weight-bold w-100 checkout-content-save-continue-button border-radius-0' %>
+            <%= f.submit Spree.t(:continue_as_guest), class: 'btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize', data: { turbo_frame: '_top' }%>
           <% end %>
         <% end %>
       </div>

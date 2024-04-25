@@ -1,0 +1,35 @@
+<div id="spree-header">
+  <header id="header" class="d-flex align-items-center header-spree border-bottom">
+    <div class="container" role="navigation" aria-label="<%= Spree.t('checkout_page.main_navigation') %>">
+      <div class="row">
+
+        <div class="col d-flex align-items-center truncate pr-0">
+          <%# link_to spree.cart_path, class: "ms-2 font-anonymus fw-normal", method: :get do %>
+            <%# icon(name: 'arrow-right',
+                     classes: 'spree-icon-arrow spree-icon-arrow-left',
+                     width: 14,
+                     height: 14) %>
+            <%# Spree.t('checkout_page.back_to_cart') %>
+          <%# end %>
+
+            <%= link_to spree.cart_path, class: 'btn btn-link text-decoration-none d-flex shopping-cart-buttons-continue py-4 py-lg-5 px-0 w-100 text-black', method: :get do %>
+                <i class="bi bi-arrow-left"></i>
+                <span class="ms-2 font-anonymus fw-normal"><%= Spree.t('checkout_page.back_to_cart') %></span>
+            <% end %>
+
+        </div>
+
+        <div class="col-auto d-flex align-items-center justify-content-end justify-content-md-center">
+          <figure class="logo header-spree-fluid-logo m-0 p-0">
+            <%= logo(nil, {method: :get}) %>
+          </figure>
+        </div>
+
+        <div class="col-0 col-md">
+          <!-- spacer -->
+        </div>
+
+      </div>
+    </div>
+  </header>
+</div>

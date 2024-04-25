@@ -1,6 +1,6 @@
 <% if defined?(spree_signup_path) %>
-<span class="d-flex justify-content-center align-items-center gap-5 py-5">
-  <h3 class=" spree-header m-0 w-100"><%= Spree.t('dont_have_account') %></h3>
-  <%= link_to Spree.t(:sign_up), spree_signup_path, class: "btn btn-outline-dark w-100 border-radius-0 #{registration_button}" %>
-</span>
+<div class="d-flex justify-content-between align-items-center">
+  <div class="font-halvar text-uppercase shopping-cart-header fw-bold"><%= Spree.t('dont_have_account') %></div>
+  <%= link_to Spree.t(:sign_up), spree_signup_path, class: "btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize #{registration_button}" %>
+</div>
 <% end %>

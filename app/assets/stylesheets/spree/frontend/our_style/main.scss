@@ -18,6 +18,12 @@ body {
     overflow-x: hidden;
     background: #EFEFEF;
 }
+@media (min-width: 1200px) {
+
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1190px;
+    }
+  }
 .font-halvar {
     font-family: 'Halvar'!important;
 }
@@ -190,7 +196,7 @@ body {
     text-transform: none;
 }
 .pr-padding {
-    padding: 4.375rem 7.5rem;
+    padding: 4rem 5.5rem;
 }
 .description-background-color {
     background-color: #EAEAE1;
@@ -840,7 +846,7 @@ body {
 }
 @media (min-width: 992px) {
     .pr-padding {
-        padding: 4.375rem 7.5rem;
+        padding: 4rem 5.5rem;
     } 
 }
 
