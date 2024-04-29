@@ -1,6 +1,6 @@
 <% cache spree_menu_cache_key('footer') do %>
   <footer id="footer" class="footer-marcel px-2">
-    <% border_top = @taxon&.products.present? || @taxon.present? && @taxon.children.any? || @product.present? && @product.respond_to?(:has_related_products?) ? 'border-top-0' : 'border-top-1'%>
+    <% border_top = @taxon&.products.present? || @taxon.present? && @taxon.children.any? || @product.present? && @product.respond_to?(:has_related_products?) || permitted_params.present? && !permitted_params.to_h.one? ? 'border-top-0' : 'border-top-1'%>
     <div class="container border <%= border_top %> border-bottom-0 border-start-0 border-end-0 border-black">
         <%= render partial: 'spree/shared/footer_big' %>
     </div>
