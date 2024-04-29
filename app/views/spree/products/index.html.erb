@@ -35,11 +35,14 @@
     <div class="container d-flex justify-content-between">
         <%# render 'spree/products/filter_and_sort_mobile_buttons' %>
         <div class="d-flex justify-content-start py-2">
-            <a class="plp-sort-header text-decoration-none" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#modalFilter" aria-controls="offcanvasmodalFilter">
+            <a class="plp-sort-header text-decoration-none position-relative" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#modalFilter" aria-controls="offcanvasmodalFilter">
                 <%= Spree.t('plp.filter_by') %>
                 <span class="ms-1 navbar-toggler-icon-svg">
                     <%= icon(name: 'filter_new', classes: 'd-inline-block', width: 20, height: 20) %>
                 </span>
+                <% if permitted_params.to_h.values.select(&:presence).count > 1  %>
+                  <span class="badge text-bg-light position-absolute top-0 start-100 translate-middle p-1 bg-light rounded-circle"><i class="bi bi-check"></i></span>
+                <% end %>
             </a>
         </div>
         <%= render 'spree/products/sort_desktop', permitted_params: permitted_params %>
