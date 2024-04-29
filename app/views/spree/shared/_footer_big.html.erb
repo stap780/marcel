@@ -7,11 +7,11 @@
     <div class="col-12 col-lg-9 row ">
         <% if spree_menu('footer').present? %>
             <ul class="list-group border-0 ps-0 col-12 col-lg-4 mb-4 mt-4 mt-lg-0 mb-lg-0">
-          <% spree_menu('footer').children.each_with_index do |parent, index| %>
-              <%= tag.li class: "list-group-item border-0 bg-transparent" do %>
-                  <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
+              <% spree_menu('footer').children.each_with_index do |parent, index| %>
+                  <%= tag.li class: "list-group-item border-0 bg-transparent" do %>
+                      <%= parent.container? ?  parent.name : spree_nav_link_tag(parent)%>
+                  <% end %>
               <% end %>
-          <% end %>
             </ul>
 
               <%# this is subcat %>
@@ -28,9 +28,10 @@
 
         <% end %>
                 
-        <ul class="col-12 col-lg-5 accordion accordion-flush list-group border-0 ps-0 mb-4 mb-lg-0" id="footerNav">
+        <ul class="col-12 col-lg-5 accordion accordion-flush list-group border-0 ps-2 mb-4 mb-lg-0" id="footerNav">
+          <div class="footer-spree-label pb-3"><%= Spree.t('categories')%></div>
           <% spree_menu.children.each_with_index do |parent| %>
-            <li class="list-group-item border-0 bg-transparent">
+            <li class="list-group-item ps-0 border-0 bg-transparent">
       
               <% first = parent == spree_menu.children.first %>
               <% last = parent == spree_menu.children.last %>
@@ -59,12 +60,17 @@
         </ul>
 
         <% if spree.respond_to?(:account_path) %>
-            <ul class="col-12 col-lg-3 ">
-                <div class="footer-spree-label pb-3"><%= Spree.t('nav_bar.my_account')%></div>
-                <li class="footer-link mb-2">
-                    <%= link_to Spree.t(:my_orders).upcase, spree.account_path(anchor: "account-my-orders") %>
-                </li>
-            </ul>
+            <div class="col-12 col-lg-3">
+              <div class="footer-spree-label pb-3">
+              <%= link_to Spree.t('nav_bar.my_account'), spree.account_path, class: "text-decoration-none text-black" %>
+              </div>
+              <div class="footer-spree-label pb-3">
+              <%= link_to Spree.t(:my_orders).upcase, spree.account_path(anchor: "account-my-orders"), class: "text-decoration-none text-black" %>
+               </div>
+               <div class="footer-spree-label pb-3">
+              <%= link_to Spree.t(:contact_us).upcase, spree.account_path, class: "text-decoration-none text-black" %>
+               </div>
+            </div>
         <% end %>
 
     </div>

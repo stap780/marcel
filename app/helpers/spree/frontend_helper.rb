@@ -172,7 +172,8 @@ module Spree
         image = product.images.second
   
         image_url = if image.present?
-                      main_app.cdn_image_url(image.url('plp'))
+                      #main_app.cdn_image_url(image.url('plp'))
+                      main_app.cdn_image_url(image.url(:large))
                     else
                       asset_path('noimage/plp.svg')
                     end
@@ -183,8 +184,8 @@ module Spree
           src: image_url,
           srcset: carousel_image_source_set(image),
           alt: product.name,
-          width: image_style&.dig(:width) || 600, #278
-          height: image_style&.dig(:height) || 600, #371
+          width: image_style&.dig(:width) || 650, #278
+          height: image_style&.dig(:height) || 870, #371
           class: "product-component-image d-block mw-100 #{image_class}"
         )
       end
@@ -193,7 +194,8 @@ module Spree
         image = default_image_for_product_or_variant(product)
   
         image_url = if image.present?
-                      main_app.cdn_image_url(image.url('plp'))
+                      #main_app.cdn_image_url(image.url('plp'))
+                      main_app.cdn_image_url(image.url(:large))
                     else
                       asset_path('noimage/plp.svg')
                     end
@@ -204,8 +206,8 @@ module Spree
           src: image_url,
           srcset: carousel_image_source_set(image),
           alt: product.name,
-          width: image_style&.dig(:width) || 600, #278
-          height: image_style&.dig(:height) || 600, #371
+          width: image_style&.dig(:width) || 650, #278
+          height: image_style&.dig(:height) || 870, #371
           class: "product-component-image d-block mw-100 #{image_class}"
         )
       end

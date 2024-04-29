@@ -5,17 +5,17 @@
 <div class="container user-passwords" custom="/password/recover">
   <div class="row">
     <div class="col-lg-6 offset-lg-3" id="forgot-password">
-      <div class="card mb-3 border-0 bg-transparent">
-        <h3 class="spree-mb-large spree-mt-large spree-header"><%= Spree.t(:forgot_password) %></h3>
+      <div class="card mb-3 border-0 bg-transparent pt-2 pt-md-5">
+        <h3 class="spree-header font-halvar text-uppercase shopping-cart-header fw-bold my-3 my-md-5"><%= Spree.t(:forgot_password) %></h3>
         <div class="card-body">
-          <p><%= Spree.t(:instructions_to_reset_password) %></p>
+          <p class=""><%= Spree.t(:instructions_to_reset_password) %></p>
 
           <%= form_for Spree.user_class.new, as: :spree_user, url: spree.reset_password_path do |f| %>
             <div class="form-group">
               <%= f.email_field :email, class: "spree-flat-input", placeholder: Spree.t(:email) %>
             </div>
             <div>
-              <%= f.submit Spree.t(:reset_password), class: 'my-3 btn btn-outline-dark border-radius-0 d-flex justify-content-center' %>
+              <%= f.submit Spree.t(:reset_password), class: 'my-4 btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize' %>
             </div>
           <% end %>
         </div>

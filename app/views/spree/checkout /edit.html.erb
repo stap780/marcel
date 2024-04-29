@@ -25,7 +25,7 @@ end
 
   <div class="row align-items-center flex-column checkout-header" data-hook="checkout_header">
     <div data-hook = "checkout_title">
-      <%=tag.h1(Spree.t('checkout_page.header'), class: "font-halvar text-uppercase fw-bold my-5")%>
+      <%=tag.h3(Spree.t('checkout_page.header'), class: "spree-header font-halvar text-uppercase shopping-cart-header fw-bold my-5")%>
     </div>
     <div class="checkout-progress" data-hook="checkout_progress" role="navigation" aria-label="<%= Spree.t('checkout_page.checkout_navigation') %>">
       <%= checkout_progress %>

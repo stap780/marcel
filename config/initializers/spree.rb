@@ -20,6 +20,11 @@ Rails.application.config.after_initialize do
   Spree::Frontend::Config[:locale] = :en if Rails.env.development?
   Spree::Backend::Config[:locale] = :en if Rails.env.development?
 
+
+  # https://github.com/RubyMoney/money/blob/main/lib/money/money/formatter.rb
+  # Spree::Money.default_formatting_rules.merge({no_cents: true})
+  Spree::Money.default_formatting_rules[:no_cents] = true
+
 end
 # Configure Spree Dependencies
 #
