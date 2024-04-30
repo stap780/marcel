@@ -985,3 +985,7 @@ label.active {
 .form-control::placeholder {
     opacity: 0.5;
   }
+
+#product-related-variants .color-select-label input:checked+.color-select .color-select-border,#product-related-variants .color-select-label input:focus+.color-select .color-select-border, #product-related-variants .color-select-label input:active+.color-select .color-select-border, #product-related-variants .color-select-label input:focus-within+.color-select .color-select-border {
+    stroke: transparent;
+}
