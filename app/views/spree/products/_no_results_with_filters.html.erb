@@ -1,4 +1,6 @@
 <%= render 'spree/products/filter_and_sort_mobile_buttons' %>
+<!-- =========================== -->
+<!-- FILTER BLOCK HERE AND IN PRODUCTS/INDEX TEMPLATE. PLEASE COPY CHANGES TO THERE -->
 <!-- FILTER & SORT offcanvas -->
 <%= render 'spree/products/filters_desktop', permitted_params: permitted_params %>
 <!-- finish FILTER & SORT offcanvas -->
@@ -12,7 +14,15 @@
                 <span class="ms-1 navbar-toggler-icon-svg">
                     <%= icon(name: 'filter_new', classes: 'd-inline-block', width: 20, height: 20) %>
                 </span>
-            <% if permitted_params.to_h.values.select(&:presence).count > 1  %>
+                <% check_filter = false %>
+                <% if permitted_params.to_h['properties'].present? && permitted_params.to_h['properties'].values.select(&:presence).count > 0 %>
+                  <% check_filter = true %>
+                <% end %>
+                <% if !permitted_params.to_h['properties'].present? %>
+                  <% check_filter = true if permitted_params.to_h.values.select(&:presence).count > 1 %>
+                <% end %>
+
+                <% if check_filter  %>
                 <span class="badge text-bg-light position-absolute top-0 start-100 translate-middle p-1 bg-light rounded-circle"><i class="bi bi-check"></i></span>
             <% end %>
             </a>
