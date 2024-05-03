@@ -74,6 +74,21 @@ Rails.application.configure do
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    tls: true,
+    address: Rails.application.credentials.masterhost[:address],
+    port: 465,
+    domain: Rails.application.credentials.masterhost[:domain],
+    authentication: "login",
+    user_name: Rails.application.credentials.masterhost[:user_name],
+    password:  Rails.application.credentials.masterhost[:password],
+    enable_starttls_auto: true
+  }
+
+  config.action_mailer.default_url_options = { host: 'https://marcel-robert.fr'}
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
