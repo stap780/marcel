@@ -77,27 +77,27 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
 
-  # config.action_mailer.smtp_settings = {
-  #   tls: true,
-  #   address: Rails.application.credentials.masterhost[:address],
-  #   port: 465,
-  #   domain: Rails.application.credentials.masterhost[:domain],
-  #   authentication: "login",
-  #   user_name: Rails.application.credentials.masterhost[:user_name],
-  #   password:  Rails.application.credentials.masterhost[:password],
-  #   enable_starttls_auto: true
-  # }
-
   config.action_mailer.smtp_settings = {
-    address: Rails.application.credentials.gmail[:address],
-    port: 587,
-    domain: Rails.application.credentials.gmail[:domain],
+    tls: true,
+    address: Rails.application.credentials.masterhost[:address],
+    port: 465,
+    domain: Rails.application.credentials.masterhost[:domain],
     authentication: "login",
-    enable_starttls_auto: true,
-    user_name: Rails.application.credentials.gmail[:user_name],
-    password: Rails.application.credentials.gmail[:password],
-    openssl_verify_mode: "none"
+    user_name: Rails.application.credentials.masterhost[:user_name],
+    password:  Rails.application.credentials.masterhost[:password],
+    enable_starttls_auto: true
   }
+
+  # config.action_mailer.smtp_settings = {
+  #   address: Rails.application.credentials.gmail[:address],
+  #   port: 587,
+  #   domain: Rails.application.credentials.gmail[:domain],
+  #   authentication: "login",
+  #   enable_starttls_auto: true,
+  #   user_name: Rails.application.credentials.gmail[:user_name],
+  #   password: Rails.application.credentials.gmail[:password],
+  #   openssl_verify_mode: "none"
+  # }
 
   config.action_mailer.default_url_options = { host: 'https://marcel-robert.fr'}
 
