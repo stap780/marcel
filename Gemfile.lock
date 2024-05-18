@@ -46,17 +46,17 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_product_bulk.git
-  revision: 90a0e45ea95756d9089c0b6904385c9b4a321243
+  revision: 020b6a0536a3a2a372e95592234b4ac71692d521
   specs:
-    spree_product_bulk (0.0.15)
+    spree_product_bulk (0.0.16)
       spree (>= 4.3.2)
       spree_extension
 
 GIT
   remote: https://github.com/stap780/spree_product_import.git
-  revision: 95ca521e0d6f59a894570780dec560e5719802b6
+  revision: 062487531008eb89fb6415da6629ee3ce4402658
   specs:
-    spree_product_import (0.0.37)
+    spree_product_import (0.0.38)
       addressable (~> 2.8)
       caxlsx
       caxlsx_rails
