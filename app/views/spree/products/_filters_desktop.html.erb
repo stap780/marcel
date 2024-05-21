@@ -31,7 +31,7 @@
                                 classes: 'float-right plp-filters-card-header-arrow--minus',width: 16, height: 16) %>
                     </button>
                     <div id="collapseFilter<%= ot_filter_param %>" class="filter-items collapse <%= 'show' unless collapsed %>" aria-labelledby="filters<%= ot_filter_param %>">
-                        <div class="card-body px-0">
+                        <div class="card-body px-1">
                         <%= render 'spree/shared/option_values',
                             option_type: option_type,
                             permitted_params: permitted_params %>
@@ -55,7 +55,7 @@
                                 width: 16,height: 16) %>
                         </button>
                         <div id="collapseFilter<%= property_name %>" class="filter-items collapse <%= 'show' unless collapsed %>" aria-labelledby="filters<%= property_name %>">
-                        <div class="card-body px-0 pt-1">
+                        <div class="card-body px-1 pt-1">
                             <%= render 'spree/shared/properties',
                             params_property_name: params[property_name],
                             property: property,
@@ -80,7 +80,7 @@
                             width: 16,height: 16) %>
                     </button>
                     <div id="collapseFilterPrice" class="filter-items collapse <%= 'show' unless price_collapsed %>" aria-labelledby="filtersPrice">
-                    <div class="card-body px-0" style="columns:2;">
+                    <div class="card-body px-1" style="columns:2;">
                         <% price_filters.each do |price_range| %>
                         <%= price_filter_link(price_range, permitted_params) %>
                         <% end %>

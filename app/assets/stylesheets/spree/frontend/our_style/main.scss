@@ -311,7 +311,7 @@ body {
     position: absolute;
     bottom: 0;
     left: -100%;
-    width: 120vw;
+    width: 130vw;
     //transform: translateX(-50%);
 }
 .col-lg-3.mosaiclItem:nth-child(4n) {
@@ -988,7 +988,9 @@ label.active {
 .form-control::placeholder {
     opacity: 0.5;
   }
-
+.color-select-border {
+    stroke: transparent;
+}
 #product-related-variants .color-select-label input:checked+.color-select .color-select-border,#product-related-variants .color-select-label input:focus+.color-select .color-select-border, #product-related-variants .color-select-label input:active+.color-select .color-select-border, #product-related-variants .color-select-label input:focus-within+.color-select .color-select-border {
     stroke: transparent;
 }
@@ -996,5 +998,8 @@ label.active {
     stroke: transparent;
 }
 .mosaiclItem .plp-overlay-color-item {
+    stroke: transparent;
+}
+.product-variants-variant .plp-overlay-color-item {
     stroke: transparent;
 }
