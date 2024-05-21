@@ -1,9 +1,9 @@
-<div class="offcanvas offcanvas-start" tabindex="-1" id="modalFilter" aria-labelledby="offcanvasmodalFiler">    
+<div class="offcanvas offcanvas-start filter" tabindex="-1" id="modalFilter" aria-labelledby="offcanvasmodalFiler">    
       <div class="offcanvas-body px-5 my-auto overflow-hidden">
         <!-- Close -->
         <div class="d-flex justify-content-between mb-3">
           <div class="sidebar-filter-menu-title">
-            Filter
+            <%= Spree.t('plp.filter')%>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="fe fe-x" aria-hidden="true"></i>
@@ -14,7 +14,7 @@
         <% cache filters_cache_key('desktop') do %>
         <% end %>
         <div id="plp-filters-accordion" class="accordion accordion-flush  h-100 plp-filters1" data-hook="taxon_sidebar_navigation">
-            <%= clear_all_filters_link(permitted_params, {css_class: "btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize"}) if product_filters_present?(permitted_params) %>
+            <%= clear_all_filters_link(permitted_params, {css_class: "btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize mb-3"}) if product_filters_present?(permitted_params) %>
 
             <div class="plp-filters-scroller">
                 <% available_option_types.each do |option_type| %>
