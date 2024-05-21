@@ -2,7 +2,7 @@
   <ul id="footer_small" class="d-flex justify-content-center align-items-center list-group list-group-horizontal border-0" >
   <% spree_menu('footer_small').children.each_with_index do |parent , index| %>
     <%= tag.span if index != 0 %>
-    <li class="list-group-item border-0 bg-transparent"><%= parent.container? ?  parent.name : spree_nav_link_tag(parent, class: "col text-decoration-none text-black" )%></li>
+    <li class="list-group-item border-0 bg-transparent"><%= parent.container? ?  parent.name : spree_nav_link_tag(parent, class: "col text-decoration-none text-black font-anonymus fs-7" )%></li>
   <% end %>
   </ul>
 <% end %>

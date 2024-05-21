@@ -28,7 +28,10 @@ body {
     font-family: 'Halvar'!important;
 }
 .font-anonymus {
-    font-family: 'Anonymous Pro'!important;
+    font-family: 'Anonymous Pro' !important;
+}
+.fs-7 {
+    font-size: 0.75rem !important;
 }
 .logo-header img {
     max-width: 233px;
@@ -308,7 +311,7 @@ body {
     position: absolute;
     bottom: 0;
     left: -100%;
-    width: 100vw;
+    width: 120vw;
     //transform: translateX(-50%);
 }
 .col-lg-3.mosaiclItem:nth-child(4n) {
@@ -974,7 +977,7 @@ label.active {
     border-radius: 0!important;
 }
 .accordion-button:not(.collapsed)::after {
-    transform: none;
+    // transform: none;
 }
 
 .shopping-cart-header {
@@ -987,5 +990,11 @@ label.active {
   }
 
 #product-related-variants .color-select-label input:checked+.color-select .color-select-border,#product-related-variants .color-select-label input:focus+.color-select .color-select-border, #product-related-variants .color-select-label input:active+.color-select .color-select-border, #product-related-variants .color-select-label input:focus-within+.color-select .color-select-border {
+    stroke: transparent;
+}
+#inside-product-cart-form .color-select-border  .plp-overlay-color-item {
+    stroke: transparent;
+}
+.mosaiclItem .plp-overlay-color-item {
     stroke: transparent;
 }

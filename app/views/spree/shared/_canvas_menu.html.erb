@@ -15,23 +15,23 @@
 
         <!-- Nav -->
         <div class="accordion accordion-flush" id="sidebarNav">
-          <% spree_menu.children.each_with_index do |parent| %>
+          <% spree_menu.children.each_with_index do |parent, index| %>
             <div class="accordion-item border-0">
       
               <% first = parent == spree_menu.children.first %>
               <% last = parent == spree_menu.children.last %>
               <% has_dropdown = parent.children.present? %>
-              <% dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
-              <% data_attr = has_dropdown ? { bs_toggle: "collapse" } : {} %>
-              <% aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
+              <%# dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
+              <%# data_attr = has_dropdown ? { bs_toggle: "collapse" } : {} %>
+              <%# aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
                 <%# spree_nav_link_tag(parent, { class: "nav-link #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
               <!-- Toggle -->
               <div class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button bg-transparent ps-0 pe-1 pt-2 pb-2" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>Collapse" aria-expanded="false" aria-controls="flush-collapseOne">
+                <button class="accordion-button bg-transparent ps-0 pe-1 pt-2 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>Collapse" aria-expanded="false" aria-controls="flush-collapseOne">
                   <%= parent.name%>
                 </button>
               </div>
-                      <!-- Collapse -->
+              <!-- Collapse -->
               <div class="accordion-collapse collapse" id="<%=parent.id%>Collapse" data-bs-parent="#sidebarNav">
                 <ul class="list-group border-0 ps-0">
                   <% parent.children.each_with_index do |child, index| %>

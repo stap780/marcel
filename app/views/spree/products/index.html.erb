@@ -76,13 +76,14 @@
                 <%= content_tag :span, subcategory.name, class: "subtitle-2 p-4 align-center"%>
               </div>
               <%= render 'spree/shared/products', products: subcategory.products, limit: 6, wrap_class: "taxon_products_#{ subcategory.id}" %>
-              <div class="container d-flex justify-content-center py-3">
-                <%# content_tag :span, 'more', class: "show-more-products text-uppercase p-3 align-center", 'data-taxon-id': subcategory.id %>
-                <button class="show-more-products text-uppercase" data-taxon-id="<%=subcategory.id%>" >
-                  <span class="py-1 text-uppercase border border-start-0 border-top-0 border-end-0 border-bottom-1 border-black"><%= Spree.t('more') %></span>
-                  <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',width: 14,height: 14) %>
-                </button>
-              </div>   
+              <% if subcategory.products.size > 6 %>
+                <div class="container d-flex justify-content-center py-3">
+                    <button class="show-more-products text-uppercase" data-taxon-id="<%=subcategory.id%>" >
+                      <span class="py-1 text-uppercase border border-start-0 border-top-0 border-end-0 border-bottom-1 border-black"><%= Spree.t('more') %></span>
+                      <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down ml-3 plp-sort-header-arrow--down',width: 14,height: 14) %>
+                    </button>
+                </div>   
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
