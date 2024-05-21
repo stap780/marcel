@@ -1,3 +1,6 @@
+.header-spree-fluid-logo-checkout img {
+  max-width: 200px;
+}
 .btn.btn-block.btn-outline-primary.spree-btn, .btn.btn-primary.text-uppercase.font-weight-bold.w-100.checkout-content-save-continue-button {
     --bs-btn-padding-x: 0.75rem;
     --bs-btn-padding-y: 0.375rem;
