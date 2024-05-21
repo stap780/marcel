@@ -13,10 +13,10 @@
     <%= render partial: 'spree/shared/header' %>
     <%# render partial: 'spree/shared/get_started' %>
     
-    <main class="<% if @homepage %><%else%>col-12<%end%>" id="content" data-hook="">
+    <main class="<% if @homepage %><%else%>col-12<%end%>" id="content" data-hook="main_tag">
       <%= flash_messages %>
       <%= yield %>
-      <div data-hook>
+      <div data-hook="yield_templates">
         <%= yield :templates %>
       </div>
     </main>

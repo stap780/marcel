@@ -1,8 +1,8 @@
+<!-- partial="spree/shared/checkout_header" -->
 <div id="spree-header">
-  <header id="header" class="d-flex align-items-center header-spree border-bottom">
+  <header id="header" class="d-flex align-items-center header-spree-chckout position-fixed w-100 top-0 bg-white border-bottom z-3">
     <div class="container" role="navigation" aria-label="<%= Spree.t('checkout_page.main_navigation') %>">
       <div class="row">
-
         <div class="col d-flex align-items-center truncate pr-0">
           <%# link_to spree.cart_path, class: "ms-2 font-anonymus fw-normal", method: :get do %>
             <%# icon(name: 'arrow-right',
@@ -20,9 +20,9 @@
         </div>
 
         <div class="col-auto d-flex align-items-center justify-content-end justify-content-md-center">
-          <figure class="logo header-spree-fluid-logo m-0 p-0">
-            <%# logo(nil, {method: :get}) %>
-            <%= logo %>
+          <figure class="logo header-spree-fluid-logo-checkout m-0 p-0">
+            <%= logo(nil, {method: :get}) %>
+            <%# logo %>
           </figure>
         </div>
 
@@ -34,3 +34,4 @@
     </div>
   </header>
 </div>
+<!-- partial="spree/shared/checkout_header" -->

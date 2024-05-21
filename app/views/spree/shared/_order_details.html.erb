@@ -1,19 +1,20 @@
-<div class='checkout-confirm-order-details w-100 d-flex flex-wrap' data-hook>
-  <div class="checkout-confirm-delivery-informations text-left mt-3">
+<!-- partial="spree/shared/order_details" -->
+<div class='checkout-confirm-order-details w-100 d-flex flex-wrap' data-hook="checkout_confirm_order_details">
+  <div class="checkout-confirm-delivery-informations text-left">
     <div class="d-lg-none checkout-confirm-delivery-informations-header">
       <%= Spree.t(:delivery_information) %>
     </div>
     <dl>
       <% if order.has_step?("address") %>
         <div data-hook="order-ship-address">
-          <dt class="text-uppercase">
+          <dt class="font-anonymus fs-5 text-capitalize mb-3">
             <%= Spree.t(:shipping_address) %>
             <%= checkout_edit_link %>
           </dt>
           <%= render 'spree/shared/address', address: order.ship_address %>
         </div>
         <div data-hook="order-bill-address">
-          <dt class="text-uppercase">
+          <dt class="font-anonymus fs-5 text-capitalize mb-3">
             <%= Spree.t(:billing_address) %>
             <%= checkout_edit_link %>
           </dt>
@@ -22,7 +23,7 @@
       <% end %>
       <% if order.has_step?("delivery") %>
         <div data-hook="order-shipment">
-          <dt class="text-uppercase">
+          <dt class="font-anonymus fs-5 text-capitalize mb-3">
             <%= Spree.t(:shipping) %>
             <%= checkout_edit_link('delivery') %>
           </dt>
@@ -34,7 +35,7 @@
       <% end %>
       <% if order.has_step?("payment") %>
         <div data-hook="order-payment">
-          <dt class="text-uppercase">
+          <dt class="font-anonymus fs-5 text-capitalize mb-3">
             <%= Spree.t(:payment) %>
             <%= checkout_edit_link('payment') %>
           </dt>
@@ -51,22 +52,22 @@
     </dl>
   </div>
 
-  <div class="checkout-confirm-order-details-line-items d-flex flex-column mt-5 mr-md-4">
+  <div class="checkout-confirm-order-details-line-items d-flex flex-column mt-5 me-md-4">
     <div class="checkout-confirm-order-details-line-items-header d-none d-sm-block d-lg-none align-self-start mb-3">
       <%= Spree.t(:products) %>
     </div>
     <div class="d-table" data-hook="order_details">
       <div class="d-none d-lg-table-row text-secondary text-uppercase" data-hook="order_details_line_items_headers">
-        <p class="d-table-cell pb-1">
+        <p class="d-table-cell pb-1 font-anonymus fs-6">
           <%= Spree.t(:product) %>
         </p>
-        <p class="d-table-cell pb-1">
+        <p class="d-table-cell pb-1 font-anonymus fs-6">
           <%= Spree.t(:price) %>
         </p>
-        <p class="d-table-cell pb-1">
+        <p class="d-table-cell pb-1 font-anonymus fs-6">
           <%= Spree.t(:quantity) %>
         </p>
-        <p class="d-table-cell pb-1">
+        <p class="d-table-cell pb-1 font-anonymus fs-6">
           <%= Spree.t(:total) %>
         </p>
       </div>
@@ -79,7 +80,7 @@
               </div>
               <div class="d-flex flex-column mt-2 mt-lg-0" data-hook="order_item_description">
                 <div data-hook="order_item_name">
-                  <%= link_to item.name, spree.product_path(item.product), class: 'checkout-confirm-order-details-line-items-line-item-name-link' %>
+                  <%= link_to item.name, spree.product_path(item.product), class: 'checkout-confirm-order-details-line-items-line-item-name-link text-decoration-none text-black fs-6' %>
                 </div>
                 <% unless item.variant.is_master? %>
                   <ul class="checkout-confirm-order-details-line-items-line-item-name-options text-uppercase list-unstyled mb-0">
@@ -92,23 +93,23 @@
                   </ul>
                 <% end %>
                 <div class="d-lg-none" data-hook="order_item_price">
-                  <div class="font-weight-bold"><%= item.single_money.to_html %></div>
+                  <div class="font-weight-bold fs-6"><%= item.single_money.to_html %></div>
                 </div>
                 <div class="d-lg-none" data-hook="order_item_qty">
                   <span><%= Spree.t(:quantity) %>:</span>
-                  <span class="font-weight-bold"><%= item.quantity %></span>
+                  <span class="font-weight-bold fs-6"><%= item.quantity %></span>
                 </div>
               </div>
             </div>
           </div>
           <div class="checkout-confirm-order-details-line-items-line-item-price d-none d-lg-table-cell align-middle py-4" data-hook="order_item_price">
-            <div><%= item.single_money.to_html %></div>
+            <div class="fs-6"><%= item.single_money.to_html %></div>
           </div>
           <div class="checkout-confirm-order-details-line-items-line-item-quantity d-none d-lg-table-cell align-middle py-4" data-hook="order_item_qty">
-            <span class="checkout-confirm-order-details-line-items-line-item-quantity-val d-lg-block"><%= item.quantity %></span>
+            <span class="checkout-confirm-order-details-line-items-line-item-quantity-val d-lg-block fs-6"><%= item.quantity %></span>
           </div>
           <div class="checkout-confirm-order-details-line-items-line-item-total d-none d-lg-table-cell align-middle py-4" data-hook="order_item_total">
-            <div><%= item.display_total.to_s %></div>
+            <div class="fs-6"><%= item.display_total.to_s %></div>
           </div>
         </div>
       <% end %>
@@ -124,3 +125,4 @@
     <% end %>
   </div>
 </div>
+<!-- partial="spree/shared/order_details" -->
