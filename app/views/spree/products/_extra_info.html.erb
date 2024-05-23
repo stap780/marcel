@@ -5,7 +5,7 @@
       <%= icon(name: 'arrow-right', classes: 'spree-icon-arrow spree-icon-arrow-down', width: 15, height: 15) %>
     </h3>
     <div id="product-<%= tab.slug%>" class="m-0 list-unstyled product-<%= tab.slug%> collapse" data-hook>
-      <div class="page-content page-<%= tab.slug%>"><%= tab.content.html_safe%></div>
+      <div class="page-content page-<%= tab.slug%>"><%=  tab.content.present? ? tab.content.html_safe : "no tab content" %></div>
     </div>
   <% end %>
 <% end %>
