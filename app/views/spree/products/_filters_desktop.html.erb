@@ -13,7 +13,7 @@
 
         <% cache filters_cache_key('desktop') do %>
         <% end %>
-        <div id="plp-filters-accordion" class="accordion accordion-flush  h-100 plp-filters1" data-hook="taxon_sidebar_navigation">
+        <div id="plp-filters-accordion" class="accordion accordion-flush  h-100 plp-filters-not_use_it" data-hook="taxon_sidebar_navigation">
             <%= clear_all_filters_link(permitted_params, {css_class: "btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize mb-3"}) if product_filters_present?(permitted_params) %>
 
             <div class="plp-filters-scroller">

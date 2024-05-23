@@ -7,6 +7,9 @@
     font-weight: normal;
     font-style: normal;
 }
+:root {
+    --marcel-default-background: #efefef;
+}
 
 body {
     margin: 0;
@@ -16,13 +19,16 @@ body {
     line-height: 1.5;
     text-align: left;
     overflow-x: hidden;
-    background: #EFEFEF;
+    background: var(--marcel-default-background);
 }
 .filter {
-    background-color: #EFEFEF;
+    background-color: var(--marcel-default-background);
 }
-.plp-filters-scroller {
-    background-color: #EFEFEF;
+.plp-filters-scroller, .plp-filters-card-header {
+    background-color: var(--marcel-default-background);
+}
+.offcanvas-body {
+    background-color: var(--marcel-default-background);
 }
 @media (min-width: 1200px) {
 
@@ -194,7 +200,7 @@ body {
     margin-left: 5%;
 }
 .default-background {
-    background: #EFEFEF!important;
+    background: var(--marcel-default-background)!important;
 }
 
 .main-nav-bar-item {
@@ -861,7 +867,7 @@ body {
 
 // Product Carousel
 .carousel-item-start, .carousel-item-end {
-background: #EFEFEF!important;
+background: var(--marcel-default-background)!important;
 }
 @media (max-width: 767px) {
     #productThumbnailsCarousel .carousel-inner .carousel-item > div {
