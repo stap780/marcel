@@ -31,7 +31,6 @@ body {
     background-color: var(--marcel-default-background);
 }
 @media (min-width: 1200px) {
-
     .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1190px;
     }
@@ -47,6 +46,11 @@ body {
 }
 .logo-header img {
     max-width: 233px;
+}
+@media (min-width: 768px) {
+    .logo-header img {
+      max-width: 140px;
+    }
 }
 .pb-6 {
     padding-bottom: 3.5rem !important;
