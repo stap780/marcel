@@ -5,7 +5,7 @@
         <div class="row mosaic-items-container px-0 px-lg-5">
             <% padding = 'pt-3 pb-4 px-3' %>
             <% products.each_with_index do |product, index| %>
-            <div class="col-6 col-lg-3 mosaiclItem <%=padding%> position-relative d-flex flex-column">
+            <div class="col-6 col-lg-3 mosaiclItem <%=padding%> position-relative d-flex flex-column gap-3">
                 <%= render 'spree/shared/product', product: product, image_class: 'w-100', product_index: index %>
             </div>
             <% end %>
