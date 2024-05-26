@@ -1,8 +1,8 @@
 div:has(+ [data-hook="tax-total"]) {
-  display: none;
+  display: none !important;
   }
   [data-hook="tax-total"] {
-      display: none;
+      display: none !important;
   }
 .header-spree-fluid-logo-checkout img {
   max-width: 233px;
