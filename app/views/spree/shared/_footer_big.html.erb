@@ -42,12 +42,12 @@
                 <%# spree_nav_link_tag(parent, { class: "nav-link #{dropdown_toggle_class}", data: data_attr, aria: aria_attr }) %>
               <!-- Toggle -->
               <div class="accordion-header border-0">
-                <button class="accordion-button bg-transparent border-0 p-0 text-black collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>Collapse" aria-expanded="false" aria-controls="flush-collapseOne">
+                <button class="accordion-button bg-transparent border-0 p-0 text-black collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<%=parent.id%>footerNavCollapse" aria-expanded="false" aria-controls="flush-collapseOne">
                   <%= parent.name%>
                 </button>
               </div>
-                      <!-- Collapse -->
-                <ul class="list-group border-0 ps-0 collapse pt-1 " id="<%=parent.id%>Collapse" data-bs-parent="#footerNav">
+                <!-- Collapse -->
+                <ul class="list-group border-0 ps-0 collapse pt-1 " id="<%=parent.id%>footerNavCollapse" data-bs-parent="#footerNav">
                   <% parent.children.each_with_index do |child, index| %>
                     <li class="list-group-item border-0 bg-transparent">
                       <%= spree_nav_link_tag(child, { class: "text-decoration-none" }) %>

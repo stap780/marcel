@@ -30,6 +30,15 @@ body {
 .offcanvas-body {
     background-color: var(--marcel-default-background);
 }
+.accordion-header {
+    background-color: var(--marcel-default-background);
+}
+.accordion-collapse li {
+    background-color: var(--marcel-default-background);
+}
+.menu-sidebar-1 li, .menu-sidebar-0 li {
+    background-color: var(--marcel-default-background);
+}
 @media (min-width: 1200px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1190px;
