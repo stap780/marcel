@@ -11,7 +11,7 @@
     <div class="row mosaic-items-container px-0 px-lg-00">
       <% cache cache_key_for_products(products) do %>
         <% products.each_with_index do |product, index| %>
-          <div id="product_<%= product.id %>" class="<%= 'd-none' if limit.present? && index+1 > limit.to_i %> col-6 col-lg-4 mosaiclItem pt-4 pb-5 px-4 position-relative d-flex flex-column gap-3">
+          <div id="product_<%= product.id %>" class="<%= 'd-none' if limit.present? && index+1 > limit.to_i %> col-6 col-lg-4 mosaiclItem pt-4 pb-4 pb-md-5 px-4 position-relative d-flex flex-column gap-3">
             <%= render 'spree/shared/product', product: product, image_class: 'product-component-plp-image' %>
           </div>
         <% end %>
