@@ -1,3 +1,4 @@
+<!-- partial = "spree/shared/product" -->
 <% url = spree.product_path(product, taxon_id: @taxon&.id) %>
 <a href="<%= url%>" class='d-flex flex-column justify-content-between text-decoration-none gap-3'>
   <%# cache [common_product_cache_keys, product] do  THIS cache not work - for future investigation %>
@@ -18,10 +19,11 @@
                                                                           color_relation_product_ids: color_relation_product_ids,  
                                                                           product: product, 
                                                                           show_title: 'not_show', 
-                                                                          css_class: 'gap-2 mt-2', 
+                                                                          css_class: 'gap-2 mt-0', 
                                                                           limit: 2 } %>
   <% end %>
 <!--end Color from related -->
 
   </a>
 <%# end %>
+<!-- partial = "spree/shared/product" -->
