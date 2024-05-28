@@ -1,3 +1,4 @@
+<!-- partial = "spree/products/cart_form"-->
 <template class="availability-template availability-template-not-available-in-currency">
   <%= render 'cart_form_availability_templates', type: 'not-available-in-currency' %>
 </template>
@@ -59,26 +60,26 @@
             </div>
         </div>
     </div>
-<!-- Color from related -->
+
   <% if color_relation_product_ids.any? %>
     <div id="product-related-variants" class="product-variants d-flex row mt-4">
       <%= render partial: 'product_color_option', locals: { color_relation_product_ids: color_relation_product_ids,  product: @product, show_title: '', css_class: 'gap-3', limit: nil } %>
     </div>
   <% end %>
-<!--end Color from related -->
-    <% if @product.variants_and_option_values(current_currency).any? %>
-      <ul id="product-variants" class="product-variants" >
-        <% used_variants_options(@variants, @product).each_with_index do |option_type, index| %>
-          <li class="container mt-0">
-            <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
-              <%= render "color_option_type", option_type: option_type, index: index if !color_relation_product_ids.present? %>
-            <% else %>
-              <%= render "option_type", option_type: option_type, index: index , related_present: color_relation_product_ids.any? ? true : false %>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+
+  <% if @product.variants_and_option_values(current_currency).any? %>
+    <ul id="product-variants" class="product-variants" >
+      <% used_variants_options(@variants, @product).each_with_index do |option_type, index| %>
+        <li class="container mt-0">
+          <% if color_option_type_name.present? && color_option_type_name == option_type[:name] %>
+            <%= render "color_option_type", option_type: option_type, index: index if !color_relation_product_ids.present? %>
+          <% else %>
+            <%= render "option_type", option_type: option_type, index: index , related_present: color_relation_product_ids.any? ? true : false %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
 
     <div class="row my-5" data-hook="product_description">
@@ -110,3 +111,4 @@
     <% end %>
   </div>
 <% end %>
+<!-- partial = "spree/products/cart_form"-->

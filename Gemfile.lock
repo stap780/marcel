@@ -46,9 +46,9 @@ GIT
 
 GIT
   remote: https://github.com/stap780/spree_product_bulk.git
-  revision: 020b6a0536a3a2a372e95592234b4ac71692d521
+  revision: 32c50b53b65862eacd5303388165a0a470e3351d
   specs:
-    spree_product_bulk (0.0.16)
+    spree_product_bulk (0.0.17)
       spree (>= 4.3.2)
       spree_extension
 

@@ -1,9 +1,9 @@
+<!-- partial = "spree/products/option_type"-->
 <div class="product-variants-variant d-flex row" data-option-type-id="<%= option_type[:id] %>">
   <span class="my-3 text-left color-option-title col-12 p-0">
     <%= option_type[:presentation] %>
   </span>
 
-<% %>
   <div class="d-flex row gap-3 justify-content-start px-2 align-items-end">
     <ol class="d-flex flex-wrap product-variants-variant-values">
       <% option_type[:option_values].each do |option_value| %>
@@ -40,3 +40,4 @@
     </ol>
   </div>
 </div>
+<!-- partial = "spree/products/option_type"-->

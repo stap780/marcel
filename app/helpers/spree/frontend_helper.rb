@@ -169,47 +169,71 @@ module Spree
       end
   
       def plp_and_carousel_image_second(product, image_class = '')
+        return '' unless product.images.second
+        
         image = product.images.second
   
-        image_url = if image.present?
-                      #main_app.cdn_image_url(image.url('plp'))
-                      main_app.cdn_image_url(image.url(:large))
-                    else
-                      asset_path('noimage/plp.svg')
-                    end
+        # image_url = if image.present?
+        #               #main_app.cdn_image_url(image.url('plp'))
+        #               main_app.cdn_image_url(image.url(:large))
+        #             else
+        #               asset_path('noimage/plp.svg')
+        #             end
   
-        image_style = image&.style(:plp)
+        # image_style = image&.style(:plp)
   
-        lazy_image(
-          src: image_url,
-          srcset: carousel_image_source_set(image),
-          alt: product.name,
-          width: image_style&.dig(:width) || 650, #278
-          height: image_style&.dig(:height) || 870, #371
-          class: "product-component-image d-block mw-100 #{image_class}"
-        )
+        # lazy_image(
+        #   src: image_url,
+        #   srcset: carousel_image_source_set(image),
+        #   alt: product.name,
+        #   width: image_style&.dig(:width) || 650, #278
+        #   height: image_style&.dig(:height) || 870, #371
+        #   class: "product-component-image d-block mw-100 #{image_class}"
+        # )
+        # )
+        zoomed = false
+
+        image_attrs = {
+          src: main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large)),
+          alt: image.alt || product.name,
+          class: "product-component-image d-block mw-100 #{image_class}",
+          width: zoomed ? 650 : 475,
+          height: zoomed ? 870 : 594
+        }
+        lazy_image(**image_attrs)
+
       end
 
       def plp_and_carousel_image(product, image_class = '')
         image = default_image_for_product_or_variant(product)
   
-        image_url = if image.present?
-                      #main_app.cdn_image_url(image.url('plp'))
-                      main_app.cdn_image_url(image.url(:large))
-                    else
-                      asset_path('noimage/plp.svg')
-                    end
+        # image_url = if image.present?
+        #               #main_app.cdn_image_url(image.url('plp'))
+        #               main_app.cdn_image_url(image.url(:large))
+        #             else
+        #               asset_path('noimage/plp.svg')
+        #             end
   
-        image_style = image&.style(:plp)
+        # image_style = image&.style(:plp)
   
-        lazy_image(
-          src: image_url,
-          srcset: carousel_image_source_set(image),
-          alt: product.name,
-          width: image_style&.dig(:width) || 650, #278
-          height: image_style&.dig(:height) || 870, #371
-          class: "product-component-image d-block mw-100 #{image_class}"
-        )
+        # lazy_image(
+        #   src: image_url,
+        #   srcset: carousel_image_source_set(image),
+        #   alt: product.name,
+        #   width: image_style&.dig(:width) || 650, #278
+        #   height: image_style&.dig(:height) || 870, #371
+        #   class: "product-component-image d-block mw-100 #{image_class}"
+        # )
+        zoomed = false
+
+        image_attrs = {
+          src: main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large)),
+          alt: image.alt || product.name,
+          class: "product-component-image d-block mw-100 #{image_class}",
+          width: zoomed ? 650 : 475,
+          height: zoomed ? 870 : 594
+        }
+        lazy_image(**image_attrs)
       end
   
       def lazy_image(src:, alt:, width:, height:, srcset: '', **options)

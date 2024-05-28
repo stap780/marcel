@@ -1,7 +1,7 @@
 <!-- partial = "spree/products/color_option_type_new"-->
 <% option_type[:option_values].each do |option_value| %>
     <%= label_tag "variant_option_value_id_#{option_type[:id]}_#{option_value[:id]}",
-      class: "d-flex color-select-label #{'active' if  index == 0}",
+      class: "color-select-label #{'active' if  index == 0}",
       #title: option_value[:presentation],
       title: tooltip_title,
       data: { toggle: "tooltip", placement: "bottom" } do %>
@@ -9,7 +9,7 @@
       <%= radio_button_tag "variant_option_value_id_#{option_type[:id]}",
         option_value[:id],
         option_value[:is_default] && index == 0,
-        class: "product-variants-variant-values-radio position-relative",
+        class: "product-variants-variant-values-radio d-none",
         aria: { label: option_value[:presentation] },
         data: {
           "option-type-index" => index,

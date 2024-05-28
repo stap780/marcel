@@ -3,26 +3,22 @@
 <a href="<%= url%>" class='d-flex flex-column justify-content-between text-decoration-none gap-3'>
   <%# cache [common_product_cache_keys, product] do  THIS cache not work - for future investigation %>
   <div class="image-wrap position-relative">
-    <%= plp_and_carousel_image(product, 'first-image') %>
-    <%= plp_and_carousel_image_second(product, 'second-image position-absolute top-50 start-50 translate-middle opacity-0 h-100') %>
+    <%= plp_and_carousel_image(product, 'new first-image') %>
+    <%= plp_and_carousel_image_second(product, 'new second-image position-absolute top-50 start-50 translate-middle opacity-0 h-100') %>
   </div>
   <div class="d-flex justify-content-between gap-3 pe-3">
-    <div class="product-component-name mt-0" title="<%= product.name %>">
-      <%= product.name %>
-    </div>
+    <div class="product-component-name mt-0" title="<%= product.name %>"><%= product.name %></div>
     <div class="product-component-price mt-0 d-flex align-items-end"><%= display_price(product) %></div>
   </div>
-
-  <% color_relation_product_ids = product.relations.map{|relation| relation.related_to.id if relation.relation_type.name == "Color"}.reject(&:blank?)%>
-  <% if color_relation_product_ids.any? %>
-    <%= render partial: '/spree/products/product_color_option', locals: { 
-                                                                          color_relation_product_ids: color_relation_product_ids,  
-                                                                          product: product, 
-                                                                          show_title: 'not_show', 
-                                                                          css_class: 'gap-2 mt-0', 
-                                                                          limit: 2 } %>
-  <% end %>
-
-  </a>
+</a>
+<% color_relation_product_ids = product.relations.map{|relation| relation.related_to.id if relation.relation_type.name == "Color"}.reject(&:blank?)%>
+<% if color_relation_product_ids.any? %>
+  <%= render partial: '/spree/products/product_color_option', 
+            locals: { color_relation_product_ids: color_relation_product_ids,  
+                      product: product, 
+                      show_title: 'not_show', 
+                      css_class: 'gap-2 mt-0', 
+                      limit: 2 } %>
+<% end %>
 <%# end %>
 <!-- partial = "spree/shared/product" -->
