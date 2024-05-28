@@ -169,16 +169,16 @@ module Spree
       end
   
       def plp_and_carousel_image_second(product, image_class = '')
-        return '' unless product.images.second
+        zoomed = false
         
         image = product.images.second
   
-        # image_url = if image.present?
-        #               #main_app.cdn_image_url(image.url('plp'))
-        #               main_app.cdn_image_url(image.url(:large))
-        #             else
-        #               asset_path('noimage/plp.svg')
-        #             end
+        image_url = if image.present?
+                      #main_app.cdn_image_url(image.url('plp'))
+                      main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large))
+                    else
+                      asset_path('noimage/plp.svg')
+                    end
   
         # image_style = image&.style(:plp)
   
@@ -191,11 +191,11 @@ module Spree
         #   class: "product-component-image d-block mw-100 #{image_class}"
         # )
         # )
-        zoomed = false
+        
 
         image_attrs = {
-          src: main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large)),
-          alt: image.alt || product.name,
+          src: image_url,
+          alt: image.present? ? image.alt : product.name,
           class: "product-component-image d-block mw-100 #{image_class}",
           width: zoomed ? 650 : 475,
           height: zoomed ? 870 : 594
@@ -205,14 +205,15 @@ module Spree
       end
 
       def plp_and_carousel_image(product, image_class = '')
+        zoomed = false
         image = default_image_for_product_or_variant(product)
   
-        # image_url = if image.present?
-        #               #main_app.cdn_image_url(image.url('plp'))
-        #               main_app.cdn_image_url(image.url(:large))
-        #             else
-        #               asset_path('noimage/plp.svg')
-        #             end
+        image_url = if image.present?
+                      #main_app.cdn_image_url(image.url('plp'))
+                      main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large))
+                    else
+                      asset_path('noimage/plp.svg')
+                    end
   
         # image_style = image&.style(:plp)
   
@@ -224,11 +225,11 @@ module Spree
         #   height: image_style&.dig(:height) || 870, #371
         #   class: "product-component-image d-block mw-100 #{image_class}"
         # )
-        zoomed = false
+        
 
         image_attrs = {
-          src: main_app.cdn_image_url(image.url(zoomed ? :zoomed : :large)),
-          alt: image.alt || product.name,
+          src: image_url,
+          alt: image.present? ? image.alt : product.name,
           class: "product-component-image d-block mw-100 #{image_class}",
           width: zoomed ? 650 : 475,
           height: zoomed ? 870 : 594
