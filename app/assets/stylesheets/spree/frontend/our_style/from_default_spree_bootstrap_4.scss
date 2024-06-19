@@ -4694,7 +4694,6 @@ input:checked~.spree-radio-label-custom-input {
 
 .order-show {
     padding-bottom: 40px;
-    font-weight: 500
 }
 
 .order-show>.order-show-check-mark {
@@ -4719,40 +4718,32 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .order-show dd {
-    font-size: 0.875rem;
     margin-bottom: 30px
 }
 
 @media (min-width: 576px) {
     .order-show dd {
         padding-bottom:0px;
-        margin-bottom: 60px;
-        font-size: 1.6875rem
     }
 }
 
 @media (min-width: 992px) {
     .order-show dd {
-        font-size:1.125rem
     }
 }
 
 .order-show dt {
-    font-weight: 500;
     margin-bottom: 18px
 }
 
 @media (min-width: 576px) {
     .order-show dt {
         padding:0;
-        margin-bottom: 32px;
-        font-size: 1.875rem
     }
 }
 
 @media (min-width: 992px) {
     .order-show dt {
-        font-size:1.375rem
     }
 }
 
@@ -4765,20 +4756,16 @@ input:checked~.spree-radio-label-custom-input {
     .order-show-number {
         margin-top:80px;
         margin-bottom: 60px;
-        font-size: 1.5625rem
     }
 }
 
 @media (min-width: 992px) {
     .order-show-number {
-        margin-top:60px;
-        font-size: 1.625rem
     }
 }
 
 .order-show-explain {
     margin: 31px 0 0;
-    font-size: 23px
 }
 
 @media (min-width: 992px) {
@@ -4789,7 +4776,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .order-show-line-items-header {
-    font-size: 1.6875rem
 }
 
 .order-show-line-items-line-item:not(:last-child) {
