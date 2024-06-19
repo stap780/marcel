@@ -60,7 +60,7 @@
         </ul>
         <% if spree_menu('footer_2').present? %>
           <div class="col-12 col-lg-3">
-            <% spree_menu('footer2').children.each_with_index do |parent, index| %>
+            <% spree_menu('footer_2').children.each_with_index do |parent, index| %>
                 <%= tag.div class: "footer-spree-label pb-3" do %>
                     <%= parent.container? ?  parent.name : spree_nav_link_tag(parent, {class: 'text-decoration-none text-black'})%>
                 <% end %>

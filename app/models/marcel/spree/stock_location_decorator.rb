@@ -23,7 +23,7 @@ module Marcel
         # end
         def check_associations
             if shipments.count > 0
-              errors.add(:base, "Cannot delete Stock Location. You have shipments with it.")
+              errors.add(:base, "Cannot delete Stock Location. You have order or shipments with it.")
               throw(:abort)
             end
         end
