@@ -21,6 +21,9 @@ body {
     overflow-x: hidden;
     background: var(--marcel-default-background);
 }
+dt {
+    font-weight: normal;
+}
 .filter {
     background-color: var(--marcel-default-background);
 }
@@ -1091,4 +1094,57 @@ label.active {
     color: var(--bs-btn-hover-color);
     background-color: var(--bs-btn-hover-bg);
     border-color: var(--bs-btn-hover-border-color);
+}
+
+.order-information, .account-information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-ship-address, .order-bill-address, .order-shipment, .order-payment, .account-information-item  {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+@media (max-width: 767px) {
+    .order-ship-address, .order-bill-address, .order-shipment, .order-payment, .account-information-item  {
+    display: flex;
+    }
+}
+.adr {
+    display: flex;
+    gap: 5px;
+}
+@media (max-width: 767px) {
+    .adr  {
+    display: block;
+    }
+}
+.adr .local{
+    display: flex;
+    gap: 5px;
+}
+@media (max-width: 767px) {
+    .adr .local {
+    display: block;
+    }
+}
+.order-shipment dd, .order-payment dd, .order-bill-address dd, .order-ship-address dd, .account-information-item dd, 
+.order-shipment dt, .order-payment dt, .order-bill-address dt, .order-ship-address dt, .account-information-item dt {
+    margin-bottom: 0;
+}
+.order-shipment dt, .order-payment dt, .order-bill-address dt, .order-ship-address dt, .account-information-item dt {
+    min-width: 135px;
+}
+.account-information-item dd {
+    display: flex;
+    gap: 5px;
+}
+.account-information-item address {
+    display: flex;
+    flex-wrap: wrap;
+    flex: unset;
+}
+.account-information-item a {
+    color: black;
 }

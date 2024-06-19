@@ -1,21 +1,17 @@
 <!-- layout="spree/orders/show" -->
 <div class='order-show container d-flex flex-column align-items-center flex-lg-wrap flex-lg-row justify-content-center' id="order_summary" data-hook>
   <% if order_just_completed?(@order) %>
-    <%= icon(name: 'check-mark-circle',
-             classes: 'd-block d-lg-none mx-auto order-show-check-mark',
-             width: 36,
-             height: 36) %>
-    <%= icon(name: 'check-mark-circle',
-             classes: 'd-none d-lg-block mx-auto order-show-check-mark',
-             width: 80,
-             height: 80) %>
-    <h5 class="w-100 text-center"><%= Spree.t(:order_success) %></h5>
-    <p class="order-show-explain w-100 text-center"><%= Spree.t(:order_success_explain) %></p>
+    <%= icon(name: 'check-mark-circle', width: 24, height: 24,
+             classes: 'd-block d-lg-none mx-auto order-show-check-mark')%>
+    <%= icon(name: 'check-mark-circle', width: 60, height: 60,
+             classes: 'd-none d-lg-block mx-auto order-show-check-mark') %>
+    <div class="h6 w-100 text-center"><%= Spree.t(:order_success) %></div>
+    <div class="order-show-explain w-100 text-center font-halvar"><%= Spree.t(:order_success_explain) %></div>
   <% end %>
 
-  <p class="my-3 my-md-5 font-halvar text-uppercase shopping-cart-header fw-bold pb-0 pb-md-3">
+  <div class="<% if order_just_completed?(@order) %>my-1 my-md-3 <% else %>my-3 my-md-5 <% end %>font-halvar text-uppercase shopping-cart-header fw-bold pb-0 pb-md-3">
     <%= accurate_title %> / <%= pretty_date(@order.completed_at) %>
-  </p>
+  </div>
   <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
 </div>
 <!-- layout="spree/orders/show" -->

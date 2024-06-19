@@ -4,17 +4,17 @@
     <div class="d-lg-none checkout-confirm-delivery-informations-header">
       <%= Spree.t(:delivery_information) %>
     </div>
-    <dl>
+    <div class="order-information">
       <% if order.has_step?("address") %>
-        <div data-hook="order-ship-address">
-          <dt class="font-anonymus fs-5 text-capitalize mb-3">
+        <div class="order-ship-address" data-hook="order-ship-address">
+          <dt class="font-anonymus fs-6 text-capitalize mb-3">
             <%= Spree.t(:shipping_address) %>
             <%= checkout_edit_link %>
           </dt>
           <%= render 'spree/shared/address', address: order.ship_address %>
         </div>
-        <div data-hook="order-bill-address">
-          <dt class="font-anonymus fs-5 text-capitalize mb-3">
+        <div class="order-bill-address" data-hook="order-bill-address">
+          <dt class="font-anonymus fs-6 text-capitalize mb-3">
             <%= Spree.t(:billing_address) %>
             <%= checkout_edit_link %>
           </dt>
@@ -22,8 +22,8 @@
         </div>
       <% end %>
       <% if order.has_step?("delivery") %>
-        <div data-hook="order-shipment">
-          <dt class="font-anonymus fs-5 text-capitalize mb-3">
+        <div class="order-shipment" data-hook="order-shipment">
+          <dt class="font-anonymus fs-6 text-capitalize">
             <%= Spree.t(:shipping) %>
             <%= checkout_edit_link('delivery') %>
           </dt>
@@ -34,8 +34,8 @@
         </div>
       <% end %>
       <% if order.has_step?("payment") %>
-        <div data-hook="order-payment">
-          <dt class="font-anonymus fs-5 text-capitalize mb-3">
+        <div class="order-payment" data-hook="order-payment">
+          <dt class="font-anonymus fs-6 text-capitalize mb-3">
             <%= Spree.t(:payment) %>
             <%= checkout_edit_link('payment') %>
           </dt>
@@ -49,7 +49,7 @@
           </dd>
         </div>
       <% end %>
-    </dl>
+    </div>
   </div>
 
   <div class="checkout-confirm-order-details-line-items d-flex flex-column mt-5 me-md-4">
@@ -74,7 +74,7 @@
       <% @order.line_items.each do |item| %>
         <div class="checkout-confirm-order-details-line-items-line-item w-100 d-table-row" data-hook="order_details_line_item_row">
           <div class="checkout-confirm-order-details-line-items-line-item-name d-table-cell align-middle py-3 py-sm-4">
-            <div class="d-flex align-items-lg-center">
+            <div class="d-flex align-items-center">
               <div class="checkout-confirm-order-details-line-items-line-item-name-image" data-hook="order_item_image">
                 <%= link_to product_image(item.variant), spree.product_path(item.product) %>
               </div>

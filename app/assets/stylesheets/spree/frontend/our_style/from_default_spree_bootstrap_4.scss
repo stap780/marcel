@@ -3619,12 +3619,10 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 #shipToLocation {
-    font-size: 0.625rem
 }
 
 @media (min-width: 768px) {
     #shipToLocation {
-        font-size:0.875rem
     }
 }
 
@@ -3639,20 +3637,17 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .checkout-confirm-order-details dd {
-    font-size: 0.875rem
 }
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details dd {
         padding-bottom:0px;
         margin-bottom: 60px;
-        font-size: 1.6875rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details dd {
-        font-size:1.125rem
     }
 }
 
@@ -3664,13 +3659,11 @@ input:checked~.spree-radio-label-custom-input {
     .checkout-confirm-order-details dt {
         padding:0;
         margin-bottom: 32px;
-        font-size: 1.875rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details dt {
-        font-size:1.375rem
     }
 }
 
@@ -3688,7 +3681,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .checkout-confirm-order-details-line-items-header {
-    font-size: 1.6875rem
 }
 
 .checkout-confirm-order-details-line-items-line-item img {
@@ -3709,7 +3701,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .checkout-confirm-order-details-line-items-line-item-name {
-    font-size: 0.875rem;
     border-top: 1px solid #e2e2e2;
     margin-right: 20px
 }
@@ -3730,19 +3721,16 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details-line-items-line-item-name-link {
-        font-size:1.6875rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-name-link {
-        font-size:1.375rem;
         width: 55%
     }
 }
 
 .checkout-confirm-order-details-line-items-line-item-name-options {
-    font-size: 0.75rem
 }
 
 @media (max-width: 1199.98px) {
@@ -3757,18 +3745,15 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details-line-items-line-item-name-options {
-        font-size:1.375rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-name-options {
-        font-size:1.125rem
     }
 }
 
 .checkout-confirm-order-details-line-items-line-item-subtitle {
-    font-size: 0.75rem
 }
 
 @media (max-width: 1199.98px) {
@@ -3783,48 +3768,40 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details-line-items-line-item-subtitle {
-        font-size:1.375rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-subtitle {
-        font-size:1.125rem
     }
 }
 
 .checkout-confirm-order-details-line-items-line-item-price {
-    font-size: 0.875rem;
     border-top: 1px solid #e2e2e2
 }
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details-line-items-line-item-price {
-        font-size:1.6875rem;
         margin-bottom: auto
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-price {
-        font-size:1.375rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-price div:last-child {
-        font-size:1.375rem
     }
 }
 
 .checkout-confirm-order-details-line-items-line-item-quantity {
-    font-size: 0.875rem;
     border-top: 1px solid #e2e2e2
 }
 
 @media (min-width: 576px) {
     .checkout-confirm-order-details-line-items-line-item-quantity {
-        font-size:1.6875rem
     }
 }
 
@@ -3836,7 +3813,6 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-quantity span {
-        font-size:1.375rem;
         margin-left: 30px
     }
 }
@@ -3847,13 +3823,11 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-total {
-        font-size:1.25rem
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-order-details-line-items-line-item-total div:last-child {
-        font-size:1.375rem
     }
 }
 
@@ -3866,9 +3840,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .checkout-confirm-delivery-informations {
-    flex-basis: 100%;
-    border-bottom: 1px solid #e2e2e2;
-    font-weight: 500
 }
 
 .checkout-confirm-delivery-informations div:first-child {
@@ -3877,17 +3848,14 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .checkout-confirm-delivery-informations-header {
-    letter-spacing: 0.4px;
     margin-bottom: 20px
 }
 
 .checkout-confirm-delivery-informations dt {
-    letter-spacing: 0.4px;
     margin-bottom: 15px
 }
 
 .checkout-confirm-delivery-informations dd {
-    letter-spacing: 0.35px;
     margin-bottom: 25px
 }
 
@@ -3900,46 +3868,33 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 576px) {
     .checkout-confirm-delivery-informations {
-        font-size:1.875rem
     }
 
     .checkout-confirm-delivery-informations-header {
-        margin-top: 45px;
-        margin-bottom: 40px;
-        letter-spacing: 0.75px
     }
 
     .checkout-confirm-delivery-informations dt {
-        padding: 0;
-        margin-bottom: 37px;
-        letter-spacing: 0.75px
     }
 
     .checkout-confirm-delivery-informations dd {
-        font-size: 1.6875rem;
-        margin-bottom: 57px;
-        letter-spacing: 0.68px
     }
 }
 
 @media (min-width: 992px) {
     .checkout-confirm-delivery-informations {
         border:none;
-        font-size: 1.375rem
     }
 
     .checkout-confirm-delivery-informations dl {
         display: flex;
-        justify-content: space-between
+        justify-content: space-between;
+        flex-direction: column;
     }
 
     .checkout-confirm-delivery-informations dt {
-        letter-spacing: 0.55px
     }
 
     .checkout-confirm-delivery-informations dd {
-        font-size: 1.125rem;
-        letter-spacing: 0.45px
     }
 }
 
@@ -4083,15 +4038,11 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (max-width: 576px) {
     .shopping-cart-header {
-        font-size:0.8rem;
     }
 }
 
 @media (min-width: 992px) {
     .shopping-cart-header {
-        font-size: 1.125rem;
-        // margin-top: 0;
-        // margin-bottom: 0
     }
 }
 
@@ -4121,14 +4072,11 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 576px) {
     .shopping-cart-empty-info {
-        font-size:1.125rem;
-        letter-spacing: 0.45px
     }
 }
 
 @media (min-width: 992px) {
     .shopping-cart-empty-info {
-        font-size:1.25rem
     }
 }
 
@@ -4142,8 +4090,6 @@ input:checked~.spree-radio-label-custom-input {
         padding:20px 12px;
         width: 100%;
         margin-top: 50px;
-        line-height: 1.11;
-        font-size: 1.75rem;
         align-self: center
     }
 }
@@ -4154,8 +4100,6 @@ input:checked~.spree-radio-label-custom-input {
         margin-top: 60px;
         margin-bottom: 90px;
         width: 517px;
-        line-height: 65px;
-        font-size: 1.375rem;
         align-self: center
     }
 }
@@ -5153,25 +5097,21 @@ input:checked~.spree-radio-label-custom-input {
 .account-page h3 {
     color: black;
     margin: 33px 0;
-    font-size: 2rem
 }
 
 @media (max-width: 991.98px) {
     .account-page h3 {
         text-align:center;
-        font-size: 2.125rem
     }
 }
 
 @media (max-width: 767.98px) {
     .account-page h3 {
-        font-size:1.125rem
     }
 }
 
 @media (min-width: 768px) {
     .account-page>div {
-        margin-bottom:85px
     }
 }
 
@@ -5198,18 +5138,15 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .account-page-user-info-item address {
-    font-size: 0.875rem
 }
 
 @media (min-width: 768px) {
     .account-page-user-info-item address {
-        font-size:1.625rem
     }
 }
 
 @media (min-width: 992px) {
     .account-page-user-info-item address {
-        font-size:1.125rem
     }
 }
 
@@ -5230,20 +5167,16 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 768px) {
     .account-page-user-info-item-title {
-        font-size:1.8125rem
     }
 }
 
 @media (min-width: 992px) {
     .account-page-user-info-item-title {
-        font-size:1.5rem
     }
 }
 
 .account-page-user-info-item-title-edit {
-    position: relative;
-    float: right;
-    margin-top: -4px
+
 }
 
 .account-page-user-info-item-title-edit-img {
@@ -5263,28 +5196,23 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 992px) {
     .account-page-user-info-item-title-edit {
-        float:none;
-        margin: -4px 0 0 20px;
-        position: absolute
+
     }
 }
 
 .account-page-user-info-item-definition {
     margin-top: 10px;
-    font-size: 0.875rem
 }
 
 @media (min-width: 576px) {
     .account-page-user-info-item-definition {
         margin-top:28px;
-        font-size: 1.625rem
     }
 }
 
 @media (min-width: 992px) {
     .account-page-user-info-item-definition {
         margin-top:10px;
-        font-size: 1.125rem
     }
 }
 
@@ -5370,7 +5298,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .account-page-orders {
-    border-top: 1px solid #e2e2e2
 }
 
 @media (max-width: 767.98px) {
@@ -5384,10 +5311,8 @@ input:checked~.spree-radio-label-custom-input {
     border-bottom: 1px solid #e2e2e2
 }
 
-@media (max-width: 991.98px) {
-    .account-page-orders tr:last-child {
-        border-bottom:0
-    }
+.account-page-orders tr:last-child {
+    border-bottom:0
 }
 
 .account-page-orders td {
@@ -5409,25 +5334,21 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 768px) {
     .account-page-order-number {
-        font-size:1.8125rem
     }
 }
 
 @media (min-width: 992px) {
     .account-page-order-number {
-        font-size:1.125rem
     }
 }
 
 .account-page-order-status {
     order: 2;
-    font-size: 0.875rem;
     text-transform: uppercase
 }
 
 @media (min-width: 768px) {
     .account-page-order-status {
-        font-size:1.625rem
     }
 }
 
