@@ -7,7 +7,7 @@ module Marcel
           # puts base::MENU_LOCATIONS.to_s
           location_name = 'sidebar'
           location_name2 = 'footer_small'
-          location_name3 = 'footer2'
+          location_name3 = 'footer_2'
           base::MENU_LOCATIONS.push('Sidebar')
           base::MENU_LOCATIONS.push('Footer small')
           base::MENU_LOCATIONS.push('Footer 2')
