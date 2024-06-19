@@ -85,9 +85,13 @@
                 <% unless item.variant.is_master? %>
                   <ul class="checkout-confirm-order-details-line-items-line-item-name-options text-uppercase list-unstyled mb-0">
                     <% item.variant.option_values.sort { |ov| ov.option_type.position }.each do |ov| %>
-                    <li>
+                    <li <% if ov.option_type.name != "color"%>style="display: flex;align-items: center;" <% end %> >
                       <% # TODO: rework option values so options_text method can be used here %>
-                      <%= "#{ov.option_type.presentation}: #{ov.presentation}" %>
+                      <% if ov.option_type.name != "color"%>
+                      <%= "#{ov.option_type.presentation}: #{ov.presentation}"%>
+                      <% else %>
+                      <%= "#{ov.option_type.presentation}: "%> <span style="width:20px;height:20px;background-color:<%=ov.presentation%>;border-radius: 50%;"></span>
+                      <% end %>
                     </li>
                   <% end %>
                   </ul>
