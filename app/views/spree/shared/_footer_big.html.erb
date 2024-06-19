@@ -25,7 +25,7 @@
                 <% end %>
               </ul>
               <% end %>
-
+              <%# this is subcat %>
         <% end %>
                 
         <ul class="col-12 col-lg-5 accordion accordion-flush list-group border-0 ps-2 mb-4 mb-lg-0" id="footerNav">
@@ -58,19 +58,25 @@
             </li>
           <% end %>
         </ul>
-
-        <% if spree.respond_to?(:account_path) %>
-            <div class="col-12 col-lg-3">
-              <div class="footer-spree-label pb-3">
-              <%= link_to Spree.t('nav_bar.my_account'), spree.account_path, class: "text-decoration-none text-black" %>
+        <% if spree_menu('footer2').present? %>
+          <div class="col-12 col-lg-3">
+            <% spree_menu('footer2').children.each_with_index do |parent, index| %>
+                <%= tag.div class: "footer-spree-label pb-3" do %>
+                    <%= parent.container? ?  parent.name : spree_nav_link_tag(parent, {class: 'text-decoration-none text-black'})%>
+                <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <% if spree.respond_to?(:account_path) %>
+              <div class="col-12 col-lg-3">
+                <div class="footer-spree-label pb-3">
+                  <%= link_to Spree.t('nav_bar.my_account'), spree.account_path, class: "text-decoration-none text-black" %>
+                </div>
+                <div class="footer-spree-label pb-3">
+                  <%= link_to Spree.t(:my_orders).upcase, spree.account_path(anchor: "account-my-orders"), class: "text-decoration-none text-black" %>
+                </div>
               </div>
-              <div class="footer-spree-label pb-3">
-              <%= link_to Spree.t(:my_orders).upcase, spree.account_path(anchor: "account-my-orders"), class: "text-decoration-none text-black" %>
-               </div>
-               <div class="footer-spree-label pb-3">
-              <%= link_to Spree.t(:contact_us).upcase, spree.account_path, class: "text-decoration-none text-black" %>
-               </div>
-            </div>
+          <% end %>
         <% end %>
 
     </div>
