@@ -7065,8 +7065,8 @@ input:checked + .select-label {
 
 @media (min-width: 992px) {
     .delete-address-popup {
-        width:686px;
-        height: 378px;
+        width:660px;
+        height: 300px;
         padding-bottom: 0
     }
 }
@@ -7094,34 +7094,26 @@ input:checked + .select-label {
 .delete-address-popup-dropdown.shown {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.5s
+    transition: opacity 0.5s;
+    z-index: 10000;
 }
 
 .delete-address-popup-header {
     
     font-weight: 600;
-    line-height: 0.91;
-    letter-spacing: 0.55px;
     text-align: center;
     color: black;
-    margin-bottom: 23px
+    margin-bottom: 15px;
 }
 
 @media (min-width: 992px) {
     .delete-address-popup-header {
-        font-size:1.5rem;
-        margin-bottom: 27px;
-        line-height: 1.06;
-        letter-spacing: 0.8px
+        margin-bottom: 10px;
     }
 }
 
 .delete-address-popup-text {
     width: 234px;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.38;
-    letter-spacing: 0.4px;
     text-align: center;
     color: black;
     margin: auto
@@ -7130,58 +7122,41 @@ input:checked + .select-label {
 @media (min-width: 576px) {
     .delete-address-popup-text {
         width:462px;
-        font-size: 1.5rem;
-        line-height: 1.42;
-        letter-spacing: 0.6px
     }
 }
 
 .delete-address-popup-buttons {
-    margin-top: 48px;
-    justify-content: space-evenly
 }
 
 @supports (-ms-ime-align: auto) {
     .delete-address-popup-buttons {
-        justify-content: space-around
     }
 }
 
 .delete-address-popup-button {
-    width: 198px;
-    height: 29px;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-    text-align: center
 }
 
 @media (min-width: 576px) {
     .delete-address-popup-button {
-        height:53px;
-        font-size: 1.25rem;
-        line-height: 37px;
-        letter-spacing: 0.5px
     }
 }
 
 @media (max-width: 575.98px) {
     .delete-address-popup-button {
-        width:145px
     }
 }
 
 .delete-address-popup-icon {
     width: 16.8px;
     height: 16.8px;
-    margin: 17px 18px 20px auto
+    margin: 17px 17px 17px auto;
 }
 
 @media (min-width: 576px) {
     .delete-address-popup-icon {
         width:29.7px;
         height: 29.7px;
-        margin: 34px 32px 20px auto
+        margin: 20px 20px 20px auto;
     }
 }
 

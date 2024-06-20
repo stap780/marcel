@@ -35,3 +35,5 @@ en:
     sku: Sku2
     skus: Skus2
     analytics_trackers: 'Analytics Trackers'
+    address_action_popup:
+      delete_button: "Oui, supprimez-le!"
