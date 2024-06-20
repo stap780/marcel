@@ -8,8 +8,8 @@
           </h3>
           <div id="shipToLocation" class="mb-4 text-uppercase">
             <%= Spree.t(:ship_to) %>
-            <span class="text-muted"><%= @order.shipping_address.address1 %></span> -
-              <% if @order.shipping_address.zipcode.present? %> <span class="text-muted"><%= @order.shipping_address.zipcode %></span> - <% end %>
+            <span class="text-muted"><%= @order.shipping_address.address1.gsub(',','') %></span> -
+              <% if @order.shipping_address.zipcode.present? %><span class="text-muted"><%= @order.shipping_address.zipcode %></span> - <% end %>
             <span class="text-muted"><%= @order.shipping_address.country_iso %></span>
           </div>
 

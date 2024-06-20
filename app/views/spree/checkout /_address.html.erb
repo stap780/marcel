@@ -14,7 +14,7 @@
   <% ['billing', 'shipping'].each do |address_type|
     address_name = "#{address_type[0...4]}_address" %>
     <div class="col-12 mb-4" data-hook="<%= address_type %>_fieldset_wrapper">
-      <div id="<%= address_type %>" data-hook>
+      <div id="<%= address_type %>" data-hook="<%= address_type_id %>">
         <h5 class="checkout-content-header spree-header font-halvar text-uppercase shopping-cart-header fw-bold">
           <%= Spree.t(address_type + '_address') %>
         </h5>

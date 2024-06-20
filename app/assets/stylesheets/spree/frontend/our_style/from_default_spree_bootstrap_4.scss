@@ -5111,8 +5111,6 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .account-page-user-full-name {
-    width: 200px;
-    display: inline-block
 }
 
 .account-page-user-info {
@@ -5920,25 +5918,19 @@ input:checked~.spree-radio-label-custom-input {
 
 .checkout-content-summary-header {
     font-size: 1rem;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
     font-weight: 500;
-    margin-bottom: 30px
 }
 
 @media (min-width: 576px) {
     .checkout-content-summary-header {
-        margin-bottom: 74px
     }
 }
 
 @media (min-width: 992px) {
     .checkout-content-summary-header {
         letter-spacing: 0.65px;
-        margin-bottom: 35px
     }
 }
 
@@ -6349,14 +6341,12 @@ input:checked~.spree-radio-label-custom-input {
 }
 
 .add-to-cart-form-general-availability {
-    font-size: 0.75rem;
     color: black;
     font-weight: 500
 }
 
 @media (min-width: 576px) {
     .add-to-cart-form-general-availability {
-        font-size:1.25rem
     }
 }
 
@@ -6380,7 +6370,6 @@ input:checked~.spree-radio-label-custom-input {
 
 @media (min-width: 768px) {
     .add-to-cart-form-price {
-        font-size:1.75rem
     }
 
     .add-to-cart-form-general-availability {

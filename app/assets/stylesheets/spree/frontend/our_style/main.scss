@@ -1109,6 +1109,7 @@ label.active {
 @media (max-width: 767px) {
     .order-ship-address, .order-bill-address, .order-shipment, .order-payment, .account-information-item  {
     display: flex;
+    gap: 10px;
     }
 }
 .adr {
@@ -1138,23 +1139,44 @@ label.active {
 }
 .account-information-item dd {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+}
+@media (max-width: 767px) {
+    .account-information-item dd {
+        gap: 5px;
+    }
 }
 .account-information-item address {
     display: flex;
     flex-wrap: wrap;
-    flex: unset;
+    margin-bottom: 0;
+    gap: 3px;
 }
 .account-information-item a {
     color: black;
+    margin-top: -5px;
 }
 .order-color-li {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+@media (max-width: 767px) {
+    .order-color-li {
+        display: flex!important;
+        align-items: center;
+        gap: 5px;
+    }
+}
 .order-color-option {
     width:20px;
     height:20px;
     border-radius: 50%;
+}
+
+.checkout-confirm-delivery-informations {
+    width: 100%;
+}
+.add-to-cart-form-general-availability {
+    font-size: 0.75rem;
 }

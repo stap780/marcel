@@ -9,8 +9,13 @@
     <div class="order-show-explain w-100 text-center font-halvar"><%= Spree.t(:order_success_explain) %></div>
   <% end %>
 
-  <div class="<% if order_just_completed?(@order) %>my-1 my-md-3 <% else %>my-3 my-md-5 <% end %>font-halvar text-uppercase shopping-cart-header fw-bold pb-0 pb-md-3">
-    <%= accurate_title %> / <%= pretty_date(@order.completed_at) %>
+  <div class="<% if order_just_completed?(@order) %>my-1 my-md-3 <% else %>my-3 my-md-5 <% end %>font-halvar text-uppercase shopping-cart-header fw-bold pb-0 pb-md-3 d-flex flex-column text-center">
+    <span class="order-title">
+      <%= accurate_title %>
+    </span>
+    <span class="order-date fs-6">
+      <%= pretty_date(@order.completed_at) %>
+    </span>
   </div>
   <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
 </div>

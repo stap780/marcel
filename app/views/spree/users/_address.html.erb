@@ -1,0 +1,17 @@
+<address class="">
+  <% if address.label&.present? %>
+    <div class="truncate">(<%= address.label %>)</div>
+  <% end %>
+  <span class="account-page-user-full-name">
+    <%= address.full_name %>
+  </span>
+  <div>
+    <%= "#{address.address1.gsub(',','')} #{address.address2}" %>
+  </div>
+  <div>
+    <%= "#{address.zipcode} #{address.city} #{address.state_text}" %>
+  </div>
+  <div>
+    <%= address.country.name %>
+  </div>
+</address>

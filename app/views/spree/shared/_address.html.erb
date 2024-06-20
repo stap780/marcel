@@ -9,20 +9,20 @@
   <div class="adr">
     <div class="street-address">
       <div class="street-address-line">
-        <%= address.address1 %>
+        <%= address.address1.gsub(',',' ') %>
       </div>
       <% unless address.address2.blank? %>
         <div class="street-address-line">
-          <%= address.address2 %>
+          <%= address.address2.gsub(',',' ') %>
         </div>
       <% end %>
     </div>
     <div class="local">
+      <span class="postal-code"><%= address.zipcode %></span>
       <span class="locality"><%= address.city %></span>
       <% if Spree::Config[:address_requires_state] %>
         <span class="region"><%= address.state_text %></span>
       <% end %>
-      <span class="postal-code"><%= address.zipcode %></span>
       <div class="country-name"><%= address.country.try(:name) %></div>
     </div>
   </div>

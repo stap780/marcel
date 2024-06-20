@@ -12,19 +12,21 @@
   </a>
   <div class="dropdown-menu text-right plp-sort-dropdown">
     <ul class="pt-1 mb-0 plp-sort-dropdown-ul">
+      <!-- 
       <li class="p-1 px-2 font-anonymus fs-6 plp-sort-dropdown-ul-li<%= '--active' if params[:sort_by].blank? %>">
-        <%= link_to Spree.t('plp.default'), url_for(permitted_params.merge(sort_by: nil)), class: 'dropdown-item' %>
+        <%# link_to Spree.t('plp.default'), url_for(permitted_params.merge(sort_by: nil)), class: 'dropdown-item' %>
       </li>
       <li class="p-1 px-2 font-anonymus fs-6 plp-sort-dropdown-ul-li<%= '--active' if params[:sort_by] == 'name-a-z' %>">
-        <%= link_to Spree.t('plp.name_a_z'), url_for(permitted_params.merge(sort_by: 'name-a-z')), class: 'dropdown-item' %>
+        <%# link_to Spree.t('plp.name_a_z'), url_for(permitted_params.merge(sort_by: 'name-a-z')), class: 'dropdown-item' %>
       </li>
     </li>
     <li class="p-1 px-2 font-anonymus fs-6 plp-sort-dropdown-ul-li<%= '--active' if params[:sort_by] == 'name-z-a' %>">
-      <%= link_to Spree.t('plp.name_z_a'), url_for(permitted_params.merge(sort_by: 'name-z-a')), class: 'dropdown-item' %>
+      <%# link_to Spree.t('plp.name_z_a'), url_for(permitted_params.merge(sort_by: 'name-z-a')), class: 'dropdown-item' %>
     </li>
     <li class="p-1 px-2 font-anonymus fs-6 plp-sort-dropdown-ul-li<%= '--active' if params[:sort_by] == 'newest-first' %>">
-      <%= link_to Spree.t('plp.newest_first'), url_for(permitted_params.merge(sort_by: 'newest-first')), class: 'dropdown-item' %>
+      <%# link_to Spree.t('plp.newest_first'), url_for(permitted_params.merge(sort_by: 'newest-first')), class: 'dropdown-item' %>
     </li>
+    -->
     <li class="p-1 px-2 font-anonymus fs-6 plp-sort-dropdown-ul-li<%= '--active' if params[:sort_by] == 'price-high-to-low' %>">
       <%= link_to Spree.t('plp.price_high_to_low'), url_for(permitted_params.merge(sort_by: 'price-high-to-low')), class: 'dropdown-item' %>
     </li>
