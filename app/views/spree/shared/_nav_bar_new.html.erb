@@ -13,8 +13,13 @@
                 </span>
 
                 <div id="link-to-account" class="dropdown-menu dropdown-menu-right text-right">
+                    <% if spree_user_signed_in? %>
+                    <a class="dropdown-item font-anonymus fs-7" href="/account">ACCOUNT</a>
+                    <a class="dropdown-item font-anonymus fs-7" href="/logout">LOGOUT</a>
+                    <% else %>
                     <a class="dropdown-item font-anonymus fs-7" href="/login">LOGIN</a>
                     <a class="dropdown-item font-anonymus fs-7" href="/signup">SIGN UP</a>
+                    <% end %>
                 </div>
             </div>
         </li>
