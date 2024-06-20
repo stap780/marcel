@@ -1099,7 +1099,7 @@ label.active {
 .order-information, .account-information {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .order-ship-address, .order-bill-address, .order-shipment, .order-payment, .account-information-item  {
@@ -1147,4 +1147,14 @@ label.active {
 }
 .account-information-item a {
     color: black;
+}
+.order-color-li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.order-color-option {
+    width:20px;
+    height:20px;
+    border-radius: 50%;
 }
