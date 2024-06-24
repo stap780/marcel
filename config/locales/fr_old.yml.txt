@@ -1,0 +1,9 @@
+fr:
+  spree:
+    sku: Sku
+    skus: Skus
+    order_summary: ''
+    order_number: Commande %{number}
+    order_success_explain: Vous allez recevoir une confirmation de votre commande par e-mail
+    address_action_popup:
+      delete_button: "Oui, supprimez-le!"
