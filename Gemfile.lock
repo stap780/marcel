@@ -37,6 +37,14 @@ GIT
       spree_extension
 
 GIT
+  remote: https://github.com/stap780/spree_contact_us.git
+  revision: cefd927d5787fb9b371dc63c74a27d8bebf6c0e4
+  specs:
+    spree_contact_us (4.0.0.alpha2)
+      deface (~> 1.0)
+      spree_core (>= 3.7.0)
+
+GIT
   remote: https://github.com/stap780/spree_custom_cms_sections.git
   revision: 175255e9e24645dd2f5f3ab2b58aba5124123056
   specs:
@@ -647,6 +655,7 @@ DEPENDENCIES
   spree_auth_devise (~> 4.5)
   spree_backend (~> 4.6)
   spree_cmd
+  spree_contact_us!
   spree_custom_cms_sections!
   spree_emails (~> 4.6)
   spree_frontend

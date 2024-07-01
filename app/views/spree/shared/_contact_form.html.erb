@@ -1,0 +1,25 @@
+<%= form_for Spree::ContactUs::Contact.new, url: contact_us_path, html: { novalidate: '' } do |f| %>
+
+    <% if SpreeContactUs.require_name %>
+    <p class="form-group checkout-content-inner-field">
+    <%= f.text_field :name, class: 'required spree-flat-input', placeholder: true %>
+    </p>
+    <% end %>
+    <p class="form-group checkout-content-inner-field">
+    <%= f.email_field :email, class: 'required spree-flat-input', placeholder: true %>
+    </p>
+    <%# if SpreeContactUs.require_subject %>
+    <p class="form-group checkout-content-inner-field hidden">
+    <%= f.hidden_field :subject, class: 'required spree-flat-input', value: "Contact form" %>
+    </p>
+    <%# end %>
+    <p class="form-group checkout-content-inner-field">
+    <%= f.text_area :message, class: 'required spree-flat-input', rows: 4, placeholder: Spree.t('spree_contact_us.message_placeholder') %>
+    </p>
+    <div class="text-center text-lg-left mt-lg-1 mb-4">
+    <%= f.submit Spree.t(:send), alt: Spree.t(:send), id: 'contact_us_contact_submit', title: Spree.t(:send),
+        class: 'btn btn-outline-dark border-radius-0 font-anonymus fs-5 border-radius-0 text-capitalize'
+    %>
+    </div>
+<% end %>
+

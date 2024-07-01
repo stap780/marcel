@@ -19,26 +19,25 @@
             <dt class="font-anonymus fs-6 text-capitalize">
               <%= Spree.t(:address) %>
             </dt>
-            <div class="addresses-wrap">
-
-            <% @user.addresses.each_with_index do |address, index| %>
-            <dd class="mb-2">
-              <% index += 1 %>
-              <% if index % 3 == 0 %>
-                <div class="account-page-user-info-item my-4"></div>
-              <% end %>
-              <%= render "spree/users/address", address: address %>
-              <%= render "spree/users/address_controls", address: address %>
-            </dd>
-            <% end %>
-            </div>
             <% if @user.addresses.count == 0 %>
             <dd>
               <%= link_to(spree.new_address_path(user_id: @user.id), method: :get, class: '', data: { hook: 'new_address' }) do %>
                 <%= inline_svg_tag('edit.svg', width: 24, height: 24) %>
               <% end %>
             </dd>
-            <% end %>       
+            <% end %>
+            <div class="addresses-wrap">
+              <% @user.addresses.each_with_index do |address, index| %>
+                <dd class="mb-2">
+                  <% index += 1 %>
+                  <% if index % 3 == 0 %>
+                    <div class="account-page-user-info-item my-4"></div>
+                  <% end %>
+                  <%= render "spree/users/address", address: address %>
+                  <%= render "spree/users/address_controls", address: address %>
+                </dd>
+              <% end %>
+            </div>
           </div>
           <% if @user.available_store_credits(current_store).count > 0 %>
           <div class="account-information-item">

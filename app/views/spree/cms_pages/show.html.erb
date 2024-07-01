@@ -8,8 +8,9 @@
       <div class="col-12">
         <%= @cms_page.content.html_safe %>
       </div>
-      <div class="col-12">
-        <%= render "spree/shared/jot_form" if @cms_page.slug == "nous-contacter" %>
+      <div class="col-11 col-md-7 m-auto pt-2 pt-md-5">
+        <%# render "spree/shared/jot_form" if @cms_page.slug == "nous-contacter" %>
+        <%= render "spree/shared/contact_form" if @cms_page.slug == "nous-contacter" || @cms_page.slug == "contact" %>
       </div>
     </div>
   </div>

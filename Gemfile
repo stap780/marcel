@@ -85,6 +85,8 @@ gem 'spree_product_bulk', github: 'stap780/spree_product_bulk'
 # gem 'spree_custom_cms_sections', path: '../spree_custom_cms_sections'
 gem 'spree_custom_cms_sections', github: 'stap780/spree_custom_cms_sections'
 
+gem 'spree_contact_us', github: 'stap780/spree_contact_us'
+# gem 'spree_contact_us', github: 'spree-contrib/spree_contact_us'
  
 # only needed for MacOS and Ruby 3.0
 gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
