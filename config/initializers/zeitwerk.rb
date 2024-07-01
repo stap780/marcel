@@ -23,3 +23,5 @@ AddGoogleAnalyticsContactInfoAddedToStoreAddress = Class.new
 AddGoogleAnalyticsGenerateLeadToStoreAddress = Class.new
 AddGoogleAnalyticsSignUpToContactInformation = Class.new
 AddGoogleAnalyticsViewItemListToProducts = Class.new
+ContactUsInFooter = Class.new
+ContactUsInHeader = Class.new
