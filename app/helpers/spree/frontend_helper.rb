@@ -323,6 +323,9 @@ module Spree
       end
   
       def filtering_params
+        puts "params"
+        puts params
+        puts "=========="
         @filtering_params ||= available_option_types.map(&:filter_param).concat(static_filters)
       end
   
