@@ -88,16 +88,16 @@ Rails.application.configure do
   #   enable_starttls_auto: true
   # }
 
-  config.action_mailer.smtp_settings = {
-    address: Rails.application.credentials.gmail[:address],
-    port: 587,
-    domain: Rails.application.credentials.gmail[:domain],
-    authentication: "login",
-    enable_starttls_auto: true,
-    user_name: Rails.application.credentials.gmail[:user_name],
-    password: Rails.application.credentials.gmail[:password],
-    openssl_verify_mode: "none"
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: Rails.application.credentials.gmail[:address],
+  #   port: 587,
+  #   domain: Rails.application.credentials.gmail[:domain],
+  #   authentication: "login",
+  #   enable_starttls_auto: true,
+  #   user_name: Rails.application.credentials.gmail[:user_name],
+  #   password: Rails.application.credentials.gmail[:password],
+  #   openssl_verify_mode: "none"
+  # }
 
   config.action_mailer.default_url_options = { host: 'https://marcel-robert.fr'}
 
