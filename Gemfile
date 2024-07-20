@@ -52,11 +52,11 @@ gem "image_processing", "~> 1.2"
 gem 'whenever', require: false
 gem "addressable"
 
-gem 'spree', '~> 4.6'
-gem 'spree_backend', '~> 4.6'
-gem 'spree_frontend'
-gem 'spree_emails', '~> 4.6'
-gem 'spree_sample', '~> 4.6'
+gem 'spree', '= 4.7.3'
+gem 'spree_backend', '= 4.7.2'
+gem 'spree_frontend', '= 4.7.0'
+gem 'spree_emails'
+# gem 'spree_sample', '= 4.7.3'
 gem 'spree_auth_devise', '~> 4.5' # Devise integration (optional)
 gem 'spree_gateway', '~> 3.10' # payment gateways eg. Stripe, Braintree (optional)
 gem 'spree_i18n', '~> 5.1' # translation files (optional)
