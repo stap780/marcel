@@ -1,6 +1,6 @@
 lock "~> 3.19.1"
 
-server '92.222.25.127', port: 22, roles: [:web, :app, :db], primary: true
+server '92.255.108.161', port: 22, roles: [:web, :app, :db], primary: true
 set :user, 'deploy'
 set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
