@@ -53,27 +53,6 @@ GIT
       spree_extension
 
 GIT
-  remote: https://github.com/stap780/spree_product_bulk.git
-  revision: 32c50b53b65862eacd5303388165a0a470e3351d
-  specs:
-    spree_product_bulk (0.0.17)
-      spree (>= 4.3.2)
-      spree_extension
-
-GIT
-  remote: https://github.com/stap780/spree_product_import.git
-  revision: 062487531008eb89fb6415da6629ee3ce4402658
-  specs:
-    spree_product_import (0.0.38)
-      addressable (~> 2.8)
-      caxlsx
-      caxlsx_rails
-      roo
-      roo-xls
-      spree (>= 4.3.2)
-      spree_extension
-
-GIT
   remote: https://github.com/stap780/spree_related_products.git
   revision: b7b0a8c9158932a527be1b1ddd21b5ae0090dffe
   specs:
@@ -226,14 +205,6 @@ GEM
       xpath (~> 3.2)
     carmen (1.1.3)
       activesupport (>= 3.0.0)
-    caxlsx (4.1.0)
-      htmlentities (~> 4.3, >= 4.3.4)
-      marcel (~> 1.0)
-      nokogiri (~> 1.10, >= 1.10.4)
-      rubyzip (>= 1.3.0, < 3)
-    caxlsx_rails (0.6.4)
-      actionpack (>= 3.1)
-      caxlsx (>= 3.0)
     chronic (0.10.2)
     concurrent-ruby (1.3.3)
     connection_pool (2.4.1)
@@ -289,7 +260,6 @@ GEM
       rails (>= 6.0.0)
       stimulus-rails
       turbo-rails
-    htmlentities (4.3.4)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     i18n_data (0.17.1)
@@ -456,14 +426,6 @@ GEM
       railties (>= 5.2)
     rexml (3.3.2)
       strscan
-    roo (2.10.1)
-      nokogiri (~> 1)
-      rubyzip (>= 1.3.0, < 3.0.0)
-    roo-xls (1.2.0)
-      nokogiri
-      roo (>= 2.0.0, < 3)
-      spreadsheet (> 0.9.0)
-    ruby-ole (1.2.13.1)
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
@@ -484,9 +446,6 @@ GEM
     simple_po_parser (1.1.6)
     sitemap_generator (6.3.0)
       builder (~> 3.0)
-    spreadsheet (1.3.1)
-      bigdecimal
-      ruby-ole
     spree (4.7.3)
       spree_api (= 4.7.3)
       spree_cli (= 4.7.3)
@@ -687,9 +646,7 @@ DEPENDENCIES
   spree_frontend (= 4.7.0)
   spree_gateway (~> 3.10)
   spree_i18n (~> 5.1)
-  spree_product_bulk!
   spree_product_feed!
-  spree_product_import!
   spree_related_products!
   spree_sitemap!
   sprockets-rails
