@@ -48,7 +48,5 @@ module Spree
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
 
-    config.active_support.key_generator_hash_digest_class = OpenSSL::Digest::SHA1
-
   end
 end
