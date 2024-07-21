@@ -77,7 +77,7 @@ gem 'spree_analytics_trackers', github: 'stap780/spree_analytics_trackers' # use
 # gem 'spree_product_import', github: 'stap780/spree_product_import'
 
 # gem 'spree_product_bulk', path: '../spree_product_bulk'
-# gem 'spree_product_bulk', github: 'stap780/spree_product_bulk'
+gem 'spree_product_bulk', github: 'stap780/spree_product_bulk'
 
 # gem 'spree_custom_cms_sections', path: '../spree_custom_cms_sections'
 gem 'spree_custom_cms_sections', github: 'stap780/spree_custom_cms_sections'
