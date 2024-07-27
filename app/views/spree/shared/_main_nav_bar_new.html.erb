@@ -6,7 +6,7 @@
             <% last = parent == spree_menu.children.last %>
             <% has_dropdown = parent.children.present? %>
             <% dropdown_toggle_class = has_dropdown ? "dropdown-toggle" : "" %>
-            <% data_attr = has_dropdown ? { bs_toggle: "" } : {} %>
+            <% data_attr = has_dropdown ? { toggle: "dropdown" } : {} %>
             <% aria_attr = has_dropdown ? { haspopup: true, expanded: false } : {} %>
             <% we_use_this = false %>
             <% if we_use_this %>
@@ -22,7 +22,7 @@
               <% column_style = nil %>
               <% column_style = '2' if parent.children.count > 7 && parent.children.count <= 13 %>
               <% column_style = '3' if parent.children.count > 13 %>
-             <ul class="dropdown-menu shadow main-nav-bar-category-dropdown py-3 <% if last %>last-dropdown<%end%>" style="columns: <%= column_style%>;">
+             <ul class="dropdown-menu shadow main-nav-bar-category-dropdown py-3 <% if last %>last-dropdown1<%end%>" style="columns: <%= column_style%>;">
               <% parent.children.each_with_index do |child, index| %>
                 <%= spree_nav_link_tag(child, { class: " main-nav-bar-category-links dropdown-item py-2 px-3" }) %>
               <% end %>
