@@ -273,7 +273,7 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n_data (0.17.1)
       simple_po_parser (~> 1.1)
-    image_processing (1.12.2)
+    image_processing (1.13.0)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     inline_svg (1.9.0)
@@ -372,7 +372,7 @@ GEM
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
-    public_suffix (6.0.0)
+    public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
@@ -654,14 +654,14 @@ DEPENDENCIES
   spree_cmd
   spree_contact_us!
   spree_custom_cms_sections!
-  spree_emails
+  spree_emails (= 4.7.3)
   spree_frontend (= 4.7.0)
   spree_gateway (~> 3.10)
   spree_i18n (~> 5.1)
   spree_product_bulk!
   spree_product_feed!
   spree_related_products!
-  spree_sample
+  spree_sample (= 4.7.3)
   spree_sitemap!
   sprockets-rails
   stimulus-rails
